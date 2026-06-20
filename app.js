@@ -107,6 +107,16 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 5800,
   },
   {
+    id: -19, category: 'networking', badge: '🎥 Free YouTube Courses',
+    title: 'thinQtank Learning – Cisco & CISSP Certification Courses',
+    description: "Boot camp-style Cisco certification training on YouTube covering CCNA, CCNP (ENCOR, ENARSI, SCOR), CCIE Enterprise Infrastructure, and CISSP. Features long-form structured lessons, live session archives, and hands-on labs with GNS3, EVE-NG, and Wireshark.",
+    url: 'https://www.youtube.com/@thinQtankS/courses',
+    source: 'YouTube – thinQtank Learning', author: 'thinQtank Learning',
+    level: 'Intermediate', type: 'Video',
+    tags: ['ccna', 'ccnp', 'ccie', 'cissp', 'networking', 'cisco', 'certification'],
+    date: '2026-06-20', views: 4700,
+  },
+  {
     id: -6, category: 'devops', badge: '🔑 Free Video Tutorials',
     title: 'TechWorld with Nana – DevOps & Cloud Training',
     description: "Nana Janashia provides some of the web's best DevOps and Cloud Computing training. Explore high-quality free video tutorials on Docker, Kubernetes, CI/CD, and Terraform, alongside structured premium bootcamps and certification prep.",
