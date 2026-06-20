@@ -14,7 +14,6 @@ const CATEGORIES = [
   { id: 'systems', name: 'Systems & Low-Level',emoji: '🔩', color: '#ff6b6b' },
   { id: 'data',    name: 'Data Engineering',  emoji: '📊', color: '#a888ff' },
   { id: 'security',name: 'Cybersecurity',     emoji: '🔒', color: '#ff6b9d' },
-  { id: 'ux',      name: 'UX / Design',       emoji: '🎨', color: '#00d4ff' },
   { id: 'tools',   name: 'Dev Tools',         emoji: '🛠️', color: '#00e5a0' },
   { id: 'databases',   name: 'Databases',         emoji: '🗄️', color: '#ffaa00' },
   { id: 'blockchain',  name: 'Web3 / Blockchain',  emoji: '⛓️', color: '#7c5cff' },
