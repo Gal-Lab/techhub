@@ -137,6 +137,16 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 19500,
   },
   {
+    id: -22, category: 'networking', badge: '🎥 Free YouTube Courses',
+    title: "Rob Riker's Tech Channel – Cisco CCNA, CCNP & CCIE Courses",
+    description: "In-depth Cisco networking education covering CCNA, CCNP (ENCOR/ENARSI), and CCIE Enterprise Infrastructure. Features the Cisco Enterprise Series with free video lessons, practical EVE-NG lab walkthroughs, and workbook solutions — ideal for serious certification candidates.",
+    url: 'https://www.youtube.com/@RobRikerTechChannel/courses',
+    source: 'YouTube – Rob Riker', author: 'Rob Riker',
+    level: 'Intermediate', type: 'Video',
+    tags: ['ccna', 'ccnp', 'ccie', 'encor', 'enarsi', 'cisco', 'networking', 'eve-ng'],
+    date: '2026-06-20', views: 5100,
+  },
+  {
     id: -6, category: 'devops', badge: '🔑 Free Video Tutorials',
     title: 'TechWorld with Nana – DevOps & Cloud Training',
     description: "Nana Janashia provides some of the web's best DevOps and Cloud Computing training. Explore high-quality free video tutorials on Docker, Kubernetes, CI/CD, and Terraform, alongside structured premium bootcamps and certification prep.",
