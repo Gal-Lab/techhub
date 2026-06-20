@@ -23,6 +23,16 @@ const CATEGORIES = [
 // ── TUTORIALS DATA ───────────────────────────────────────────────────────────
 const TUTORIALS_DATA = [
   {
+    id: -17, category: 'tools', freeTrial: true, trialLabel: '10-Day Free Trial',
+    title: "O'Reilly Learning – Books, Videos & Live Training",
+    description: "One of the world's most comprehensive tech learning platforms. Access 60,000+ books, video courses, live online training, and interactive labs covering software development, networking, cybersecurity, data science, AI, cloud, and more. Start a free 10-day individual trial — no commitment.",
+    url: 'https://www.oreilly.com/start-trial/?type=individual',
+    source: "O'Reilly Media", author: "O'Reilly Team",
+    level: 'Beginner', type: 'Course',
+    tags: ['books', 'video courses', 'cloud', 'programming', 'networking', 'ai', 'cybersecurity'],
+    date: '2026-06-20', views: 21000,
+  },
+  {
     id: 0, category: 'networking', featured: true,
     title: "Jeremy's IT Lab – Free CCNA 200-301 Complete Course",
     description:
