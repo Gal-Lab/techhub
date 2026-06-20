@@ -315,12 +315,12 @@ const TUTORIALS_DATA = [
     tags: ['langchain', 'llm', 'python', 'rag'], date: '2024-03-18', views: 4800,
   },
   {
-    id: 7, category: 'backend', title: 'Building REST APIs with Node & Express',
-    description: 'A practical guide to designing and building production-ready REST APIs using Node.js, Express, JWT authentication, and MongoDB — deployed on AWS.',
-    url: 'https://www.freecodecamp.org/news/rest-api-tutorial/',
-    source: 'freeCodeCamp', author: 'Kolade Chris',
+    id: 7, category: 'backend', title: 'Building REST APIs with Node, Express & MongoDB',
+    description: 'A practical guide to designing and building production-ready REST APIs using Node.js, Express, Mongoose, and MongoDB Atlas.',
+    url: 'https://www.freecodecamp.org/news/build-a-restful-api-using-node-express-and-mongodb/',
+    source: 'freeCodeCamp', author: 'Nishant Kumar',
     level: 'Beginner', type: 'Article',
-    tags: ['node', 'express', 'rest', 'api'], date: '2024-02-28', views: 2900,
+    tags: ['node', 'express', 'mongodb', 'rest', 'api'], date: '2024-02-28', views: 2900,
   },
   {
     id: 8, category: 'mobile', title: 'Flutter & Dart – The Complete Guide',
