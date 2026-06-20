@@ -97,6 +97,16 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 6500,
   },
   {
+    id: -18, category: 'networking', badge: '🎥 Free YouTube Courses',
+    title: 'Kevin Wallace – Free Cisco Courses on YouTube',
+    description: "Dual CCIE Kevin Wallace shares free Cisco certification courses directly on YouTube. Covers CCNA, CCNP, and related topics with clear, structured video lessons — ideal for self-study without a paid subscription.",
+    url: 'https://www.youtube.com/@kwallaceccie/courses',
+    source: 'YouTube – Kevin Wallace', author: 'Kevin Wallace',
+    level: 'Beginner', type: 'Video',
+    tags: ['ccna', 'ccnp', 'cisco', 'networking', 'certification', 'ccie'],
+    date: '2026-06-20', views: 5800,
+  },
+  {
     id: -6, category: 'devops', badge: '🔑 Free Video Tutorials',
     title: 'TechWorld with Nana – DevOps & Cloud Training',
     description: "Nana Janashia provides some of the web's best DevOps and Cloud Computing training. Explore high-quality free video tutorials on Docker, Kubernetes, CI/CD, and Terraform, alongside structured premium bootcamps and certification prep.",
