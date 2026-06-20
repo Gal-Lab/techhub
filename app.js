@@ -645,17 +645,27 @@ function bindEvents() {
 
   // ── Navbar scroll
   let lastScroll = 0;
-  window.addEventListener('scroll', () => {
+  
+  const updateScrollButtons = () => {
     const y = window.scrollY;
     const nav = $('#navbar');
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
     nav.classList.toggle('scrolled', y > 20);
 
-    // Back to top
+    // Back to top & Scroll to bottom visibility
     $('#back-to-top').classList.toggle('visible', y > 500);
+    $('#scroll-to-bottom').classList.toggle('visible', y < maxScroll - 500);
     lastScroll = y;
-  }, { passive: true });
+  };
+
+  window.addEventListener('scroll', updateScrollButtons, { passive: true });
+  // Run once initially to set correct state
+  setTimeout(updateScrollButtons, 100);
 
   $('#back-to-top').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  $('#scroll-to-bottom').addEventListener('click', () => {
+    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+  });
 
   // ── Mobile menu
   const hamburger = $('#hamburger');
