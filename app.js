@@ -291,14 +291,6 @@ const TUTORIALS_DATA = [
     tags: ['nlp', 'transformers', 'python', 'bert'], date: '2024-02-20', views: 6100,
   },
   {
-    id: 15, category: 'ux', title: 'Design Systems in Figma',
-    description: 'Build a scalable design system from scratch with Figma — design tokens, component variants, auto-layout, accessibility, and handoff to developers.',
-    url: 'https://www.figma.com/community/file/1049055218665082030',
-    source: 'Figma', author: 'Figma Team',
-    level: 'Intermediate', type: 'Interactive',
-    tags: ['figma', 'design systems', 'ui', 'ux'], date: '2024-03-05', views: 2700,
-  },
-  {
     id: 16, category: 'backend', title: 'FastAPI: Modern Python API Development',
     description: 'Build production-grade APIs with FastAPI — async endpoints, Pydantic models, automatic OpenAPI docs, OAuth2, and PostgreSQL with SQLAlchemy.',
     url: 'https://fastapi.tiangolo.com/tutorial/',
