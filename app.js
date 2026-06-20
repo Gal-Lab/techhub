@@ -511,7 +511,14 @@ function renderCategories() {
   const counts = {};
   TUTORIALS_DATA.forEach(t => { counts[t.category] = (counts[t.category] || 0) + 1; });
 
-  grid.innerHTML = CATEGORIES.map(cat => `
+  const sortedCategories = [...CATEGORIES].sort((a, b) => {
+    const countA = counts[a.id] || 0;
+    const countB = counts[b.id] || 0;
+    if (countB !== countA) return countB - countA;
+    return a.name.localeCompare(b.name);
+  });
+
+  grid.innerHTML = sortedCategories.map(cat => `
     <div class="cat-card animate-in ${state.category === cat.id ? 'active' : ''}"
          data-catid="${cat.id}"
          role="button" tabindex="0"
