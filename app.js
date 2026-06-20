@@ -127,6 +127,16 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 4200,
   },
   {
+    id: -21, category: 'networking', badge: '🎓 Free Courses & Badges',
+    title: 'Cisco Networking Academy – Free IT & Networking Courses',
+    description: "Cisco's official learning platform offering free, self-paced courses with digital badges upon completion. Covers networking (CCNA prep, Networking Basics), cybersecurity (Ethical Hacker, Endpoint Security), Python, Linux, IoT, and DevNet. No cost to enroll — just create an account.",
+    url: 'https://www.netacad.com/',
+    source: 'Cisco NetAcad', author: 'Cisco Systems',
+    level: 'Beginner', type: 'Course',
+    tags: ['ccna', 'networking', 'cybersecurity', 'python', 'linux', 'cisco', 'iot'],
+    date: '2026-06-20', views: 19500,
+  },
+  {
     id: -6, category: 'devops', badge: '🔑 Free Video Tutorials',
     title: 'TechWorld with Nana – DevOps & Cloud Training',
     description: "Nana Janashia provides some of the web's best DevOps and Cloud Computing training. Explore high-quality free video tutorials on Docker, Kubernetes, CI/CD, and Terraform, alongside structured premium bootcamps and certification prep.",
