@@ -157,6 +157,16 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 18400,
   },
   {
+    id: -26, category: 'networking', badge: '🎥 Free Intro Courses',
+    title: 'CBT Nuggets – Free IT & Networking Tutorials on YouTube',
+    description: "Free introductory IT and networking courses from CBT Nuggets on YouTube. Covers foundational topics in networking (CCNA, Network+), cybersecurity, Linux, virtualization, and career guidance, alongside short, highly-focused 'MicroNuggets' for specific technologies.",
+    url: 'https://www.youtube.com/@cbtnuggets/courses',
+    source: 'YouTube – CBT Nuggets', author: 'CBT Nuggets Instructors',
+    level: 'Beginner', type: 'Video',
+    tags: ['ccna', 'networking', 'comptia', 'security', 'cybersecurity', 'cloud', 'linux'],
+    date: '2026-06-20', views: 12500,
+  },
+  {
     id: -6, category: 'devops', badge: '🔑 Free Video Tutorials',
     title: 'TechWorld with Nana – DevOps & Cloud Training',
     description: "Nana Janashia provides some of the web's best DevOps and Cloud Computing training. Explore high-quality free video tutorials on Docker, Kubernetes, CI/CD, and Terraform, alongside structured premium bootcamps and certification prep.",
