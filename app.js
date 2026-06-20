@@ -187,6 +187,16 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 7600,
   },
   {
+    id: -23, category: 'networking', badge: '📝 Step-by-Step Guide',
+    title: 'Running Cisco Modeling Labs (CML) on Hyper-V',
+    description: "A complete step-by-step technical guide to running Cisco Modeling Labs (CML) on Windows Hyper-V. Explains VM creation (Gen 2), nested virtualization setup via PowerShell, MAC spoofing, and initial networking setup to run CML labs without VMware.",
+    url: 'https://www.networkacademy.io/ccna/network-fundamentals/cml-on-hyperv',
+    source: 'NetworkAcademy.io', author: 'NetworkAcademy Team',
+    level: 'Intermediate', type: 'Article',
+    tags: ['cml', 'hyper-v', 'networking', 'cisco', 'virtualization', 'labs'],
+    date: '2026-06-20', views: 3200,
+  },
+  {
     id: -16, category: 'networking',
     title: 'Boson – Cisco & CompTIA Certification Exam Prep',
     description: "Boson is an industry-leading exam prep platform offering ExSim-Max practice exams and the NetSim network simulator for Cisco (CCNA, CCNP) and CompTIA (Network+, Security+) certifications. Known for realistic exam simulations and detailed answer explanations. Demo versions available; full access via paid subscription.",
