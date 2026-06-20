@@ -227,10 +227,10 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 22000,
   },
   {
-    id: -15, category: 'security', badge: '🎥 Free 6-Hour Course',
-    title: 'Simplilearn – Cyber Security Full Course',
+    id: -15, category: 'security', badge: '🎥 Free Full Courses',
+    title: 'Simplilearn – Cyber Security Full Courses',
     description: "A solid introductory course covering cybersecurity core fundamentals, cryptography, firewalls, network monitoring, vulnerability assessment, and threat detection.",
-    url: 'https://www.youtube.com/watch?v=z5nc9PRRtLM',
+    url: 'https://www.youtube.com/@SimplilearnOfficial/search?query=cyber+security+full+course',
     source: 'Simplilearn', author: 'Simplilearn Team',
     level: 'Beginner', type: 'Video',
     tags: ['security', 'cybersecurity', 'cryptography', 'firewalls', 'threats'],
