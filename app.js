@@ -78,6 +78,26 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 8900,
   },
   {
+    id: -5, category: 'networking', badge: '🔑 Free Resources',
+    title: 'Kevin Wallace Training – Cisco Certifications',
+    description: "Led by dual CCIE Kevin Wallace, this training offers structured preparation for Cisco certifications like CCNA, CCNP, and ENCOR. Features high-quality YouTube tutorials, exam-prep blueprints, and an All-Access Pass for in-depth premium courses.",
+    url: 'https://kwtrain.com',
+    source: 'Kevin Wallace Training', author: 'Kevin Wallace',
+    level: 'Beginner', type: 'Course',
+    tags: ['ccna', 'ccnp', 'cisco', 'networking', 'certification'],
+    date: '2026-06-20', views: 6500,
+  },
+  {
+    id: -6, category: 'devops', badge: '🔑 Free Video Tutorials',
+    title: 'TechWorld with Nana – DevOps & Cloud Training',
+    description: "Nana Janashia provides some of the web's best DevOps and Cloud Computing training. Explore high-quality free video tutorials on Docker, Kubernetes, CI/CD, and Terraform, alongside structured premium bootcamps and certification prep.",
+    url: 'https://www.techworld-with-nana.com/',
+    source: 'TechWorld with Nana', author: 'Nana Janashia',
+    level: 'Beginner', type: 'Course',
+    tags: ['devops', 'kubernetes', 'docker', 'ci-cd', 'cloud', 'terraform'],
+    date: '2026-06-20', views: 9800,
+  },
+  {
     id: 1, category: 'webdev', title: 'React in 100 Seconds', featured: true, featuredLarge: true,
 
     description: 'A rapid-fire visual overview of React — components, hooks, JSX, and the virtual DOM explained with stunning animations. Perfect as a starting point before diving deeper.',
