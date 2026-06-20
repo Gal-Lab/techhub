@@ -526,8 +526,10 @@ function updateCatFilter() {
 
 // ── RENDER: FEATURED ───────────────────────────────────────────────────────────
 function renderFeatured() {
-  const featured = TUTORIALS_DATA.filter(t => t.featured);
   const grid = $('#featured-grid');
+  if (!grid) return; // section removed from DOM
+
+  const featured = TUTORIALS_DATA.filter(t => t.featured);
 
   grid.innerHTML = featured.map((t, i) => {
     const cat = getCategoryById(t.category);
