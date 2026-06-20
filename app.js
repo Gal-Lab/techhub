@@ -68,6 +68,16 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 9500,
   },
   {
+    id: -4, category: 'security', badge: '🎓 Free Self-Paced Courses',
+    title: 'Fortinet Training Institute – Free Cybersecurity Courses',
+    description: "Fortinet's official training academy offers free, self-paced courses for industry certifications like Fortinet Certified Associate (FCA) and Fortinet Certified Professional (FCP). Study network security, cloud security, firewalls, and threat detection directly from the global leader.",
+    url: 'https://training.fortinet.com',
+    source: 'Fortinet', author: 'Fortinet Training Team',
+    level: 'Beginner', type: 'Course',
+    tags: ['cybersecurity', 'firewalls', 'fortinet', 'network security', 'certification'],
+    date: '2026-06-20', views: 8900,
+  },
+  {
     id: 1, category: 'webdev', title: 'React in 100 Seconds', featured: true, featuredLarge: true,
 
     description: 'A rapid-fire visual overview of React — components, hooks, JSX, and the virtual DOM explained with stunning animations. Perfect as a starting point before diving deeper.',
@@ -436,7 +446,9 @@ function renderTutorialCard(t) {
     ? `<span class="trial-badge">🎁 ${t.trialLabel || 'Free Trial'}</span>`
     : (t.freeAccount
       ? `<span class="free-account-badge">🔑 Free Account Available</span>`
-      : '');
+      : (t.badge
+        ? `<span class="free-account-badge">${t.badge}</span>`
+        : ''));
   const linkLabel = t.freeTrial ? `Start Free Trial <span>→</span>` : `Open <span>↗</span>`;
   const linkClass = t.freeTrial ? 'tut-link tut-link-trial' : 'tut-link';
   return `
