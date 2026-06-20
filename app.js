@@ -147,6 +147,16 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 5100,
   },
   {
+    id: -25, category: 'networking', badge: '🎥 Free Animated Courses',
+    title: 'PowerCert Animated Videos – Visual IT & Networking Courses',
+    description: "Extremely popular animation-based training channel specializing in computer networking, cybersecurity, and hardware fundamentals. Ideal for visual learners studying for CompTIA A+, Network+, or Security+ certifications who prefer clear, animated diagrams over textbook lectures.",
+    url: 'https://www.youtube.com/@PowerCertAnimatedVideos',
+    source: 'YouTube – PowerCert', author: 'PowerCert Team',
+    level: 'Beginner', type: 'Video',
+    tags: ['networking', 'comptia', 'security', 'cybersecurity', 'a-plus', 'network-plus'],
+    date: '2026-06-20', views: 18400,
+  },
+  {
     id: -6, category: 'devops', badge: '🔑 Free Video Tutorials',
     title: 'TechWorld with Nana – DevOps & Cloud Training',
     description: "Nana Janashia provides some of the web's best DevOps and Cloud Computing training. Explore high-quality free video tutorials on Docker, Kubernetes, CI/CD, and Terraform, alongside structured premium bootcamps and certification prep.",
