@@ -207,6 +207,16 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 8300,
   },
   {
+    id: -24, category: 'networking', badge: '🎥 Free Playlists',
+    title: 'INE – Free IT & Networking Playlists on YouTube',
+    description: "Free video training playlists provided by INE (Internetwork Expert). Includes structured playlists on networking (CCNA/CCIE prep), cybersecurity concepts, cloud computing, and webinar archives — a great starting point for deep-dive certification study.",
+    url: 'https://www.youtube.com/@INEtraining/playlists',
+    source: 'YouTube – INE', author: 'INE (Internetwork Expert)',
+    level: 'Intermediate', type: 'Video',
+    tags: ['ccna', 'ccnp', 'ccie', 'cybersecurity', 'cloud', 'networking', 'certification'],
+    date: '2026-06-20', views: 6100,
+  },
+  {
     id: -11, category: 'systems', badge: '🎓 Free Ivy League Course',
     title: 'Harvard CS50 – Introduction to Computer Science',
     description: "The world's most famous entry-level computer science course from Harvard University. Introduces programming, algorithms, data structures, and memory management using C, Python, SQL, and HTML/CSS.",
