@@ -118,16 +118,6 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 8700,
   },
   {
-    id: -9, category: 'networking', badge: '🎥 Free YouTube Course',
-    title: 'I-MEDITA – Free CCNP ENARSI 300-410 Playlist',
-    description: "A structured lecture series covering key concepts of the Cisco 300-410 ENARSI exam blueprint. Focuses on advanced routing protocols (OSPF, EIGRP, BGP), route redistribution, VPN solutions, and advanced infrastructure troubleshooting.",
-    url: 'https://www.youtube.com/@IMEDITACiscoDevOpsCloud/search?query=CCNP+ENARSI',
-    source: 'YouTube – I-MEDITA', author: 'I-MEDITA Training Team',
-    level: 'Advanced', type: 'Video',
-    tags: ['ccnp', 'enarsi', 'cisco', 'routing', 'troubleshooting', 'certification'],
-    date: '2026-06-20', views: 5400,
-  },
-  {
     id: -10, category: 'networking', badge: '🎓 Free Courses Available',
     title: 'NetworkAcademy.io – Visual Networking Tutorials',
     description: "An independent e-learning platform featuring high-quality visual guides, animated diagrams, and interactive illustrations. Offers free study paths and beginner-friendly tutorials for CCNA, CCIE, and Python network automation.",
