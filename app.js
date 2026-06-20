@@ -128,6 +128,16 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 5400,
   },
   {
+    id: -10, category: 'networking', badge: '🎓 Free Courses Available',
+    title: 'NetworkAcademy.io – Visual Networking Tutorials',
+    description: "An independent e-learning platform featuring high-quality visual guides, animated diagrams, and interactive illustrations. Offers free study paths and beginner-friendly tutorials for CCNA, CCIE, and Python network automation.",
+    url: 'https://www.networkacademy.io',
+    source: 'NetworkAcademy.io', author: 'NetworkAcademy Team',
+    level: 'Beginner', type: 'Course',
+    tags: ['ccna', 'ccie', 'networking', 'automation', 'python'],
+    date: '2026-06-20', views: 7600,
+  },
+  {
     id: 1, category: 'webdev', title: 'React in 100 Seconds', featured: true, featuredLarge: true,
 
     description: 'A rapid-fire visual overview of React — components, hooks, JSX, and the virtual DOM explained with stunning animations. Perfect as a starting point before diving deeper.',
