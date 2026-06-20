@@ -38,6 +38,26 @@ const TUTORIALS_DATA = [
     views: 12000,
   },
   {
+    id: -2, category: 'networking', freeAccount: true,
+    title: 'NetworkLessons – Cisco & Networking Courses',
+    description: "NetworkLessons.com offers in-depth, structured courses for CCNA, CCNP, and other Cisco certifications written by instructor Rene Molenaar. Sign up for a free account to access the first part of every course (300+ free lessons, no credit card needed), or unlock full access with a paid membership.",
+    url: 'https://networklessons.com',
+    source: 'NetworkLessons', author: 'Rene Molenaar',
+    level: 'Beginner', type: 'Course',
+    tags: ['ccna', 'ccnp', 'cisco', 'networking', 'certification'],
+    date: '2026-06-20', views: 7200,
+  },
+  {
+    id: -3, category: 'networking',
+    title: 'INE – Networking & Cybersecurity Training',
+    description: "INE is a premium platform for IT certification training covering Networking (CCNA, CCNP), Cybersecurity, Cloud, and Data Science. Offers structured learning paths, hands-on labs, and live sessions. Paid subscription required for full access — plans include INE Fundamentals and INE Premium.",
+    url: 'https://ine.com/pages/networking',
+    source: 'INE', author: 'INE Team',
+    level: 'Intermediate', type: 'Course',
+    tags: ['ccna', 'ccnp', 'cybersecurity', 'networking', 'labs', 'certification'],
+    date: '2026-06-20', views: 8100,
+  },
+  {
     id: -1, category: 'networking', freeTrial: true, trialLabel: '7-Day Free Trial',
     title: 'CBT Nuggets – IT Certification Training',
     description: "CBT Nuggets offers expert-led video training for IT certifications including Cisco (CCNA, CCNP), CompTIA (A+, Security+, Network+), Microsoft, AWS, and more. Full access includes virtual labs, practice exams, and a personal coach. Start with a free 7-day trial — no commitment required.",
@@ -414,7 +434,9 @@ function renderTutorialCard(t) {
   const saved = state.savedIds.has(t.id);
   const trialBadge = t.freeTrial
     ? `<span class="trial-badge">🎁 ${t.trialLabel || 'Free Trial'}</span>`
-    : '';
+    : (t.freeAccount
+      ? `<span class="free-account-badge">🔑 Free Account Available</span>`
+      : '');
   const linkLabel = t.freeTrial ? `Start Free Trial <span>→</span>` : `Open <span>↗</span>`;
   const linkClass = t.freeTrial ? 'tut-link tut-link-trial' : 'tut-link';
   return `
