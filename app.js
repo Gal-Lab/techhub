@@ -838,17 +838,6 @@ function bindEvents() {
     }
   });
 
-  // ── Quick search tags
-  $$('.search-tag').forEach(tag => {
-    tag.addEventListener('click', () => {
-      const q = tag.dataset.query;
-      searchInput.value = q;
-      state.search = q;
-      state.page = 1;
-      renderTutorials();
-      document.getElementById('tutorials').scrollIntoView({ behavior: 'smooth' });
-    });
-  });
 
   // ── Clear search
   $('#clear-search').addEventListener('click', () => {
