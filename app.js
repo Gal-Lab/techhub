@@ -658,12 +658,16 @@ function updateScrollButtons() {
   const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
   if (nav) nav.classList.toggle('scrolled', y > 20);
 
-  // Back to top & Scroll to bottom visibility
   const btnTop = $('#back-to-top');
   const btnBottom = $('#scroll-to-bottom');
-  
-  if (btnTop) btnTop.classList.toggle('visible', y > 500);
-  if (btnBottom) btnBottom.classList.toggle('visible', y < maxScroll - 100);
+
+  const atTop    = y < 300;
+  const atBottom = maxScroll > 0 && y >= maxScroll - 300;
+
+  // Down arrow: only at the top of the page
+  if (btnBottom) btnBottom.classList.toggle('visible', atTop);
+  // Up arrow: only at the bottom of the page
+  if (btnTop)    btnTop.classList.toggle('visible', atBottom);
 }
 
 // ── EVENT BINDINGS ─────────────────────────────────────────────────────────────
