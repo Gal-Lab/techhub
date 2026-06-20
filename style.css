@@ -47,6 +47,25 @@ html { scroll-behavior: smooth; font-size: 16px; }
   --shadow2: 0 8px 48px rgba(80,80,160,0.18);
 }
 
+/* Light mode overrides for Hero section contrast */
+.light-mode .hero-overlay {
+  background: linear-gradient(160deg, rgba(240,242,252,0.4) 0%, rgba(240,242,252,0.85) 50%, rgba(240,242,252,0.98) 100%);
+}
+.light-mode .hero-img {
+  opacity: 0.08;
+}
+.light-mode .hero-badge {
+  color: var(--primary);
+  background: rgba(124,92,255,0.08);
+  border-color: rgba(124,92,255,0.2);
+}
+.light-mode .hero-orb {
+  opacity: 0.08;
+}
+.light-mode .stat-label {
+  color: var(--text2);
+}
+
 body {
   font-family: var(--font);
   background: var(--bg);
