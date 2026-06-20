@@ -514,6 +514,7 @@ function renderTutorials(reset = true) {
     grid.innerHTML = '';
     noResults.classList.remove('hidden');
     loadMore.classList.add('hidden');
+    updateScrollButtons();
     return;
   }
   noResults.classList.add('hidden');
@@ -529,6 +530,7 @@ function renderTutorials(reset = true) {
   });
 
   observeAnimations();
+  updateScrollButtons();
 }
 
 function renderTutorialCard(t) {
@@ -640,27 +642,28 @@ function observeAnimations() {
   if (stats) statsObserver.observe(stats);
 }
 
+function updateScrollButtons() {
+  const y = window.scrollY;
+  const nav = $('#navbar');
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  if (nav) nav.classList.toggle('scrolled', y > 20);
+
+  // Back to top & Scroll to bottom visibility
+  const btnTop = $('#back-to-top');
+  const btnBottom = $('#scroll-to-bottom');
+  
+  if (btnTop) btnTop.classList.toggle('visible', y > 500);
+  if (btnBottom) btnBottom.classList.toggle('visible', y < maxScroll - 100);
+}
+
 // ── EVENT BINDINGS ─────────────────────────────────────────────────────────────
 function bindEvents() {
 
-  // ── Navbar scroll
-  let lastScroll = 0;
-  
-  const updateScrollButtons = () => {
-    const y = window.scrollY;
-    const nav = $('#navbar');
-    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    nav.classList.toggle('scrolled', y > 20);
-
-    // Back to top & Scroll to bottom visibility
-    $('#back-to-top').classList.toggle('visible', y > 500);
-    $('#scroll-to-bottom').classList.toggle('visible', y < maxScroll - 500);
-    lastScroll = y;
-  };
-
   window.addEventListener('scroll', updateScrollButtons, { passive: true });
+  window.addEventListener('resize', updateScrollButtons, { passive: true });
+  
   // Run once initially to set correct state
-  setTimeout(updateScrollButtons, 100);
+  setTimeout(updateScrollButtons, 150);
 
   $('#back-to-top').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   $('#scroll-to-bottom').addEventListener('click', () => {
