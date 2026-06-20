@@ -4,19 +4,16 @@
    search, dark mode, forms, animations.
 =================================================== */
 
-// ── CATEGORIES DATA ──────────────────────────────────────────────────────────
 const CATEGORIES = [
   { id: 'webdev',  name: 'Web Development',  emoji: '🌐', color: '#7c5cff' },
   { id: 'aiml',    name: 'AI / ML',           emoji: '🤖', color: '#00d4ff' },
   { id: 'devops',  name: 'DevOps & Cloud',    emoji: '☁️', color: '#00e5a0' },
   { id: 'mobile',  name: 'Mobile Dev',        emoji: '📱', color: '#ff6b9d' },
   { id: 'backend', name: 'Backend / APIs',    emoji: '⚙️', color: '#ffaa00' },
-  { id: 'systems', name: 'Systems & Low-Level',emoji: '🔩', color: '#ff6b6b' },
   { id: 'data',    name: 'Data Engineering',  emoji: '📊', color: '#a888ff' },
   { id: 'security',name: 'Cybersecurity',     emoji: '🔒', color: '#ff6b9d' },
   { id: 'tools',   name: 'Dev Tools',         emoji: '🛠️', color: '#00e5a0' },
   { id: 'databases',   name: 'Databases',         emoji: '🗄️', color: '#ffaa00' },
-  { id: 'blockchain',  name: 'Web3 / Blockchain',  emoji: '⛓️', color: '#7c5cff' },
   { id: 'networking',  name: 'Networking',          emoji: '🌐🔗', color: '#38bdf8' },
 ];
 
@@ -235,17 +232,6 @@ const TUTORIALS_DATA = [
     level: 'Intermediate', type: 'Video',
     tags: ['ccna', 'ccnp', 'ccie', 'cybersecurity', 'cloud', 'networking', 'certification'],
     date: '2026-06-20', views: 6100,
-  },
-  {
-    id: -11, category: 'systems', badge: '🎓 Free Ivy League Course',
-    title: 'Harvard CS50 – Introduction to Computer Science',
-    description: "The world's most famous entry-level computer science course from Harvard University. Introduces programming, algorithms, data structures, and memory management using C, Python, SQL, and HTML/CSS.",
-    url: 'https://cs50.harvard.edu/x/',
-    source: 'Harvard University', author: 'David J. Malan',
-    level: 'Beginner', type: 'Course',
-    tags: ['computer science', 'c', 'python', 'sql', 'algorithms'],
-    date: '2026-06-20', views: 25000,
-  },
   {
     id: -12, category: 'networking', badge: '🎥 Free 9-Hour Course',
     title: 'freeCodeCamp – Computer Networking Complete Course',
@@ -318,15 +304,6 @@ const TUTORIALS_DATA = [
     source: 'freeCodeCamp', author: 'Dave Gray',
     level: 'Beginner', type: 'Video',
     tags: ['typescript', 'javascript', 'types'], date: '2024-04-12', views: 3300,
-  },
-  {
-    id: 5, category: 'systems', title: 'The Rust Programming Language',
-    description: 'The official "Rust Book" online — an authoritative, deeply detailed introduction to Rust with ownership, lifetimes, concurrency, and crates ecosystem.',
-    url: 'https://doc.rust-lang.org/book/',
-    source: 'rust-lang.org', author: 'Steve Klabnik',
-    level: 'Intermediate', type: 'Article',
-    tags: ['rust', 'systems', 'memory safety'], date: '2024-01-30', views: 6200,
-  },
   {
     id: 6, category: 'aiml', title: 'LangChain Crash Course: Build LLM Apps',
     description: 'Learn to chain language models, use agents and tools, build RAG pipelines, and deploy conversational AI apps with Python and LangChain in under 2 hours.',
@@ -422,15 +399,6 @@ const TUTORIALS_DATA = [
     source: 'React Native Docs', author: 'Meta Open Source',
     level: 'Intermediate', type: 'Article',
     tags: ['react native', 'javascript', 'mobile'], date: '2024-03-30', views: 3400,
-  },
-  {
-    id: 19, category: 'blockchain', title: 'Solidity & Smart Contracts — Full Course',
-    description: 'Write, test, and deploy Ethereum smart contracts with Solidity. ERC-20 tokens, DeFi primitives, security vulnerabilities, and Hardhat testing framework.',
-    url: 'https://www.youtube.com/watch?v=umepbfKp5rI',
-    source: 'freeCodeCamp', author: 'Patrick Collins',
-    level: 'Intermediate', type: 'Video',
-    tags: ['solidity', 'ethereum', 'web3', 'smart contracts'], date: '2024-02-15', views: 3900,
-  },
   {
     id: 20, category: 'data', title: 'dbt (data build tool) Crash Course',
     description: 'Transform your data warehouse with dbt — models, tests, documentation, incremental materializations, and deploying analytics engineering pipelines.',
