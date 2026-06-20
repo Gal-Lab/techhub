@@ -117,6 +117,16 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 4700,
   },
   {
+    id: -20, category: 'networking', badge: '🎥 Free YouTube Courses',
+    title: 'KishSquared – Cisco Networking Courses by Jeff Kish',
+    description: "Free Cisco networking courses by Jeff Kish, a dual-CCIE (R&S and Data Center) instructor at CBT Nuggets. Covers CCNA, CCNP ENCOR, OSPF, Spanning-Tree, LISP/VXLAN, and enterprise network design with clear, expert-led sessions.",
+    url: 'https://www.youtube.com/@KishSquared/courses',
+    source: 'YouTube – KishSquared', author: 'Jeff Kish',
+    level: 'Intermediate', type: 'Video',
+    tags: ['ccna', 'ccnp', 'encor', 'cisco', 'networking', 'ccie', 'ospf'],
+    date: '2026-06-20', views: 4200,
+  },
+  {
     id: -6, category: 'devops', badge: '🔑 Free Video Tutorials',
     title: 'TechWorld with Nana – DevOps & Cloud Training',
     description: "Nana Janashia provides some of the web's best DevOps and Cloud Computing training. Explore high-quality free video tutorials on Docker, Kubernetes, CI/CD, and Terraform, alongside structured premium bootcamps and certification prep.",
