@@ -681,6 +681,34 @@ function toggleSave(id, btn) {
   saveFavourites();
 }
 
+// ── UPDATE STATS TARGETS DYNAMICALLY ───────────────────────────────────────────
+function updateStatsTargets() {
+  const tutorialsEl = $('#stat-tutorials');
+  const categoriesEl = $('#stat-categories');
+  const sourcesEl = $('#stat-sources');
+  const heroBadge = $('#hero-badge-count');
+
+  const totalTutorials = TUTORIALS_DATA.length;
+  const totalCategories = CATEGORIES.length;
+  const totalSources = new Set(TUTORIALS_DATA.map(t => t.source)).size;
+
+  if (tutorialsEl) {
+    tutorialsEl.dataset.target = totalTutorials;
+    tutorialsEl.dataset.suffix = '';
+  }
+  if (categoriesEl) {
+    categoriesEl.dataset.target = totalCategories;
+    categoriesEl.dataset.suffix = '';
+  }
+  if (sourcesEl) {
+    sourcesEl.dataset.target = totalSources;
+    sourcesEl.dataset.suffix = '';
+  }
+  if (heroBadge) {
+    heroBadge.textContent = `${totalTutorials} Curated Resources`;
+  }
+}
+
 // ── POPULATE SELECTS ───────────────────────────────────────────────────────────
 function populateSelects() {
   const catFilter = $('#cat-filter');
@@ -876,6 +904,7 @@ function bindEvents() {
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
 function init() {
+  updateStatsTargets();
   populateSelects();
   renderCategories();
   renderFeatured();
