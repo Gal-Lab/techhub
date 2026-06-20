@@ -128,6 +128,16 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 7600,
   },
   {
+    id: -16, category: 'networking',
+    title: 'Boson – Cisco & CompTIA Certification Exam Prep',
+    description: "Boson is an industry-leading exam prep platform offering ExSim-Max practice exams and the NetSim network simulator for Cisco (CCNA, CCNP) and CompTIA (Network+, Security+) certifications. Known for realistic exam simulations and detailed answer explanations. Demo versions available; full access via paid subscription.",
+    url: 'https://www.boson.com',
+    source: 'Boson', author: 'Boson Team',
+    level: 'Intermediate', type: 'Interactive',
+    tags: ['ccna', 'ccnp', 'comptia', 'networking', 'practice exams', 'certification'],
+    date: '2026-06-20', views: 8300,
+  },
+  {
     id: -11, category: 'systems', badge: '🎓 Free Ivy League Course',
     title: 'Harvard CS50 – Introduction to Computer Science',
     description: "The world's most famous entry-level computer science course from Harvard University. Introduces programming, algorithms, data structures, and memory management using C, Python, SQL, and HTML/CSS.",
