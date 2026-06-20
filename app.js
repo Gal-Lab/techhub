@@ -232,6 +232,7 @@ const TUTORIALS_DATA = [
     level: 'Intermediate', type: 'Video',
     tags: ['ccna', 'ccnp', 'ccie', 'cybersecurity', 'cloud', 'networking', 'certification'],
     date: '2026-06-20', views: 6100,
+  },
   {
     id: -12, category: 'networking', badge: '🎥 Free 9-Hour Course',
     title: 'freeCodeCamp – Computer Networking Complete Course',
@@ -304,6 +305,7 @@ const TUTORIALS_DATA = [
     source: 'freeCodeCamp', author: 'Dave Gray',
     level: 'Beginner', type: 'Video',
     tags: ['typescript', 'javascript', 'types'], date: '2024-04-12', views: 3300,
+  },
   {
     id: 6, category: 'aiml', title: 'LangChain Crash Course: Build LLM Apps',
     description: 'Learn to chain language models, use agents and tools, build RAG pipelines, and deploy conversational AI apps with Python and LangChain in under 2 hours.',
@@ -399,6 +401,7 @@ const TUTORIALS_DATA = [
     source: 'React Native Docs', author: 'Meta Open Source',
     level: 'Intermediate', type: 'Article',
     tags: ['react native', 'javascript', 'mobile'], date: '2024-03-30', views: 3400,
+  },
   {
     id: 20, category: 'data', title: 'dbt (data build tool) Crash Course',
     description: 'Transform your data warehouse with dbt — models, tests, documentation, incremental materializations, and deploying analytics engineering pipelines.',
