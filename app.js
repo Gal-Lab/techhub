@@ -30,7 +30,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 21000,
   },
   {
-    id: 0, category: 'networking', featured: true,
+    id: 0, category: 'networking', featured: true, badge: '🎥 100% Free',
     title: "Jeremy's IT Lab – Free CCNA 200-301 Complete Course",
     description:
       "The most recommended free CCNA course on YouTube. Jeremy covers every topic in the Cisco 200-301 exam syllabus in a structured \"Day-by-Day\" format — IP addressing, VLANs, STP, OSPF, ACLs, NAT, security, and automation. Includes Packet Tracer labs, Anki flashcards, and end-of-video quizzes.",
