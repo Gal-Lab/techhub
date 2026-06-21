@@ -54,7 +54,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 7200,
   },
   {
-    id: -3, category: 'networking',
+    id: -3, category: 'networking', badge: '💳 Paid',
     title: 'INE – Networking & Cybersecurity Training',
     description: "INE is a premium platform for IT certification training covering Networking (CCNA, CCNP), Cybersecurity, Cloud, and Data Science. Offers structured learning paths, hands-on labs, and live sessions. Paid subscription required for full access — plans include INE Fundamentals and INE Premium.",
     url: 'https://ine.com/pages/networking',
