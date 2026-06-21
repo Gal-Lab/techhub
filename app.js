@@ -516,7 +516,7 @@ const TUTORIALS_DATA = [
     url: 'https://docs.github.com/en/actions/learn-github-actions',
     source: 'GitHub Docs', author: 'GitHub Team',
     level: 'Beginner', type: 'Article',
-    tags: ['github-actions', 'ci/cd', 'devops'], date: '2024-04-22', views: 3600,
+    tags: ['github-actions', 'ci-cd', 'devops'], date: '2024-04-22', views: 3600,
   },
   {
     id: 23, category: 'databases', badge: '🔑 FREE', title: 'Redis: The Complete Developer Guide',
@@ -542,6 +542,56 @@ const TUTORIALS_DATA = [
     level: 'Advanced', type: 'Video',
     tags: ['neovim', 'vim', 'editor', 'lua'], date: '2024-02-25', views: 2300,
   },
+  {
+    id: -37, category: 'databases', badge: '🎓 FREE',
+    title: 'MySQL for Developers',
+    description: 'A comprehensive, free video course on MySQL design and optimization. Learn indexing strategies, schema design, query tuning, and database scaling principles from industry experts to build highly performant applications.',
+    url: 'https://planetscale.com/courses/mysql-for-developers',
+    source: 'PlanetScale', author: 'Aaron Francis',
+    level: 'Intermediate', type: 'Course',
+    tags: ['mysql', 'database-design', 'indexing', 'performance', 'sql'],
+    date: '2026-06-21', views: 15000,
+  },
+  {
+    id: -38, category: 'databases', badge: '🔑 FREE',
+    title: 'MongoDB University',
+    description: 'The official learning portal for MongoDB. Learn document database principles, CRUD operations, aggregation pipelines, indexing, and schema design through self-paced courses and labs.',
+    url: 'https://learn.mongodb.com/',
+    source: 'MongoDB', author: 'MongoDB Team',
+    level: 'Beginner', type: 'Course',
+    tags: ['mongodb', 'nosql', 'document-database', 'mql', 'aggregation'],
+    date: '2026-06-21', views: 12000,
+  },
+  {
+    id: -39, category: 'data', badge: '🎓 FREE',
+    title: 'Data Engineering Zoomcamp',
+    description: 'A comprehensive, free, hands-on bootcamp for modern data engineering. Learn Docker, Terraform, PostgreSQL, Airflow, Spark, Kafka, and BigQuery by building end-to-end data pipelines.',
+    url: 'https://github.com/DataTalksClub/data-engineering-zoomcamp',
+    source: 'DataTalks.Club', author: 'DataTalksClub Team',
+    level: 'Intermediate', type: 'Course',
+    tags: ['docker', 'terraform', 'postgresql', 'airflow', 'spark', 'kafka', 'bigquery'],
+    date: '2026-06-21', views: 18000,
+  },
+  {
+    id: -40, category: 'tools', badge: '🎓 FREE',
+    title: 'The Missing Semester of Your CS Education',
+    description: "MIT's legendary class on the practical tools of software engineering. Master the command-line, shell scripting, Vim, Git, SSH, security, and build systems to boost your daily developer productivity.",
+    url: 'https://missing.csail.mit.edu/',
+    source: 'MIT', author: 'MIT CSAIL Team',
+    level: 'Beginner', type: 'Course',
+    tags: ['shell', 'command-line', 'vim', 'git', 'ssh', 'data-wrangling'],
+    date: '2026-06-21', views: 22000,
+  },
+  {
+    id: -41, category: 'tools', badge: '🎓 FREE',
+    title: 'Learn Git Branching',
+    description: 'An interactive, visual simulation game for learning Git commands. Practice branching, merging, rebasing, cherry-picking, and remote repository operations with immediate visual feedback.',
+    url: 'https://learngitbranching.js.org/',
+    source: 'Learn Git Branching', author: 'Peter Cottle',
+    level: 'Beginner', type: 'Interactive',
+    tags: ['git', 'version-control', 'git-branching', 'git-rebase', 'interactive-game'],
+    date: '2026-06-21', views: 16000,
+  },
 ];
 
 // ── APP STATE ─────────────────────────────────────────────────────────────────
@@ -555,6 +605,7 @@ let state = {
   page: 1,
   savedIds: new Set(JSON.parse(localStorage.getItem('saved') || '[]')),
   tutorials: [...TUTORIALS_DATA],
+  showSavedOnly: false,
 };
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
@@ -580,6 +631,135 @@ function saveFavourites() {
   localStorage.setItem('saved', JSON.stringify([...state.savedIds]));
 }
 
+// ── SEARCH AUTOCOMPLETE SUGGESTIONS ───────────────────────────────────────────
+let currentSuggestions = [];
+let highlightedIndex = -1;
+
+function getSuggestions(query) {
+  const q = query.toLowerCase().trim();
+  if (!q) return [];
+
+  const suggestions = [];
+  const seenTerms = new Set();
+
+  // 1. Categories
+  CATEGORIES.forEach(cat => {
+    if (cat.name.toLowerCase().includes(q)) {
+      const term = cat.name;
+      if (!seenTerms.has(term)) {
+        seenTerms.add(term);
+        suggestions.push({
+          type: 'category',
+          term: term,
+          html: `<span class="search-icon">${cat.emoji || '🌐'}</span> <span>${cat.name}</span>`
+        });
+      }
+    }
+  });
+
+  // 2. Tags
+  const allTags = new Set();
+  TUTORIALS_DATA.forEach(t => t.tags.forEach(tag => allTags.add(tag)));
+  Array.from(allTags).forEach(tag => {
+    if (tag.toLowerCase().includes(q)) {
+      const term = tag;
+      if (!seenTerms.has(term)) {
+        seenTerms.add(term);
+        suggestions.push({
+          type: 'tag',
+          term: term,
+          html: `<span class="search-icon">🏷️</span> <span>#${tag}</span>`
+        });
+      }
+    }
+  });
+
+  // 3. Titles
+  TUTORIALS_DATA.forEach(t => {
+    if (t.title.toLowerCase().includes(q)) {
+      const term = t.title;
+      if (!seenTerms.has(term)) {
+        seenTerms.add(term);
+        suggestions.push({
+          type: 'title',
+          term: term,
+          html: `<span class="search-icon">📝</span> <span>${t.title}</span>`
+        });
+      }
+    }
+  });
+
+  return suggestions.slice(0, 7); // Limit suggestions to 7 items
+}
+
+function renderSuggestions(suggestions) {
+  const container = $('#search-suggestions');
+  if (!container) return;
+
+  if (suggestions.length === 0) {
+    container.innerHTML = '';
+    container.classList.add('hidden');
+    return;
+  }
+
+  container.innerHTML = suggestions.map((s, idx) => `
+    <div class="suggestion-item" data-term="${s.term.replace(/"/g, '&quot;')}" role="option" id="suggestion-item-${idx}">
+      ${s.html}
+    </div>
+  `).join('');
+
+  container.classList.remove('hidden');
+
+  container.querySelectorAll('.suggestion-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const term = item.dataset.term;
+      selectSuggestion(term);
+    });
+  });
+}
+
+function selectSuggestion(term) {
+  const searchInput = $('#search-input');
+  if (searchInput) {
+    searchInput.value = term;
+  }
+  state.search = term;
+  state.page = 1;
+  hideSuggestions();
+  renderTutorials();
+  
+  const tutSec = document.getElementById('tutorials');
+  if (tutSec) {
+    tutSec.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+function hideSuggestions() {
+  const container = $('#search-suggestions');
+  if (container) {
+    container.classList.add('hidden');
+    container.innerHTML = '';
+  }
+  currentSuggestions = [];
+  highlightedIndex = -1;
+}
+
+function updateHighlight() {
+  const container = $('#search-suggestions');
+  if (!container) return;
+  const items = container.querySelectorAll('.suggestion-item');
+  items.forEach((item, idx) => {
+    if (idx === highlightedIndex) {
+      item.classList.add('active');
+      item.setAttribute('aria-selected', 'true');
+      item.scrollIntoView({ block: 'nearest' });
+    } else {
+      item.classList.remove('active');
+      item.removeAttribute('aria-selected');
+    }
+  });
+}
+
 // ── FILTER + SORT LOGIC ───────────────────────────────────────────────────────
 function applyFilters() {
   const q = state.search.toLowerCase().trim();
@@ -589,7 +769,8 @@ function applyFilters() {
     const matchCat = state.category === 'all' || t.category === state.category;
     const matchLevel = state.level === 'all' || t.level === state.level;
     const matchType = state.type === 'all' || t.type === state.type;
-    return matchSearch && matchCat && matchLevel && matchType;
+    const matchSaved = !state.showSavedOnly || state.savedIds.has(t.id);
+    return matchSearch && matchCat && matchLevel && matchType && matchSaved;
   });
 
   if (state.sort === 'newest') list.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -777,16 +958,24 @@ function renderTutorialCard(t) {
 function toggleSave(id, btn) {
   if (state.savedIds.has(id)) {
     state.savedIds.delete(id);
-    btn.classList.remove('saved');
-    btn.textContent = '🏷️';
+    if (btn) {
+      btn.classList.remove('saved');
+      btn.textContent = '🏷️';
+    }
     showToast('Bookmark removed');
   } else {
     state.savedIds.add(id);
-    btn.classList.add('saved');
-    btn.textContent = '🔖';
+    if (btn) {
+      btn.classList.add('saved');
+      btn.textContent = '🔖';
+    }
     showToast('Tutorial bookmarked! 🔖');
   }
   saveFavourites();
+  
+  if (state.showSavedOnly) {
+    renderTutorials(false);
+  }
 }
 
 // ── UPDATE STATS TARGETS DYNAMICALLY ───────────────────────────────────────────
@@ -820,10 +1009,12 @@ function updateStatsTargets() {
 // ── POPULATE SELECTS ───────────────────────────────────────────────────────────
 function populateSelects() {
   const catFilter = $('#cat-filter');
-  CATEGORIES.forEach(cat => {
-    const opt = `<option value="${cat.id}">${cat.emoji} ${cat.name}</option>`;
-    catFilter.insertAdjacentHTML('beforeend', opt);
-  });
+  if (catFilter) {
+    CATEGORIES.forEach(cat => {
+      const opt = `<option value="${cat.id}">${cat.emoji} ${cat.name}</option>`;
+      catFilter.insertAdjacentHTML('beforeend', opt);
+    });
+  }
 }
 
 // ── STATS COUNTER ANIMATION ────────────────────────────────────────────────────
@@ -851,17 +1042,17 @@ const statsObserver = new IntersectionObserver((entries) => {
   }
 }, { threshold: 0.5 });
 
-function observeAnimations() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
+const animationsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      animationsObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
 
-  $$('.animate-in:not(.visible)').forEach(el => observer.observe(el));
+function observeAnimations() {
+  $$('.animate-in:not(.visible)').forEach(el => animationsObserver.observe(el));
 }
 
 function updateScrollButtons() {
@@ -937,6 +1128,15 @@ function bindEvents() {
   if (searchInput) {
     let debounce;
     searchInput.addEventListener('input', () => {
+      const val = searchInput.value;
+      if (!val.trim()) {
+        hideSuggestions();
+      } else {
+        currentSuggestions = getSuggestions(val);
+        highlightedIndex = -1;
+        renderSuggestions(currentSuggestions);
+      }
+
       clearTimeout(debounce);
       debounce = setTimeout(() => {
         state.search = searchInput.value;
@@ -945,11 +1145,27 @@ function bindEvents() {
       }, 280);
     });
 
+    searchInput.addEventListener('focus', () => {
+      const val = searchInput.value;
+      if (val.trim()) {
+        currentSuggestions = getSuggestions(val);
+        highlightedIndex = -1;
+        renderSuggestions(currentSuggestions);
+      }
+    });
+
+    searchInput.addEventListener('blur', () => {
+      setTimeout(() => {
+        hideSuggestions();
+      }, 200);
+    });
+
     const searchBtn = $('#search-btn');
     if (searchBtn) {
       searchBtn.addEventListener('click', () => {
         state.search = searchInput.value;
         state.page = 1;
+        hideSuggestions();
         renderTutorials();
         const tutSec = document.getElementById('tutorials');
         if (tutSec) tutSec.scrollIntoView({ behavior: 'smooth' });
@@ -957,14 +1173,56 @@ function bindEvents() {
     }
 
     searchInput.addEventListener('keydown', e => {
-      if (e.key === 'Enter') {
-        state.search = searchInput.value;
-        renderTutorials();
-        const tutSec = document.getElementById('tutorials');
-        if (tutSec) tutSec.scrollIntoView({ behavior: 'smooth' });
+      const container = $('#search-suggestions');
+      const isSuggestionsVisible = container && !container.classList.contains('hidden');
+
+      if (isSuggestionsVisible && currentSuggestions.length > 0) {
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          highlightedIndex = (highlightedIndex + 1) % currentSuggestions.length;
+          updateHighlight();
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          highlightedIndex = (highlightedIndex - 1 + currentSuggestions.length) % currentSuggestions.length;
+          updateHighlight();
+        } else if (e.key === 'Enter') {
+          if (highlightedIndex >= 0 && highlightedIndex < currentSuggestions.length) {
+            e.preventDefault();
+            selectSuggestion(currentSuggestions[highlightedIndex].term);
+          } else {
+            state.search = searchInput.value;
+            hideSuggestions();
+            renderTutorials();
+            const tutSec = document.getElementById('tutorials');
+            if (tutSec) tutSec.scrollIntoView({ behavior: 'smooth' });
+          }
+        } else if (e.key === 'Escape') {
+          e.preventDefault();
+          hideSuggestions();
+        }
+      } else {
+        if (e.key === 'Enter') {
+          state.search = searchInput.value;
+          renderTutorials();
+          const tutSec = document.getElementById('tutorials');
+          if (tutSec) tutSec.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     });
   }
+
+  // ── Click outside search suggestions
+  document.addEventListener('click', e => {
+    const container = $('#search-suggestions');
+    const inputEl = $('#search-input');
+    const searchWrapper = $('#search-wrapper');
+    if (container && inputEl) {
+      const clickedInside = inputEl.contains(e.target) || container.contains(e.target) || (searchWrapper && searchWrapper.contains(e.target));
+      if (!clickedInside) {
+        hideSuggestions();
+      }
+    }
+  });
 
   // ── Clear search
   const clearSearchBtn = $('#clear-search');
@@ -975,6 +1233,7 @@ function bindEvents() {
       state.category = 'all';
       state.level = 'all';
       state.type = 'all';
+      state.showSavedOnly = false;
       state.page = 1;
       const catF = $('#cat-filter');
       if (catF) catF.value = 'all';
@@ -982,6 +1241,8 @@ function bindEvents() {
       if (diffF) diffF.value = 'all';
       const typeF = $('#type-filter');
       if (typeF) typeF.value = 'all';
+      const bookmarksToggle = $('#bookmarks-toggle');
+      if (bookmarksToggle) bookmarksToggle.classList.remove('active');
       renderCategories();
       renderTutorials();
     });
@@ -1005,14 +1266,24 @@ function bindEvents() {
   if (typeFilter) {
     typeFilter.addEventListener('change', e => { state.type = e.target.value; state.page = 1; renderTutorials(); });
   }
+  const bookmarksToggle = $('#bookmarks-toggle');
+  if (bookmarksToggle) {
+    bookmarksToggle.addEventListener('click', () => {
+      state.showSavedOnly = !state.showSavedOnly;
+      bookmarksToggle.classList.toggle('active', state.showSavedOnly);
+      renderTutorials();
+    });
+  }
   const resetFiltersBtn = $('#reset-filters');
   if (resetFiltersBtn) {
     resetFiltersBtn.addEventListener('click', () => {
       state.category = 'all'; state.level = 'all'; state.type = 'all'; state.search = '';
+      state.showSavedOnly = false;
       if (searchInput) searchInput.value = '';
       if (catFilter) catFilter.value = 'all';
       if (diffFilter) diffFilter.value = 'all';
       if (typeFilter) typeFilter.value = 'all';
+      if (bookmarksToggle) bookmarksToggle.classList.remove('active');
       state.page = 1;
       renderCategories();
       renderTutorials();
