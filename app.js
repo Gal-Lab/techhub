@@ -30,7 +30,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 21000,
   },
   {
-    id: 0, category: 'networking', featured: true, badge: '🎥 100% Free',
+    id: 0, category: 'networking', featured: true, badge: '🎥 FREE',
     title: "Jeremy's IT Lab – Free CCNA 200-301 Complete Course",
     description:
       "The most recommended free CCNA course on YouTube. Jeremy covers every topic in the Cisco 200-301 exam syllabus in a structured \"Day-by-Day\" format — IP addressing, VLANs, STP, OSPF, ACLs, NAT, security, and automation. Includes Packet Tracer labs, Anki flashcards, and end-of-video quizzes.",
@@ -44,7 +44,7 @@ const TUTORIALS_DATA = [
     views: 12000,
   },
   {
-    id: -2, category: 'networking', freeAccount: true,
+    id: -2, category: 'networking', badge: '🔑 FREE',
     title: 'NetworkLessons – Cisco & Networking Courses',
     description: "NetworkLessons.com offers in-depth, structured courses for CCNA, CCNP, and other Cisco certifications written by instructor Rene Molenaar. Sign up for a free account to access the first part of every course (300+ free lessons, no credit card needed), or unlock full access with a paid membership.",
     url: 'https://networklessons.com',
@@ -54,7 +54,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 7200,
   },
   {
-    id: -3, category: 'networking', badge: '💳 Paid',
+    id: -3, category: 'networking', badge: '💳 PAID',
     title: 'INE – Networking & Cybersecurity Training',
     description: "INE is a premium platform for IT certification training covering Networking (CCNA, CCNP), Cybersecurity, Cloud, and Data Science. Offers structured learning paths, hands-on labs, and live sessions. Paid subscription required for full access — plans include INE Fundamentals and INE Premium.",
     url: 'https://ine.com/pages/networking',
@@ -74,7 +74,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 9500,
   },
   {
-    id: -4, category: 'security', badge: '🎓 Free Self-Paced Courses',
+    id: -4, category: 'security', badge: '🎓 FREE',
     title: 'Fortinet Training Institute – Free Cybersecurity Courses',
     description: "Fortinet's official training academy offers free, self-paced courses for industry certifications like Fortinet Certified Associate (FCA) and Fortinet Certified Professional (FCP). Study network security, cloud security, firewalls, and threat detection directly from the global leader.",
     url: 'https://training.fortinet.com',
@@ -84,7 +84,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 8900,
   },
   {
-    id: -5, category: 'networking', badge: '🔑 Free Resources',
+    id: -5, category: 'networking', badge: '🔑 FREE',
     title: 'Kevin Wallace Training – Cisco Certifications',
     description: "Led by dual CCIE Kevin Wallace, this training offers structured preparation for Cisco certifications like CCNA, CCNP, and ENCOR. Features high-quality YouTube tutorials, exam-prep blueprints, and an All-Access Pass for in-depth premium courses.",
     url: 'https://kwtrain.com',
@@ -94,7 +94,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 6500,
   },
   {
-    id: -18, category: 'networking', badge: '🎥 Free YouTube Courses',
+    id: -18, category: 'networking', badge: '🎥 FREE',
     title: 'Kevin Wallace – Free Cisco Courses on YouTube',
     description: "Dual CCIE Kevin Wallace shares free Cisco certification courses directly on YouTube. Covers CCNA, CCNP, and related topics with clear, structured video lessons — ideal for self-study without a paid subscription.",
     url: 'https://www.youtube.com/@kwallaceccie/courses',
@@ -104,7 +104,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 5800,
   },
   {
-    id: -19, category: 'networking', badge: '🎥 Free YouTube Courses',
+    id: -19, category: 'networking', badge: '🎥 FREE',
     title: 'thinQtank Learning – Cisco & CISSP Certification Courses',
     description: "Boot camp-style Cisco certification training on YouTube covering CCNA, CCNP (ENCOR, ENARSI, SCOR), CCIE Enterprise Infrastructure, and CISSP. Features long-form structured lessons, live session archives, and hands-on labs with GNS3, EVE-NG, and Wireshark.",
     url: 'https://www.youtube.com/@thinQtankS/courses',
@@ -114,7 +114,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 4700,
   },
   {
-    id: -20, category: 'networking', badge: '🎥 Free YouTube Courses',
+    id: -20, category: 'networking', badge: '🎥 FREE',
     title: 'KishSquared – Cisco Networking Courses by Jeff Kish',
     description: "Free Cisco networking courses by Jeff Kish, a dual-CCIE (R&S and Data Center) instructor at CBT Nuggets. Covers CCNA, CCNP ENCOR, OSPF, Spanning-Tree, LISP/VXLAN, and enterprise network design with clear, expert-led sessions.",
     url: 'https://www.youtube.com/@KishSquared/courses',
@@ -124,7 +124,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 4200,
   },
   {
-    id: -21, category: 'networking', badge: '🎓 Free Courses & Badges',
+    id: -21, category: 'networking', badge: '🎓 FREE',
     title: 'Cisco Networking Academy – Free IT & Networking Courses',
     description: "Cisco's official learning platform offering free, self-paced courses with digital badges upon completion. Covers networking (CCNA prep, Networking Basics), cybersecurity (Ethical Hacker, Endpoint Security), Python, Linux, IoT, and DevNet. No cost to enroll — just create an account.",
     url: 'https://www.netacad.com/',
@@ -134,7 +134,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 19500,
   },
   {
-    id: -22, category: 'networking', badge: '🎥 Free YouTube Courses',
+    id: -22, category: 'networking', badge: '🎥 FREE',
     title: "Rob Riker's Tech Channel – Cisco CCNA, CCNP & CCIE Courses",
     description: "In-depth Cisco networking education covering CCNA, CCNP (ENCOR/ENARSI), and CCIE Enterprise Infrastructure. Features the Cisco Enterprise Series with free video lessons, practical EVE-NG lab walkthroughs, and workbook solutions — ideal for serious certification candidates.",
     url: 'https://www.youtube.com/@RobRikerTechChannel/courses',
@@ -144,7 +144,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 5100,
   },
   {
-    id: -25, category: 'networking', badge: '🎥 Free Animated Courses',
+    id: -25, category: 'networking', badge: '🎥 FREE',
     title: 'PowerCert Animated Videos – Visual IT & Networking Courses',
     description: "Extremely popular animation-based training channel specializing in computer networking, cybersecurity, and hardware fundamentals. Ideal for visual learners studying for CompTIA A+, Network+, or Security+ certifications who prefer clear, animated diagrams over textbook lectures.",
     url: 'https://www.youtube.com/@PowerCertAnimatedVideos',
@@ -154,7 +154,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 18400,
   },
   {
-    id: -26, category: 'networking', badge: '🎥 Free Intro Courses',
+    id: -26, category: 'networking', badge: '🎥 FREE',
     title: 'CBT Nuggets – Free IT & Networking Tutorials on YouTube',
     description: "Free introductory IT and networking courses from CBT Nuggets on YouTube. Covers foundational topics in networking (CCNA, Network+), cybersecurity, Linux, virtualization, and career guidance, alongside short, highly-focused 'MicroNuggets' for specific technologies.",
     url: 'https://www.youtube.com/@cbtnuggets/courses',
@@ -164,7 +164,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 12500,
   },
   {
-    id: -6, category: 'devops', badge: '🔑 Free Video Tutorials',
+    id: -6, category: 'devops', badge: '🔑 FREE',
     title: 'TechWorld with Nana – DevOps & Cloud Training',
     description: "Nana Janashia provides some of the web's best DevOps and Cloud Computing training. Explore high-quality free video tutorials on Docker, Kubernetes, CI/CD, and Terraform, alongside structured premium bootcamps and certification prep.",
     url: 'https://www.techworld-with-nana.com/',
@@ -174,7 +174,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 9800,
   },
   {
-    id: -7, category: 'networking', badge: '🎥 Free YouTube Course',
+    id: -7, category: 'networking', badge: '🎥 FREE',
     title: 'NetworkChuck – Free CCNA 200-301 Complete Course',
     description: "An energetic, highly practical CCNA training course. NetworkChuck covers networking fundamentals, subnetting, routers, switches, IPv6, security, and automation with hands-on labs you can build along in GNS3 or Packet Tracer.",
     url: 'https://www.youtube.com/playlist?list=PLIhvC56v63IJVXjvsaC47JqH1w_L8v1Y4',
@@ -184,7 +184,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 15400,
   },
   {
-    id: -8, category: 'networking', badge: '🎥 Free YouTube Course',
+    id: -8, category: 'networking', badge: '🎥 FREE',
     title: "Jeremy's IT Lab – Free CCNP ENCOR 350-401 Course",
     description: "Prepare for your CCNP Enterprise certification with the web's most structured free CCNP ENCOR series. Covers enterprise routing, switching, wireless, security, virtualization, and network automation, with free Anki flashcards and downloadable labs.",
     url: 'https://www.youtube.com/@JeremysITLab/search?query=CCNP+ENCOR',
@@ -194,7 +194,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 8700,
   },
   {
-    id: -10, category: 'networking', badge: '🎓 Free Courses Available',
+    id: -10, category: 'networking', badge: '🎓 FREE',
     title: 'NetworkAcademy.io – Visual Networking Tutorials',
     description: "An independent e-learning platform featuring high-quality visual guides, animated diagrams, and interactive illustrations. Offers free study paths and beginner-friendly tutorials for CCNA, CCIE, and Python network automation.",
     url: 'https://www.networkacademy.io',
@@ -204,7 +204,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 7600,
   },
   {
-    id: -23, category: 'networking', badge: '📝 Step-by-Step Guide',
+    id: -23, category: 'networking', badge: '📝 GUIDE',
     title: 'Running Cisco Modeling Labs (CML) on Hyper-V',
     description: "A complete step-by-step technical guide to running Cisco Modeling Labs (CML) on Windows Hyper-V. Explains VM creation (Gen 2), nested virtualization setup via PowerShell, MAC spoofing, and initial networking setup to run CML labs without VMware.",
     url: 'https://www.networkacademy.io/ccna/network-fundamentals/cml-on-hyperv',
@@ -214,7 +214,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 3200,
   },
   {
-    id: -16, category: 'networking',
+    id: -16, category: 'networking', badge: '💳 PAID',
     title: 'Boson – Cisco & CompTIA Certification Exam Prep',
     description: "Boson is an industry-leading exam prep platform offering ExSim-Max practice exams and the NetSim network simulator for Cisco (CCNA, CCNP) and CompTIA (Network+, Security+) certifications. Known for realistic exam simulations and detailed answer explanations. Demo versions available; full access via paid subscription.",
     url: 'https://www.boson.com',
@@ -224,7 +224,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 8300,
   },
   {
-    id: -24, category: 'networking', badge: '🎥 Free Playlists',
+    id: -24, category: 'networking', badge: '🎥 FREE',
     title: 'INE – Free IT & Networking Playlists on YouTube',
     description: "Free video training playlists provided by INE (Internetwork Expert). Includes structured playlists on networking (CCNA/CCIE prep), cybersecurity concepts, cloud computing, and webinar archives — a great starting point for deep-dive certification study.",
     url: 'https://www.youtube.com/@INEtraining/playlists',
@@ -234,7 +234,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 6100,
   },
   {
-    id: -12, category: 'networking', badge: '🎥 Free 9-Hour Course',
+    id: -12, category: 'networking', badge: '🎥 FREE',
     title: 'freeCodeCamp – Computer Networking Complete Course',
     description: "A comprehensive foundational course covering how the Internet works, network models (OSI/TCP-IP), IP addressing, subnetting, routing protocols, and network security concepts.",
     url: 'https://www.youtube.com/watch?v=IPvYjXCsTg8',
@@ -244,7 +244,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 18200,
   },
   {
-    id: -13, category: 'devops', badge: '🎥 Free 7-Hour Course',
+    id: -13, category: 'devops', badge: '🎥 FREE',
     title: 'freeCodeCamp – Linux Command Line for Beginners',
     description: "Go from absolute beginner to a proficient Linux user. Covers terminal navigation, filesystem structures, package managers, user permissions, and basic bash scripting.",
     url: 'https://www.youtube.com/watch?v=wBp0Rb-ZJak',
@@ -254,7 +254,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 14500,
   },
   {
-    id: -14, category: 'webdev', badge: '🎓 Free Full-Stack Track',
+    id: -14, category: 'webdev', badge: '🎓 FREE',
     title: 'The Odin Project – Full-Stack Web Development',
     description: "An outstanding, project-based web development curriculum. Guides you through setting up a professional local environment, Git/GitHub, HTML/CSS, JavaScript, Node.js, and databases.",
     url: 'https://www.theodinproject.com/',
@@ -264,7 +264,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 22000,
   },
   {
-    id: -15, category: 'security', badge: '🎥 Free Full Courses',
+    id: -15, category: 'security', badge: '🎥 FREE',
     title: 'Simplilearn – Cyber Security Full Courses',
     description: "A solid introductory course covering cybersecurity core fundamentals, cryptography, firewalls, network monitoring, vulnerability assessment, and threat detection.",
     url: 'https://www.youtube.com/@SimplilearnOfficial/search?query=cyber+security+full+course',
