@@ -44,7 +44,7 @@ const TUTORIALS_DATA = [
     views: 12000,
   },
   {
-    id: -2, category: 'networking', badge: '🔑 FREE',
+    id: -2, category: 'networking', badge: '💳 PAID',
     title: 'NetworkLessons – Cisco & Networking Courses',
     description: "NetworkLessons.com offers in-depth, structured courses for CCNA, CCNP, and other Cisco certifications written by instructor Rene Molenaar. Sign up for a free account to access the first part of every course (300+ free lessons, no credit card needed), or unlock full access with a paid membership.",
     url: 'https://networklessons.com',
@@ -84,7 +84,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 8900,
   },
   {
-    id: -5, category: 'networking', badge: '🔑 FREE',
+    id: -5, category: 'networking', badge: '💳 PAID',
     title: 'Kevin Wallace Training – Cisco Certifications',
     description: "Led by dual CCIE Kevin Wallace, this training offers structured preparation for Cisco certifications like CCNA, CCNP, and ENCOR. Features high-quality YouTube tutorials, exam-prep blueprints, and an All-Access Pass for in-depth premium courses.",
     url: 'https://kwtrain.com',
@@ -164,7 +164,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 12500,
   },
   {
-    id: -6, category: 'devops', badge: '🔑 FREE',
+    id: -6, category: 'devops', badge: '💳 PAID',
     title: 'TechWorld with Nana – DevOps & Cloud Training',
     description: "Nana Janashia provides some of the web's best DevOps and Cloud Computing training. Explore high-quality free video tutorials on Docker, Kubernetes, CI/CD, and Terraform, alongside structured premium bootcamps and certification prep.",
     url: 'https://www.techworld-with-nana.com/',
@@ -283,7 +283,7 @@ const TUTORIALS_DATA = [
     tags: ['pytorch', 'neural networks', 'python'], date: '2024-01-20', views: 7800,
   },
   {
-    id: 3, category: 'devops', title: 'Docker & Kubernetes: The Complete Guide',
+    id: 3, category: 'devops', badge: '💳 PAID', title: 'Docker & Kubernetes: The Complete Guide',
     description: 'Master containerisation from scratch — build Docker images, write compose files, orchestrate with Kubernetes, and deploy to the cloud.',
     url: 'https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/',
     source: 'Udemy', author: 'Stephen Grider',
@@ -315,7 +315,7 @@ const TUTORIALS_DATA = [
     tags: ['node', 'express', 'mongodb', 'rest', 'api'], date: '2024-02-28', views: 2900,
   },
   {
-    id: 8, category: 'mobile', title: 'Flutter & Dart – The Complete Guide',
+    id: 8, category: 'mobile', badge: '💳 PAID', title: 'Flutter & Dart – The Complete Guide',
     description: 'Go from zero to a multi-screen mobile app with Flutter. Widgets, state management, animations, Firebase, and publishing to app stores.',
     url: 'https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/',
     source: 'Udemy', author: 'Maximilian Schwarzmüller',
@@ -395,7 +395,7 @@ const TUTORIALS_DATA = [
     tags: ['react native', 'javascript', 'mobile'], date: '2024-03-30', views: 3400,
   },
   {
-    id: 20, category: 'data', title: 'dbt (data build tool) Crash Course',
+    id: 20, category: 'data', badge: '🎓 FREE', title: 'dbt (data build tool) Crash Course',
     description: 'Transform your data warehouse with dbt — models, tests, documentation, incremental materializations, and deploying analytics engineering pipelines.',
     url: 'https://courses.getdbt.com/courses/fundamentals',
     source: 'dbt Labs', author: 'dbt Labs Team',
@@ -427,7 +427,7 @@ const TUTORIALS_DATA = [
     tags: ['redis', 'caching', 'nosql'], date: '2024-03-02', views: 2800,
   },
   {
-    id: 24, category: 'webdev', title: 'CSS Grid & Flexbox Mastery',
+    id: 24, category: 'webdev', badge: '🎓 FREE', title: 'CSS Grid & Flexbox Mastery',
     description: 'Build any layout imaginable with CSS Grid and Flexbox. Interactive exercises, real-world projects, and techniques for responsive, accessible designs.',
     url: 'https://cssgrid.io/',
     source: 'Wes Bos', author: 'Wes Bos',
