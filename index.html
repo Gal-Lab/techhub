@@ -6,15 +6,24 @@
   <title>TechHub – Curated Tech Tutorials</title>
   <meta name="description" content="TechHub is your curated directory of the best tech tutorials across web dev, AI/ML, DevOps, mobile, and more. Discover, filter, and bookmark top-quality learning resources from across the web." />
   <meta name="keywords" content="tech tutorials, programming, web development, machine learning, DevOps, learning resources" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com/" />
   <meta property="og:title" content="TechHub – Curated Tech Tutorials" />
   <meta property="og:description" content="Discover the best hand-picked tech tutorials from across the web." />
-  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://yourdomain.com/hero_banner.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TechHub – Curated Tech Tutorials" />
+  <meta name="twitter:description" content="Discover the best hand-picked tech tutorials from across the web." />
+  <meta name="twitter:image" content="https://yourdomain.com/hero_banner.png" />
+  <link rel="canonical" href="https://yourdomain.com/" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⬡</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- ── NAVBAR ── -->
   <header class="navbar" id="navbar">
@@ -30,17 +39,19 @@
       <div class="nav-actions">
         <button class="btn-ghost" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
   <!-- ── MOBILE MENU ── -->
-  <div class="mobile-menu" id="mobile-menu">
+  <nav aria-label="Mobile navigation" class="mobile-menu" id="mobile-menu">
     <a href="#tutorials" class="mobile-link">Tutorials</a>
     <a href="#categories" class="mobile-link">Categories</a>
-  </div>
+  </nav>
+
+  <main id="main-content" tabindex="-1">
 
   <!-- ── HERO ── -->
   <section class="hero" id="home">
@@ -76,6 +87,7 @@
             autocomplete="off"
           />
           <button class="search-btn" id="search-btn">Search</button>
+        </div>
       </div>
       <div class="hero-stats">
         <div class="stat"><span class="stat-num" id="stat-tutorials" data-target="500">0</span><span class="stat-label">Tutorials</span></div>
@@ -169,7 +181,7 @@
     </div>
   </section>
 
-
+  </main>
 
   <!-- ── FOOTER ── -->
   <footer class="footer">
@@ -184,7 +196,7 @@
         </div>
         <div class="footer-links-grid">
           <div class="footer-col">
-            <h4 class="footer-col-title">Browse</h4>
+            <h3 class="footer-col-title">Browse</h3>
             <a href="#categories" class="footer-link">Categories</a>
             <a href="#tutorials" class="footer-link">All Tutorials</a>
           </div>
