@@ -273,15 +273,7 @@ const TUTORIALS_DATA = [
     tags: ['security', 'cybersecurity', 'cryptography', 'firewalls', 'threats'],
     date: '2026-06-20', views: 9200,
   },
-  {
-    id: 1, category: 'webdev', title: 'React in 100 Seconds', featured: true, featuredLarge: true,
 
-    description: 'A rapid-fire visual overview of React — components, hooks, JSX, and the virtual DOM explained with stunning animations. Perfect as a starting point before diving deeper.',
-    url: 'https://www.youtube.com/watch?v=Tn6-PIqc4UM',
-    source: 'Fireship', author: 'Jeff Delaney',
-    level: 'Beginner', type: 'Video',
-    tags: ['react', 'javascript', 'frontend'], date: '2024-03-10', views: 4200,
-  },
   {
     id: 2, category: 'aiml', title: 'Practical Deep Learning for Coders',
     description: "Fast.ai's legendary course covering deep learning with PyTorch — image classification, NLP, tabular data, and deployment. A must-have for any ML practitioner.",
