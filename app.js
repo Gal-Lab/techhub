@@ -728,12 +728,17 @@ function getCategoryByName(name) { return CATEGORIES.find(c => c.name === name) 
 function levelClass(l) { return `level-${l.toLowerCase()}`; }
 function typeClass(t) { return `type-${t.toLowerCase()}`; }
 
+let toastTimeout = null;
 function showToast(msg, dur = 2500) {
   const el = $('#toast');
   if (el) {
     el.textContent = msg;
     el.classList.add('show');
-    setTimeout(() => el.classList.remove('show'), dur);
+    if (toastTimeout) clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+      el.classList.remove('show');
+      toastTimeout = null;
+    }, dur);
   }
 }
 
@@ -998,7 +1003,27 @@ function renderTutorials(reset = true) {
   if (noResults) noResults.classList.add('hidden');
 
   if (grid) {
-    grid.innerHTML = slice.map(t => renderTutorialCard(t)).join('');
+    if (reset) {
+      grid.innerHTML = slice.map(t => renderTutorialCard(t)).join('');
+      grid.querySelectorAll('.tut-bookmark').forEach(btn => {
+        const id = Number(btn.dataset.id);
+        btn.addEventListener('click', () => toggleSave(id, btn));
+      });
+    } else {
+      const currentCount = grid.querySelectorAll('.tut-card').length;
+      const newItems = slice.slice(currentCount);
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = newItems.map(t => renderTutorialCard(t)).join('');
+      
+      tempDiv.querySelectorAll('.tut-bookmark').forEach(btn => {
+        const id = Number(btn.dataset.id);
+        btn.addEventListener('click', () => toggleSave(id, btn));
+      });
+
+      while (tempDiv.firstChild) {
+        grid.appendChild(tempDiv.firstChild);
+      }
+    }
   }
   if (loadMore) {
     loadMore.classList.toggle('hidden', slice.length >= filtered.length);
@@ -1007,14 +1032,6 @@ function renderTutorials(reset = true) {
   const loadMoreBtn = $('#load-more-btn');
   if (loadMoreBtn) {
     loadMoreBtn.dataset.total = filtered.length;
-  }
-
-  // Bind bookmark clicks
-  if (grid) {
-    grid.querySelectorAll('.tut-bookmark').forEach(btn => {
-      const id = Number(btn.dataset.id);
-      btn.addEventListener('click', () => toggleSave(id, btn));
-    });
   }
 
   observeAnimations();
@@ -1131,7 +1148,7 @@ function populateSelects() {
 function animateCounters() {
   $$('.stat-num[data-target]').forEach(el => {
     const target = parseInt(el.dataset.target);
-    const suffix = el.dataset.suffix || '+';
+    const suffix = el.dataset.suffix !== undefined ? el.dataset.suffix : '+';
     let start = 0;
     const step = Math.ceil(target / 60);
     const timer = setInterval(() => {
