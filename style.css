@@ -695,6 +695,7 @@ input, select, textarea { font-family: var(--font); outline: none; }
 @media(max-width: 768px) {
   :root { --navbar-h: 64px; }
   .nav-links, .nav-actions .btn-primary { display: none; }
+  .nav-actions { margin-left: auto; }
   .hamburger { display: flex; }
   .hero { min-height: 90vh; padding-bottom: 4rem; }
   .hero-stats { gap: 1rem; }

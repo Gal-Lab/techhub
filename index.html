@@ -23,6 +23,14 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'light' || (!theme && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+        document.documentElement.classList.add('light-mode');
+      }
+    })();
+  </script>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- ── NAVBAR ── -->

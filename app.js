@@ -826,7 +826,8 @@ function renderSuggestions(suggestions) {
   container.classList.remove('hidden');
 
   container.querySelectorAll('.suggestion-item').forEach(item => {
-    item.addEventListener('click', () => {
+    item.addEventListener('mousedown', (e) => {
+      e.preventDefault();
       const term = item.dataset.term;
       selectSuggestion(term);
     });
@@ -1101,7 +1102,7 @@ function toggleSave(id, btn) {
   saveFavourites();
   
   if (state.showSavedOnly) {
-    renderTutorials(false);
+    renderTutorials(true);
   }
 }
 
@@ -1203,7 +1204,16 @@ function updateScrollButtons() {
 // ── EVENT BINDINGS ─────────────────────────────────────────────────────────────
 function bindEvents() {
 
-  window.addEventListener('scroll', updateScrollButtons, { passive: true });
+  let scrollTicking = false;
+  window.addEventListener('scroll', () => {
+    if (!scrollTicking) {
+      window.requestAnimationFrame(() => {
+        updateScrollButtons();
+        scrollTicking = false;
+      });
+      scrollTicking = true;
+    }
+  }, { passive: true });
   window.addEventListener('resize', updateScrollButtons, { passive: true });
   
   // Run once initially to set correct state
@@ -1238,14 +1248,13 @@ function bindEvents() {
   const themeBtn = $('#theme-toggle');
   if (themeBtn) {
     themeBtn.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
-      const isLight = document.body.classList.contains('light-mode');
+      document.documentElement.classList.toggle('light-mode');
+      const isLight = document.documentElement.classList.contains('light-mode');
       themeBtn.textContent = isLight ? '☀️' : '🌙';
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
     });
     // restore
-    if (localStorage.getItem('theme') === 'light') {
-      document.body.classList.add('light-mode');
+    if (document.documentElement.classList.contains('light-mode')) {
       themeBtn.textContent = '☀️';
     }
   }
@@ -1310,7 +1319,7 @@ function bindEvents() {
           updateHighlight();
         } else if (e.key === 'ArrowUp') {
           e.preventDefault();
-          highlightedIndex = (highlightedIndex - 1 + currentSuggestions.length) % currentSuggestions.length;
+          highlightedIndex = highlightedIndex <= 0 ? currentSuggestions.length - 1 : highlightedIndex - 1;
           updateHighlight();
         } else if (e.key === 'Enter') {
           if (highlightedIndex >= 0 && highlightedIndex < currentSuggestions.length) {
