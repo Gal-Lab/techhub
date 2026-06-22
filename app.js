@@ -723,7 +723,6 @@ const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => [...document.querySelectorAll(sel)];
 
 function getCategoryById(id) { return CATEGORIES.find(c => c.id === id); }
-function getCategoryByName(name) { return CATEGORIES.find(c => c.name === name) || CATEGORIES[0]; }
 
 function levelClass(l) { return `level-${l.toLowerCase()}`; }
 function typeClass(t) { return `type-${t.toLowerCase()}`; }
@@ -916,7 +915,7 @@ function renderCategories() {
          role="button" tabindex="0"
          aria-label="Filter by ${cat.name}"
          style="--cat-color: ${cat.color}">
-      <span class="cat-emoji">${cat.emoji}</span>
+      <span class="cat-emoji" aria-hidden="true">${cat.emoji}</span>
       <span class="cat-name">${cat.name}</span>
       <span class="cat-count">${counts[cat.id] || 0} tutorials</span>
     </div>
