@@ -957,14 +957,14 @@ function renderFeatured() {
     return `
     <div class="featured-card animate-in ${isLarge ? 'large' : ''}" style="--i:${i}">
       <div class="featured-card-glow" style="background:radial-gradient(circle,${cat?.color || '#7c5cff'}40,transparent)"></div>
-      <span class="featured-badge">⭐ Featured</span>
+      <span class="featured-badge"><span aria-hidden="true">⭐</span> Featured</span>
       <div class="featured-body">
         <div class="featured-category">${cat?.emoji || ''} ${cat?.name || t.category}</div>
         <div class="featured-title">${t.title}</div>
         <div class="featured-desc">${t.description}</div>
         <div class="featured-meta">
           <span class="chip ${levelClass(t.level)}">${t.level}</span>
-          <span class="chip ${typeClass(t.type)}">${t.type === 'Video' ? '▶' : t.type === 'Article' ? '📄' : t.type === 'Course' ? '🎓' : '⚡'} ${t.type}</span>
+          <span class="chip ${typeClass(t.type)}"><span aria-hidden="true">${t.type === 'Video' ? '▶' : t.type === 'Article' ? '📄' : t.type === 'Course' ? '🎓' : '⚡'}</span> ${t.type}</span>
         </div>
         <div class="featured-footer">
           <span class="featured-author">by ${t.author} · ${t.source}</span>
@@ -1042,7 +1042,7 @@ function renderTutorialCard(t) {
   const cat = getCategoryById(t.category);
   const saved = state.savedIds.has(t.id);
   const trialBadge = t.freeTrial
-    ? `<span class="trial-badge">🎁 ${t.trialLabel || 'Free Trial'}</span>`
+    ? `<span class="trial-badge"><span aria-hidden="true">🎁</span> ${t.trialLabel || 'Free Trial'}</span>`
     : (t.freeAccount
       ? `<span class="free-account-badge">🔑 Free Account Available</span>`
       : (t.badge
@@ -1056,7 +1056,7 @@ function renderTutorialCard(t) {
     <div class="tut-card-body">
       <div class="tut-card-top">
         <span class="tut-cat-badge chip" style="background:${cat?.color || '#7c5cff'}22;border-color:${cat?.color || '#7c5cff'}44;color:${cat?.color || '#7c5cff'}">
-          ${cat?.emoji || ''} ${cat?.name || t.category}
+          <span aria-hidden="true">${cat?.emoji || ''}</span> ${cat?.name || t.category}
         </span>
         <button class="tut-bookmark ${saved ? 'saved' : ''}" data-id="${t.id}" aria-label="${saved ? 'Remove bookmark' : 'Bookmark tutorial'}" title="${saved ? 'Remove bookmark' : 'Bookmark'}">
           ${saved ? '🔖' : '🏷️'}
@@ -1067,14 +1067,14 @@ function renderTutorialCard(t) {
       <p class="tut-desc">${t.description}</p>
       <div class="tut-chips">
         <span class="chip ${levelClass(t.level)}">${t.level}</span>
-        <span class="chip ${typeClass(t.type)}">${t.type === 'Video' ? '▶' : t.type === 'Article' ? '📄' : t.type === 'Course' ? '🎓' : '⚡'} ${t.type}</span>
+        <span class="chip ${typeClass(t.type)}"><span aria-hidden="true">${t.type === 'Video' ? '▶' : t.type === 'Article' ? '📄' : t.type === 'Course' ? '🎓' : '⚡'}</span> ${t.type}</span>
       </div>
       <div class="tut-tags">
         ${t.tags.map(tag => `<span class="tut-tag">#${tag}</span>`).join('')}
       </div>
     </div>
     <div class="tut-card-footer">
-      <span class="tut-source">🔗 ${t.source}</span>
+      <span class="tut-source"><span aria-hidden="true">🔗</span> ${t.source}</span>
       <a href="${t.url}" target="_blank" rel="noopener noreferrer" class="${linkClass}" id="open-tut-${t.id}">
         ${linkLabel}
       </a>
