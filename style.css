@@ -462,6 +462,7 @@ input, select, textarea { font-family: var(--font); outline: none; }
 .chip.type-article { background: rgba(124,92,255,0.1); border-color: rgba(124,92,255,0.3); color: #a888ff; }
 .chip.type-course { background: rgba(255,170,0,0.1); border-color: rgba(255,170,0,0.3); color: #ffaa00; }
 .chip.type-interactive { background: rgba(0,229,160,0.1); border-color: rgba(0,229,160,0.3); color: #00e5a0; }
+.chip.duration-chip { background: rgba(140, 151, 190, 0.1); border-color: rgba(140, 151, 190, 0.25); color: var(--text2); }
 
 /* Light mode chip contrast overrides */
 .light-mode .chip.level-beginner { background: rgba(4, 120, 87, 0.08); border-color: rgba(4, 120, 87, 0.25); color: #047857; }
@@ -471,6 +472,7 @@ input, select, textarea { font-family: var(--font); outline: none; }
 .light-mode .chip.type-article { background: rgba(91, 61, 232, 0.08); border-color: rgba(91, 61, 232, 0.25); color: #5b3de8; }
 .light-mode .chip.type-course { background: rgba(180, 83, 9, 0.08); border-color: rgba(180, 83, 9, 0.25); color: #b45309; }
 .light-mode .chip.type-interactive { background: rgba(4, 120, 87, 0.08); border-color: rgba(4, 120, 87, 0.25); color: #047857; }
+.light-mode .chip.duration-chip { background: rgba(63, 68, 112, 0.08); border-color: rgba(63, 68, 112, 0.25); color: var(--text3); }
 .light-mode .free-account-badge { background: rgba(4, 120, 87, 0.08); border-color: rgba(4, 120, 87, 0.25); color: #047857; }
 
 /* ===== TUTORIALS SECTION ===== */
@@ -1251,3 +1253,135 @@ textarea:focus-visible {
 .light-mode .roadmap-step-card { background: #ffffff; }
 .light-mode .roadmap-tut-item { background: var(--bg); }
 .light-mode .custom-checkbox { background: var(--bg2); }
+
+/* ===== BENTO DASHBOARD ===== */
+.bento-dashboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 1024px) {
+  .bento-dashboard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .bento-dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bento-card {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow2);
+  border-color: var(--border2);
+}
+
+.bento-card.featured {
+  grid-column: span 2;
+  grid-row: span 2;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 2.25rem;
+}
+@media (max-width: 768px) {
+  .bento-card.featured {
+    grid-column: span 1;
+    grid-row: span 1;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.75rem;
+  }
+}
+
+.bento-card.continue-learning {
+  grid-column: span 1;
+  grid-row: span 1;
+  background: radial-gradient(circle at top right, rgba(0, 229, 160, 0.05), transparent 70%), var(--surface);
+  border-color: rgba(0, 229, 160, 0.1);
+}
+.bento-card.recent-bookmarks {
+  grid-column: span 1;
+  grid-row: span 1;
+  background: radial-gradient(circle at top right, rgba(124, 92, 255, 0.05), transparent 70%), var(--surface);
+  border-color: rgba(124, 92, 255, 0.1);
+}
+.bento-card.quick-stats {
+  grid-column: span 1;
+  grid-row: span 1;
+  background: radial-gradient(circle at top right, rgba(0, 212, 255, 0.05), transparent 70%), var(--surface);
+  border-color: rgba(0, 212, 255, 0.1);
+}
+
+.bento-card.quick-stats {
+  grid-column: span 3;
+}
+@media (max-width: 1024px) {
+  .bento-card.quick-stats {
+    grid-column: span 2;
+  }
+}
+@media (max-width: 768px) {
+  .bento-card.quick-stats {
+    grid-column: span 1;
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+  .bento-card.quick-stats > div {
+    width: 100% !important;
+    height: 1px !important;
+  }
+}
+
+.bookmark-link-item:hover {
+  border-color: var(--primary) !important;
+  background: var(--surface2) !important;
+}
+.bookmark-link-item:hover span {
+  color: var(--primary-light) !important;
+}
+
+/* Light mode overrides for Bento */
+.light-mode .bento-card {
+  background: #ffffff;
+}
+.light-mode .bento-card.featured {
+  background: #ffffff;
+}
+.light-mode .bento-card.continue-learning {
+  background: radial-gradient(circle at top right, rgba(0, 229, 160, 0.06), transparent 70%), #ffffff;
+}
+.light-mode .bento-card.recent-bookmarks {
+  background: radial-gradient(circle at top right, rgba(124, 92, 255, 0.06), transparent 70%), #ffffff;
+}
+.light-mode .bento-card.quick-stats {
+  background: radial-gradient(circle at top right, rgba(0, 212, 255, 0.06), transparent 70%), #ffffff;
+}
+.light-mode .bookmark-link-item {
+  background: var(--bg) !important;
+}
+.light-mode .bookmark-link-item:hover {
+  background: #ffffff !important;
+  border-color: var(--primary-dark) !important;
+}
+.light-mode .bookmark-link-item:hover span {
+  color: var(--primary-dark) !important;
+}
+.light-mode .bento-stat-num {
+  color: var(--primary-dark) !important;
+}
+

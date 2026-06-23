@@ -819,6 +819,7 @@ let state = {
   category: 'all',
   level: 'all',
   type: 'all',
+  duration: 'all',
   sort: 'newest',
   page: 1,
   savedIds: new Set(JSON.parse(localStorage.getItem('saved') || '[]')),
@@ -840,6 +841,31 @@ function getCategoryById(id) { return CATEGORIES.find(c => c.id === id); }
 
 function levelClass(l) { return `level-${l.toLowerCase()}`; }
 function typeClass(t) { return `type-${t.toLowerCase()}`; }
+
+// Estimate duration in minutes if not explicitly defined on the tutorial
+function getDurationMinutes(t) {
+  if (t.duration) return t.duration;
+  switch (t.type) {
+    case 'Video': return 45;
+    case 'Article': return 15;
+    case 'Course': return 1200; // 20 hours
+    case 'Interactive': return 90;
+    default: return 30;
+  }
+}
+
+// Format duration label from minutes
+function getDurationLabel(minutes) {
+  if (minutes < 60) {
+    return `${minutes}m`;
+  }
+  const hours = Math.floor(minutes / 60);
+  const mins = minutes % 60;
+  if (mins === 0) {
+    return `${hours}h`;
+  }
+  return `${hours}h ${mins}m`;
+}
 
 let toastTimeout = null;
 function showToast(msg, dur = 2500) {
@@ -1015,7 +1041,15 @@ function applyFilters() {
     const matchLevel = state.level === 'all' || t.level === state.level;
     const matchType = state.type === 'all' || t.type === state.type;
     const matchSaved = !state.showSavedOnly || state.savedIds.has(t.id);
-    return matchSearch && matchCat && matchLevel && matchType && matchSaved;
+    const matchDuration = (() => {
+      if (state.duration === 'all') return true;
+      const mins = getDurationMinutes(t);
+      if (state.duration === 'quick') return mins < 30;
+      if (state.duration === 'medium') return mins >= 30 && mins <= 120;
+      if (state.duration === 'deep') return mins > 120;
+      return true;
+    })();
+    return matchSearch && matchCat && matchLevel && matchType && matchSaved && matchDuration;
   });
 
   if (state.sort === 'newest') list.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -1077,34 +1111,152 @@ function updateCatFilter() {
 // ── RENDER: FEATURED ───────────────────────────────────────────────────────────
 function renderFeatured() {
   const grid = $('#featured-grid');
-  if (!grid) return; // section removed from DOM
+  if (!grid) return;
 
-  const featured = TUTORIALS_DATA.filter(t => t.featured);
+  const featured = TUTORIALS_DATA.find(t => t.featured) || TUTORIALS_DATA[0];
+  const cat = getCategoryById(featured.category);
 
-  grid.innerHTML = featured.map((t, i) => {
-    const cat = getCategoryById(t.category);
-    const isLarge = t.featuredLarge;
-    return `
-    <div class="featured-card animate-in ${isLarge ? 'large' : ''}" style="--i:${i}">
-      <div class="featured-card-glow" style="background:radial-gradient(circle,${cat?.color || '#7c5cff'}40,transparent)"></div>
-      <span class="featured-badge"><span aria-hidden="true">⭐</span> Featured</span>
-      <div class="featured-body">
-        <div class="featured-category">${cat?.emoji || ''} ${cat?.name || t.category}</div>
-        <div class="featured-title">${t.title}</div>
-        <div class="featured-desc">${t.description}</div>
-        <div class="featured-meta">
-          <span class="chip ${levelClass(t.level)}">${t.level}</span>
-          <span class="chip ${typeClass(t.type)}"><span aria-hidden="true">${t.type === 'Video' ? '▶' : t.type === 'Article' ? '📄' : t.type === 'Course' ? '🎓' : '⚡'}</span> ${t.type}</span>
+  // Card 1: Featured Card (span 2, row span 2)
+  const featuredHtml = `
+    <div class="bento-card featured animate-in" style="--i:0">
+      <div class="featured-card-glow" style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; border-radius: 50%; opacity: 0.05; pointer-events: none; background:radial-gradient(circle,${cat?.color || '#7c5cff'}40,transparent)"></div>
+      <div class="bento-featured-content" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span class="featured-badge" style="position: static; margin-bottom: 1rem; display: inline-block; padding: 0.3rem 0.7rem; border-radius: 100px; font-size: 0.72rem; font-weight: 700; background: var(--gradient); color: #fff; letter-spacing: 0.05em;"><span aria-hidden="true">⭐</span> Featured</span>
+          <div class="featured-category" style="font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary-light); margin-bottom: 0.5rem;">${cat?.emoji || ''} ${cat?.name || featured.category}</div>
+          <h3 class="featured-title" style="font-size: 1.5rem; font-weight: 800; color: var(--text); margin-bottom: 0.75rem; line-height: 1.3;">${featured.title}</h3>
+          <p class="featured-desc" style="font-size: 0.92rem; color: var(--text2); line-height: 1.65; margin-bottom: 1.5rem;">${featured.description}</p>
         </div>
-        <div class="featured-footer">
-          <span class="featured-author">by ${t.author} · ${t.source}</span>
-          <a href="${t.url}" target="_blank" rel="noopener noreferrer" class="btn-featured">
-            Open Tutorial <span>→</span>
+        <div class="featured-footer" style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+          <span class="featured-author" style="font-size: 0.82rem; color: var(--text3);">by ${featured.author} · ${featured.source}</span>
+          <a href="${featured.url}" target="_blank" rel="noopener noreferrer" class="btn-featured">
+            Start Learning <span>→</span>
           </a>
         </div>
       </div>
-    </div>`;
-  }).join('');
+    </div>
+  `;
+
+  // Card 2: Continue Learning (span 1, row span 1)
+  const activePath = LEARNING_PATHS.find(p => p.id === state.activePathId) || LEARNING_PATHS[0];
+  const allPathTutorials = activePath.steps.reduce((acc, step) => acc.concat(step.tutorials), []);
+  const completedPathTutorials = allPathTutorials.filter(id => state.completedTutorialIds.has(id));
+  const totalPercent = allPathTutorials.length > 0 
+    ? Math.round((completedPathTutorials.length / allPathTutorials.length) * 100) 
+    : 0;
+
+  const continueHtml = `
+    <div class="bento-card continue-learning animate-in" style="--i:1; --path-color: ${activePath.color}">
+      <span class="section-tag" style="font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: ${activePath.color}; margin-bottom: 0.5rem; display: block;">Continue Learning</span>
+      <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        <span aria-hidden="true">${activePath.emoji}</span> ${activePath.title}
+      </h3>
+      <p style="font-size: 0.85rem; color: var(--text2); line-height: 1.5; margin-bottom: 1.25rem; flex: 1;">
+        ${completedPathTutorials.length === allPathTutorials.length ? 'Path completed! Excellent work! 🎉' : 'Pick up where you left off and complete the remaining milestones.'}
+      </p>
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--text2); margin-bottom: 0.4rem;">
+          <span style="font-weight: 500;">${completedPathTutorials.length} / ${allPathTutorials.length} Complete</span>
+          <span style="font-family: var(--mono); font-weight: 600;">${totalPercent}%</span>
+        </div>
+        <div class="path-tab-progress-bar" style="margin-top: 0; margin-bottom: 1.25rem; width: 100%; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden;">
+          <div class="path-tab-progress-fill" style="width: ${totalPercent}%; height: 100%; border-radius: 2px; transition: width 0.4s ease-out; background: ${activePath.color}"></div>
+        </div>
+        <a href="#learning-paths" class="btn-ghost" style="display: flex; align-items: center; justify-content: center; font-size: 0.85rem; padding: 0.5rem 1rem; border-radius: var(--radius-xs); border: 1px solid var(--border); transition: all var(--transition); text-align: center;">
+          Open Roadmap Timeline
+        </a>
+      </div>
+    </div>
+  `;
+
+  // Card 3: Recent Bookmarks (span 1, row span 1)
+  const bookmarkedIds = Array.from(state.savedIds).slice(-3).reverse();
+  const bookmarkedTuts = bookmarkedIds.map(id => TUTORIALS_DATA.find(t => t.id === id)).filter(Boolean);
+
+  let bookmarksListHtml = '';
+  if (bookmarkedTuts.length === 0) {
+    bookmarksListHtml = `
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: var(--text3); font-size: 0.85rem; padding: 1rem 0;">
+        <span aria-hidden="true" style="font-size: 1.75rem; margin-bottom: 0.5rem; display: block;">🏷️</span>
+        No bookmarks saved yet.
+      </div>
+    `;
+  } else {
+    bookmarksListHtml = `
+      <div style="display: flex; flex-direction: column; gap: 0.75rem; flex: 1; margin-bottom: 1.25rem;">
+        ${bookmarkedTuts.map(t => `
+          <a href="${t.url}" target="_blank" rel="noopener noreferrer" style="display: flex; flex-direction: column; gap: 0.15rem; padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); background: var(--bg2); border: 1px solid var(--border); transition: all var(--transition);" class="bookmark-link-item">
+            <span style="font-size: 0.85rem; font-weight: 600; color: var(--text); transition: color var(--transition); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${t.title}</span>
+            <span style="font-size: 0.75rem; color: var(--text3);">by ${t.source}</span>
+          </a>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  const bookmarksHtml = `
+    <div class="bento-card recent-bookmarks animate-in" style="--i:2">
+      <span class="section-tag" style="font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); margin-bottom: 0.5rem; display: block;">Recently Bookmarked</span>
+      <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+        <span aria-hidden="true">🔖</span> My Bookmarks
+      </h3>
+      ${bookmarksListHtml}
+      <button class="bookmarks-toggle" id="bento-bookmarks-btn" style="width: 100%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; padding: 0.5rem 1rem; border-radius: var(--radius-xs); border: 1px solid var(--border); background: var(--surface); color: var(--text2); transition: all var(--transition);">
+        View All Bookmarks
+      </button>
+    </div>
+  `;
+
+  // Card 4: Quick Stats (span 3, row span 1)
+  const totalTutorials = TUTORIALS_DATA.length;
+  const totalCategories = CATEGORIES.length;
+  const totalSources = new Set(TUTORIALS_DATA.map(t => t.source)).size;
+
+  const statsHtml = `
+    <div class="bento-card quick-stats animate-in" style="--i:3; display: flex; flex-direction: row; align-items: center; justify-content: space-around; gap: 2rem; padding: 1.5rem 2rem;">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span aria-hidden="true" style="font-size: 2rem;">🌐</span>
+        <div>
+          <span style="font-family: var(--mono); font-size: 1.75rem; font-weight: 800; color: var(--accent); display: block; line-height: 1.1;" class="bento-stat-num">${totalTutorials}</span>
+          <span style="font-size: 0.72rem; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 0.05em;">Curated Tutorials</span>
+        </div>
+      </div>
+      <div style="width: 1px; height: 30px; background: var(--border);"></div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span aria-hidden="true" style="font-size: 2rem;">⬡</span>
+        <div>
+          <span style="font-family: var(--mono); font-size: 1.75rem; font-weight: 800; color: var(--primary-light); display: block; line-height: 1.1;" class="bento-stat-num">${totalCategories}</span>
+          <span style="font-size: 0.72rem; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 0.05em;">Categories</span>
+        </div>
+      </div>
+      <div style="width: 1px; height: 30px; background: var(--border);"></div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span aria-hidden="true" style="font-size: 2rem;">🔗</span>
+        <div>
+          <span style="font-family: var(--mono); font-size: 1.75rem; font-weight: 800; color: var(--accent3); display: block; line-height: 1.1;" class="bento-stat-num">${totalSources}</span>
+          <span style="font-size: 0.72rem; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 0.05em;">Vetted Sources</span>
+        </div>
+      </div>
+    </div>
+  `;
+
+  grid.innerHTML = `
+    ${featuredHtml}
+    ${continueHtml}
+    ${bookmarksHtml}
+    ${statsHtml}
+  `;
+
+  // Bind the bento bookmarks view toggle button
+  const bentoBookBtn = $('#bento-bookmarks-btn');
+  if (bentoBookBtn) {
+    bentoBookBtn.addEventListener('click', () => {
+      const toggleBtn = $('#bookmarks-toggle');
+      if (toggleBtn) {
+        toggleBtn.click();
+      }
+    });
+  }
 
   observeAnimations();
 }
@@ -1212,6 +1364,7 @@ function renderTutorialCard(t) {
       <div class="tut-chips">
         <span class="chip ${levelClass(t.level)}">${t.level}</span>
         <span class="chip ${typeClass(t.type)}"><span aria-hidden="true">${t.type === 'Video' ? '▶' : t.type === 'Article' ? '📄' : t.type === 'Course' ? '🎓' : '⚡'}</span> ${t.type}</span>
+        <span class="chip duration-chip"><span aria-hidden="true">⏱️</span> ${getDurationLabel(getDurationMinutes(t))}</span>
       </div>
       <div class="tut-tags">
         ${t.tags.map(tag => `<span class="tut-tag">#${tag}</span>`).join('')}
@@ -1243,6 +1396,7 @@ function toggleSave(id, btn) {
     showToast('Tutorial bookmarked! 🔖');
   }
   saveFavourites();
+  renderFeatured(); // Update Bento Grid Bookmarks card in real-time
   
   if (state.showSavedOnly) {
     renderTutorials(true);
@@ -1278,6 +1432,9 @@ function toggleTutorialCompletion(id) {
       card.classList.toggle('completed', isCompleted);
     }
   });
+
+  // 3. Update Bento grid's "Continue Learning" progress card
+  renderFeatured();
 }
 
 // ── PATH RENDERING & DYNAMIC TIMELINE ──────────────────────────────────────────
@@ -1697,6 +1854,7 @@ function bindEvents() {
       state.category = 'all';
       state.level = 'all';
       state.type = 'all';
+      state.duration = 'all';
       state.showSavedOnly = false;
       state.page = 1;
       const catF = $('#cat-filter');
@@ -1705,6 +1863,8 @@ function bindEvents() {
       if (diffF) diffF.value = 'all';
       const typeF = $('#type-filter');
       if (typeF) typeF.value = 'all';
+      const durF = $('#duration-filter');
+      if (durF) durF.value = 'all';
       const bookmarksToggle = $('#bookmarks-toggle');
       if (bookmarksToggle) bookmarksToggle.classList.remove('active');
       renderCategories();
@@ -1730,6 +1890,14 @@ function bindEvents() {
   if (typeFilter) {
     typeFilter.addEventListener('change', e => { state.type = e.target.value; state.page = 1; renderTutorials(); });
   }
+  const durationFilter = $('#duration-filter');
+  if (durationFilter) {
+    durationFilter.addEventListener('change', e => {
+      state.duration = e.target.value;
+      state.page = 1;
+      renderTutorials();
+    });
+  }
   const bookmarksToggle = $('#bookmarks-toggle');
   if (bookmarksToggle) {
     bookmarksToggle.addEventListener('click', () => {
@@ -1741,12 +1909,14 @@ function bindEvents() {
   const resetFiltersBtn = $('#reset-filters');
   if (resetFiltersBtn) {
     resetFiltersBtn.addEventListener('click', () => {
-      state.category = 'all'; state.level = 'all'; state.type = 'all'; state.search = '';
+      state.category = 'all'; state.level = 'all'; state.type = 'all'; state.duration = 'all'; state.search = '';
       state.showSavedOnly = false;
       if (searchInput) searchInput.value = '';
       if (catFilter) catFilter.value = 'all';
       if (diffFilter) diffFilter.value = 'all';
       if (typeFilter) typeFilter.value = 'all';
+      const durFilter = $('#duration-filter');
+      if (durFilter) durFilter.value = 'all';
       if (bookmarksToggle) bookmarksToggle.classList.remove('active');
       state.page = 1;
       renderCategories();
