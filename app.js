@@ -924,9 +924,12 @@ function renderSuggestions(suggestions) {
   const container = $('#search-suggestions');
   if (!container) return;
 
+  const searchInput = $('#search-input');
+
   if (suggestions.length === 0) {
     container.innerHTML = '';
     container.classList.add('hidden');
+    if (searchInput) searchInput.setAttribute('aria-expanded', 'false');
     return;
   }
 
@@ -937,6 +940,7 @@ function renderSuggestions(suggestions) {
   `).join('');
 
   container.classList.remove('hidden');
+  if (searchInput) searchInput.setAttribute('aria-expanded', 'true');
 
   container.querySelectorAll('.suggestion-item').forEach(item => {
     item.addEventListener('mousedown', (e) => {
@@ -969,6 +973,11 @@ function hideSuggestions() {
     container.classList.add('hidden');
     container.innerHTML = '';
   }
+  const searchInput = $('#search-input');
+  if (searchInput) {
+    searchInput.setAttribute('aria-expanded', 'false');
+    searchInput.removeAttribute('aria-activedescendant');
+  }
   currentSuggestions = [];
   highlightedIndex = -1;
 }
@@ -977,16 +986,23 @@ function updateHighlight() {
   const container = $('#search-suggestions');
   if (!container) return;
   const items = container.querySelectorAll('.suggestion-item');
+  const searchInput = $('#search-input');
   items.forEach((item, idx) => {
     if (idx === highlightedIndex) {
       item.classList.add('active');
       item.setAttribute('aria-selected', 'true');
       item.scrollIntoView({ block: 'nearest' });
+      if (searchInput) {
+        searchInput.setAttribute('aria-activedescendant', `suggestion-item-${idx}`);
+      }
     } else {
       item.classList.remove('active');
       item.removeAttribute('aria-selected');
     }
   });
+  if (highlightedIndex === -1 && searchInput) {
+    searchInput.removeAttribute('aria-activedescendant');
+  }
 }
 
 // ── FILTER + SORT LOGIC ───────────────────────────────────────────────────────
