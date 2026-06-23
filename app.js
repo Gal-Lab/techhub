@@ -703,6 +703,114 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 15000,
   },
 ];
+// ── LEARNING PATHS DATA ──────────────────────────────────────────────────────
+const LEARNING_PATHS = [
+  {
+    id: "frontend-dev",
+    title: "Frontend Developer Path",
+    description: "Master modern web interfaces. Go from HTML basics to building complex Single Page Applications (SPAs) with React and Next.js.",
+    difficulty: "Beginner to Advanced",
+    estimatedTime: "80-100 hours",
+    color: "#7c5cff", // Theme color for timeline highlights
+    emoji: "🌐",
+    steps: [
+      {
+        id: "fe-step-1",
+        title: "1. Web Foundations (HTML & CSS)",
+        description: "Learn the core markup and styling languages of the web, including layout techniques like Flexbox and Grid.",
+        tutorials: [24, -29]
+      },
+      {
+        id: "fe-step-2",
+        title: "2. JavaScript Programming",
+        description: "Deep dive into language syntax, DOM manipulation, asynchronous programming, and API integration.",
+        tutorials: [-14, -28]
+      },
+      {
+        id: "fe-step-3",
+        title: "3. TypeScript & Modern Frameworks",
+        description: "Learn statically typed JavaScript and building scalable interfaces using component-driven frameworks.",
+        tutorials: [4, -27]
+      },
+      {
+        id: "fe-step-4",
+        title: "4. Advanced Meta-Frameworks (Next.js)",
+        description: "Master server-side rendering, routing, optimizations, and deployment using Next.js.",
+        tutorials: [12]
+      }
+    ]
+  },
+  {
+    id: "devops-cloud",
+    title: "DevOps & Cloud Engineer Path",
+    description: "Learn to automate deployments, manage infrastructure at scale, configure CI/CD pipelines, and orchestrate cloud environments.",
+    difficulty: "Intermediate to Advanced",
+    estimatedTime: "120-150 hours",
+    color: "#00e5a0",
+    emoji: "☁️",
+    steps: [
+      {
+        id: "do-step-1",
+        title: "1. Linux Fundamentals & Shell Scripting",
+        description: "Master terminal navigation, filesystem structures, system administration, and automation scripts.",
+        tutorials: [-13, -40]
+      },
+      {
+        id: "do-step-2",
+        title: "2. Containers & Orchestration",
+        description: "Understand application isolation using Docker containers and container coordination using Kubernetes.",
+        tutorials: [3, -34]
+      },
+      {
+        id: "do-step-3",
+        title: "3. Infrastructure as Code (IaC)",
+        description: "Define, provision, and configure cloud resources declaratively using Terraform.",
+        tutorials: [9, 22]
+      },
+      {
+        id: "do-step-4",
+        title: "4. Cloud Provider Competence (AWS)",
+        description: "Build robust, scalable infrastructure on Amazon Web Services using industry best practices.",
+        tutorials: [-35]
+      }
+    ]
+  },
+  {
+    id: "cybersecurity-analyst",
+    title: "Cybersecurity Analyst Path",
+    description: "Get started with security concepts, penetration testing, network defense, and web vulnerability analysis.",
+    difficulty: "Beginner to Advanced",
+    estimatedTime: "100-120 hours",
+    color: "#ff6b9d",
+    emoji: "🔒",
+    steps: [
+      {
+        id: "sec-step-1",
+        title: "1. Networking Foundations",
+        description: "Understand IP addressing, subnetting, routers, switches, and core protocols (TCP/IP, DNS).",
+        tutorials: [-12, -106]
+      },
+      {
+        id: "sec-step-2",
+        title: "2. Security Core Concepts",
+        description: "Learn basic security terminology, incident response, firewalls, and cryptographic basics.",
+        tutorials: [-15, -4]
+      },
+      {
+        id: "sec-step-3",
+        title: "3. Hands-On Lab Environments",
+        description: "Apply your security skills practically in gamified laboratories and environments.",
+        tutorials: [-32, 21]
+      },
+      {
+        id: "sec-step-4",
+        title: "4. Web Application Security",
+        description: "Identify and mitigate web-based vulnerabilities like SQL injection, XSS, CSRF, and broken access controls.",
+        tutorials: [-33, 11]
+      }
+    ]
+  }
+];
 
 // ── APP STATE ─────────────────────────────────────────────────────────────────
 const PAGE_SIZE = 9;
@@ -714,9 +822,15 @@ let state = {
   sort: 'newest',
   page: 1,
   savedIds: new Set(JSON.parse(localStorage.getItem('saved') || '[]')),
+  completedTutorialIds: new Set(JSON.parse(localStorage.getItem('completed_tutorials') || '[]')),
+  activePathId: localStorage.getItem('active_path_id') || 'frontend-dev',
   tutorials: [...TUTORIALS_DATA],
   showSavedOnly: false,
 };
+
+function saveCompleted() {
+  localStorage.setItem('completed_tutorials', JSON.stringify([...state.completedTutorialIds]));
+}
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
 const $ = (sel) => document.querySelector(sel);
@@ -1009,6 +1123,10 @@ function renderTutorials(reset = true) {
         const id = Number(btn.dataset.id);
         btn.addEventListener('click', () => toggleSave(id, btn));
       });
+      grid.querySelectorAll('.tut-complete-btn').forEach(btn => {
+        const id = Number(btn.dataset.id);
+        btn.addEventListener('click', () => toggleTutorialCompletion(id));
+      });
     } else {
       const currentCount = grid.querySelectorAll('.tut-card').length;
       const newItems = slice.slice(currentCount);
@@ -1018,6 +1136,10 @@ function renderTutorials(reset = true) {
       tempDiv.querySelectorAll('.tut-bookmark').forEach(btn => {
         const id = Number(btn.dataset.id);
         btn.addEventListener('click', () => toggleSave(id, btn));
+      });
+      tempDiv.querySelectorAll('.tut-complete-btn').forEach(btn => {
+        const id = Number(btn.dataset.id);
+        btn.addEventListener('click', () => toggleTutorialCompletion(id));
       });
 
       while (tempDiv.firstChild) {
@@ -1041,6 +1163,7 @@ function renderTutorials(reset = true) {
 function renderTutorialCard(t) {
   const cat = getCategoryById(t.category);
   const saved = state.savedIds.has(t.id);
+  const completed = state.completedTutorialIds.has(t.id);
   const trialBadge = t.freeTrial
     ? `<span class="trial-badge"><span aria-hidden="true">🎁</span> ${t.trialLabel || 'Free Trial'}</span>`
     : (t.freeAccount
@@ -1051,16 +1174,21 @@ function renderTutorialCard(t) {
   const linkLabel = t.freeTrial ? `Start Free Trial <span>→</span>` : `Open <span>↗</span>`;
   const linkClass = t.freeTrial ? 'tut-link tut-link-trial' : 'tut-link';
   return `
-  <article class="tut-card animate-in ${t.freeTrial ? 'tut-card-trial' : ''}" id="tut-${t.id}">
+  <article class="tut-card animate-in ${t.freeTrial ? 'tut-card-trial' : ''} ${completed ? 'completed' : ''}" id="tut-${t.id}">
     <div class="tut-card-accent"></div>
     <div class="tut-card-body">
       <div class="tut-card-top">
         <span class="tut-cat-badge chip" style="background:${cat?.color || '#7c5cff'}22;border-color:${cat?.color || '#7c5cff'}44;color:${cat?.color || '#7c5cff'}">
           <span aria-hidden="true">${cat?.emoji || ''}</span> ${cat?.name || t.category}
         </span>
-        <button class="tut-bookmark ${saved ? 'saved' : ''}" data-id="${t.id}" aria-label="${saved ? 'Remove bookmark' : 'Bookmark tutorial'}" title="${saved ? 'Remove bookmark' : 'Bookmark'}">
-          ${saved ? '🔖' : '🏷️'}
-        </button>
+        <div class="tut-card-actions">
+          <button class="tut-complete-btn ${completed ? 'completed' : ''}" data-id="${t.id}" aria-label="${completed ? 'Mark incomplete' : 'Mark complete'}" title="${completed ? 'Mark incomplete' : 'Mark complete'}">
+            ${completed ? '✅' : '✓'}
+          </button>
+          <button class="tut-bookmark ${saved ? 'saved' : ''}" data-id="${t.id}" aria-label="${saved ? 'Remove bookmark' : 'Bookmark tutorial'}" title="${saved ? 'Remove bookmark' : 'Bookmark'}">
+            ${saved ? '🔖' : '🏷️'}
+          </button>
+        </div>
       </div>
       ${trialBadge}
       <h3 class="tut-title">${t.title}</h3>
@@ -1103,6 +1231,191 @@ function toggleSave(id, btn) {
   if (state.showSavedOnly) {
     renderTutorials(true);
   }
+}
+
+// ── TOGGLE TUTORIAL COMPLETION ───────────────────────────────────────────────
+function toggleTutorialCompletion(id) {
+  if (state.completedTutorialIds.has(id)) {
+    state.completedTutorialIds.delete(id);
+    showToast('Tutorial marked as incomplete');
+  } else {
+    state.completedTutorialIds.add(id);
+    showToast('Tutorial marked as completed! 🎉');
+  }
+  saveCompleted();
+
+  // 1. Refresh active path timeline & radial meters
+  if ($('#active-path-container')) {
+    renderLearningPaths();
+  }
+
+  // 2. Sync tutorial cards currently displayed in all other grids
+  const completeBtns = $$(`.tut-complete-btn[data-id="${id}"]`);
+  completeBtns.forEach(btn => {
+    const isCompleted = state.completedTutorialIds.has(id);
+    btn.classList.toggle('completed', isCompleted);
+    btn.innerHTML = isCompleted ? '✅' : '✓';
+    btn.setAttribute('aria-label', isCompleted ? 'Mark incomplete' : 'Mark complete');
+    
+    const card = btn.closest('.tut-card');
+    if (card) {
+      card.classList.toggle('completed', isCompleted);
+    }
+  });
+}
+
+// ── PATH RENDERING & DYNAMIC TIMELINE ──────────────────────────────────────────
+function renderLearningPaths() {
+  const selectorContainer = $('#paths-selector');
+  const activeContainer = $('#active-path-container');
+  if (!selectorContainer || !activeContainer) return;
+
+  // Render Path Tabs with mini progress indicators
+  selectorContainer.innerHTML = LEARNING_PATHS.map(path => {
+    // Gather all tutorials in this pathway
+    const allTutorialsInPath = path.steps.reduce((acc, step) => acc.concat(step.tutorials), []);
+    const completedInPath = allTutorialsInPath.filter(id => state.completedTutorialIds.has(id));
+    const percent = allTutorialsInPath.length > 0 
+      ? Math.round((completedInPath.length / allTutorialsInPath.length) * 100) 
+      : 0;
+    
+    const isActive = state.activePathId === path.id;
+    return `
+      <button class="path-tab ${isActive ? 'active' : ''}" data-pathid="${path.id}" style="--path-color: ${path.color}">
+        <span class="path-tab-emoji">${path.emoji}</span>
+        <div class="path-tab-info">
+          <span class="path-tab-title">${path.title}</span>
+          <div class="path-tab-progress-meta">
+            <span class="path-tab-difficulty">${path.difficulty}</span>
+            <span class="path-tab-percent">${percent}%</span>
+          </div>
+          <div class="path-tab-progress-bar">
+            <div class="path-tab-progress-fill" style="width: ${percent}%; background: ${path.color}"></div>
+          </div>
+        </div>
+      </button>
+    `;
+  }).join('');
+
+  // Bind path selector tabs
+  selectorContainer.querySelectorAll('.path-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      state.activePathId = tab.dataset.pathid;
+      localStorage.setItem('active_path_id', state.activePathId);
+      renderLearningPaths();
+    });
+  });
+
+  // Get active path details
+  const activePath = LEARNING_PATHS.find(p => p.id === state.activePathId);
+  if (!activePath) return;
+
+  // Calculate overall metrics
+  const allPathTutorials = activePath.steps.reduce((acc, step) => acc.concat(step.tutorials), []);
+  const completedPathTutorials = allPathTutorials.filter(id => state.completedTutorialIds.has(id));
+  const totalPercent = allPathTutorials.length > 0 
+    ? Math.round((completedPathTutorials.length / allPathTutorials.length) * 100) 
+    : 0;
+
+  // Render Active Path Content
+  activeContainer.innerHTML = `
+    <div class="path-overview-card" style="--path-color: ${activePath.color}">
+      <div class="path-overview-content">
+        <span class="path-overview-badge" style="background: ${activePath.color}20; color: ${activePath.color}">
+          ${activePath.difficulty} · ${activePath.estimatedTime}
+        </span>
+        <h3 class="path-overview-title">${activePath.title}</h3>
+        <p class="path-overview-desc">${activePath.description}</p>
+      </div>
+      <div class="path-overall-progress">
+        <div class="progress-radial-container">
+          <svg class="progress-ring" width="80" height="80">
+            <circle class="progress-ring-circle-bg" stroke="var(--border)" stroke-width="6" fill="transparent" r="34" cx="40" cy="40"/>
+            <circle class="progress-ring-circle" stroke="${activePath.color}" stroke-width="6" fill="transparent" r="34" cx="40" cy="40"
+                    style="stroke-dasharray: ${2 * Math.PI * 34}; stroke-dashoffset: ${2 * Math.PI * 34 * (1 - totalPercent / 100)}"/>
+          </svg>
+          <span class="progress-percent-text">${totalPercent}%</span>
+        </div>
+        <div class="progress-stats-text">
+          <span class="progress-completed-count">${completedPathTutorials.length} / ${allPathTutorials.length} Finished</span>
+          <span class="progress-label">Overall Progress</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="roadmap-timeline">
+      <div class="roadmap-line" style="background: linear-gradient(to bottom, ${activePath.color} 0%, var(--border) 100%)"></div>
+      ${activePath.steps.map((step, sIdx) => {
+        // Calculate step progress details
+        const stepCompleted = step.tutorials.every(id => state.completedTutorialIds.has(id));
+        const stepInProgress = step.tutorials.some(id => state.completedTutorialIds.has(id)) && !stepCompleted;
+        
+        let stepStatusClass = 'pending';
+        let stepStatusIcon = '○';
+        if (stepCompleted) {
+          stepStatusClass = 'completed';
+          stepStatusIcon = '✓';
+        } else if (stepInProgress) {
+          stepStatusClass = 'in-progress';
+          stepStatusIcon = '●';
+        }
+
+        return `
+          <div class="roadmap-step ${stepStatusClass}">
+            <div class="roadmap-node" style="background: ${stepCompleted ? activePath.color : 'var(--bg3)'}; border-color: ${stepCompleted || stepInProgress ? activePath.color : 'var(--border)'}">
+              <span class="node-icon">${stepStatusIcon}</span>
+            </div>
+            
+            <div class="roadmap-step-card animate-in">
+              <div class="step-card-header">
+                <h4 class="step-title">${step.title}</h4>
+                <p class="step-desc">${step.description}</p>
+              </div>
+              <div class="step-tutorials-list">
+                ${step.tutorials.map(tutId => {
+                  const t = TUTORIALS_DATA.find(item => item.id === tutId);
+                  if (!t) return ''; // Skip if missing in DB
+                  
+                  const isTutCompleted = state.completedTutorialIds.has(t.id);
+                  
+                  return `
+                    <div class="roadmap-tut-item ${isTutCompleted ? 'completed' : ''}">
+                      <label class="roadmap-checkbox-label">
+                        <input type="checkbox" class="roadmap-checkbox" ${isTutCompleted ? 'checked' : ''} data-tutid="${t.id}" />
+                        <span class="custom-checkbox" style="--path-color: ${activePath.color}"></span>
+                      </label>
+                      <div class="roadmap-tut-info">
+                        <div class="roadmap-tut-main">
+                          <a href="${t.url}" target="_blank" rel="noopener noreferrer" class="roadmap-tut-link">
+                            ${t.title} <span class="external-link-arrow">↗</span>
+                          </a>
+                          <span class="roadmap-tut-source">by ${t.author} · ${t.source}</span>
+                        </div>
+                        <div class="roadmap-tut-meta">
+                          <span class="chip ${levelClass(t.level)}">${t.level}</span>
+                          <span class="chip ${typeClass(t.type)}">${t.type}</span>
+                        </div>
+                      </div>
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `;
+
+  // Bind roadmap checkbox changes
+  activeContainer.querySelectorAll('.roadmap-checkbox').forEach(box => {
+    box.addEventListener('change', () => {
+      const tutId = Number(box.dataset.tutid);
+      toggleTutorialCompletion(tutId);
+    });
+  });
+
+  observeAnimations();
 }
 
 // ── UPDATE STATS TARGETS DYNAMICALLY ───────────────────────────────────────────
@@ -1457,6 +1770,7 @@ function init() {
   populateSelects();
   renderCategories();
   renderFeatured();
+  renderLearningPaths();
   renderTutorials();
   bindEvents();
   observeAnimations();
