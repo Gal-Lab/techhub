@@ -1078,6 +1078,7 @@ function renderCategories() {
          data-catid="${cat.id}"
          role="button" tabindex="0"
          aria-label="Filter by ${cat.name}"
+         aria-pressed="${state.category === cat.id ? 'true' : 'false'}"
          style="--cat-color: ${cat.color}">
       <span class="cat-emoji" aria-hidden="true">${cat.emoji}</span>
       <span class="cat-name">${cat.name}</span>
@@ -1443,6 +1444,13 @@ function renderLearningPaths() {
   const activeContainer = $('#active-path-container');
   if (!selectorContainer || !activeContainer) return;
 
+  // Save keyboard focus context if focus is on a milestone checkbox
+  let focusedTutId = null;
+  const activeEl = document.activeElement;
+  if (activeEl && activeEl.classList.contains('roadmap-checkbox') && activeContainer.contains(activeEl)) {
+    focusedTutId = activeEl.dataset.tutid;
+  }
+
   // Render Path Tabs with mini progress indicators
   selectorContainer.innerHTML = LEARNING_PATHS.map(path => {
     // Gather all tutorials in this pathway
@@ -1588,6 +1596,14 @@ function renderLearningPaths() {
     });
   });
 
+  // Restore keyboard focus if it was on a milestone checkbox
+  if (focusedTutId !== null) {
+    const boxToFocus = activeContainer.querySelector(`.roadmap-checkbox[data-tutid="${focusedTutId}"]`);
+    if (boxToFocus) {
+      boxToFocus.focus();
+    }
+  }
+
   observeAnimations();
 }
 
@@ -1721,10 +1737,12 @@ function bindEvents() {
   if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', () => {
       const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
       hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
     $$('.mobile-link, .mobile-cta').forEach(el => el.addEventListener('click', () => {
       mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
     }));
   }
@@ -1732,16 +1750,23 @@ function bindEvents() {
   // ── Dark / Light mode
   const themeBtn = $('#theme-toggle');
   if (themeBtn) {
+    const updateThemeLabel = () => {
+      const isLight = document.documentElement.classList.contains('light-mode');
+      themeBtn.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+    };
+    
     themeBtn.addEventListener('click', () => {
       document.documentElement.classList.toggle('light-mode');
       const isLight = document.documentElement.classList.contains('light-mode');
       themeBtn.textContent = isLight ? '☀️' : '🌙';
+      updateThemeLabel();
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
     });
     // restore
     if (document.documentElement.classList.contains('light-mode')) {
       themeBtn.textContent = '☀️';
     }
+    updateThemeLabel();
   }
 
   // ── Search
@@ -1900,9 +1925,11 @@ function bindEvents() {
   }
   const bookmarksToggle = $('#bookmarks-toggle');
   if (bookmarksToggle) {
+    bookmarksToggle.setAttribute('aria-pressed', state.showSavedOnly ? 'true' : 'false');
     bookmarksToggle.addEventListener('click', () => {
       state.showSavedOnly = !state.showSavedOnly;
       bookmarksToggle.classList.toggle('active', state.showSavedOnly);
+      bookmarksToggle.setAttribute('aria-pressed', state.showSavedOnly ? 'true' : 'false');
       renderTutorials();
     });
   }
