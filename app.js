@@ -892,13 +892,14 @@ let highlightedIndex = -1;
 function getSuggestions(query) {
   const q = query.toLowerCase().trim();
   if (!q) return [];
+  const qClean = q.startsWith('#') ? q.substring(1) : q;
 
   const suggestions = [];
   const seenTerms = new Set();
 
   // 1. Categories
   CATEGORIES.forEach(cat => {
-    if (cat.name.toLowerCase().includes(q)) {
+    if (cat.name.toLowerCase().includes(qClean)) {
       const term = cat.name;
       if (!seenTerms.has(term)) {
         seenTerms.add(term);
@@ -915,8 +916,8 @@ function getSuggestions(query) {
   const allTags = new Set();
   TUTORIALS_DATA.forEach(t => t.tags.forEach(tag => allTags.add(tag)));
   Array.from(allTags).forEach(tag => {
-    if (tag.toLowerCase().includes(q)) {
-      const term = tag;
+    if (tag.toLowerCase().includes(qClean)) {
+      const term = '#' + tag;
       if (!seenTerms.has(term)) {
         seenTerms.add(term);
         suggestions.push({
@@ -930,7 +931,7 @@ function getSuggestions(query) {
 
   // 3. Titles
   TUTORIALS_DATA.forEach(t => {
-    if (t.title.toLowerCase().includes(q)) {
+    if (t.title.toLowerCase().includes(qClean)) {
       const term = t.title;
       if (!seenTerms.has(term)) {
         seenTerms.add(term);
@@ -1034,9 +1035,9 @@ function updateHighlight() {
 // ── FILTER + SORT LOGIC ───────────────────────────────────────────────────────
 function applyFilters() {
   const q = state.search.toLowerCase().trim();
+  const qClean = q.startsWith('#') ? q.substring(1) : q;
   let list = TUTORIALS_DATA.filter(t => {
-    const matchSearch = !q || [t.title, t.description, t.source, t.author, ...t.tags]
-      .some(s => s.toLowerCase().includes(q));
+    const matchSearch = !q || [t.title, t.description, t.source, t.author].some(s => s.toLowerCase().includes(q)) || t.tags.some(tag => tag.toLowerCase().includes(qClean));
     const matchCat = state.category === 'all' || t.category === state.category;
     const matchLevel = state.level === 'all' || t.level === state.level;
     const matchType = state.type === 'all' || t.type === state.type;
