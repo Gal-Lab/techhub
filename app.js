@@ -158,6 +158,16 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 7600,
   },
   {
+    id: -106, category: 'networking', badge: '🎥 FREE',
+    title: 'Practical Networking – Free IT & Networking Courses',
+    description: "Free, high-quality computer networking tutorials on YouTube covering subnetting, routing, switching, and firewall concepts.",
+    url: 'https://www.youtube.com/@PracticalNetworking/playlists',
+    source: 'YouTube – Practical Networking', author: 'Ed Harmoush',
+    level: 'Beginner', type: 'Video',
+    tags: ['networking', 'subnetting', 'routing', 'switching', 'firewall'],
+    date: '2026-06-22', views: 8500,
+  },
+  {
     id: -16, category: 'networking', badge: '💳 PAID',
     title: 'Boson – Cisco & CompTIA Certification Exam Prep',
     description: "Industry-leading CCNA, CCNP, and CompTIA practice exams and network simulators with detailed explanations and realistic scenarios.",
