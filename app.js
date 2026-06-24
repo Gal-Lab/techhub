@@ -68,7 +68,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-24', views: 8900,
   },
   {
-    id: -4, category: 'security', badge: '📖 FREE',
+    id: -4, category: 'security', badge: '🎓 FREE',
     title: 'Fortinet Training Institute – Free Cybersecurity Courses',
     description: "Free, self-paced courses for Fortinet certifications (FCA, FCP). Learn network security, firewalls, and threat detection from the global leader.",
     url: 'https://www.fortinet.com/training/cybersecurity-professionals',
@@ -98,7 +98,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 4700,
   },
   {
-    id: -21, category: 'networking', badge: '📖 FREE',
+    id: -21, category: 'networking', badge: '🎓 FREE',
     title: 'Cisco Networking Academy – Free IT & Networking Courses',
     description: "Cisco's official platform for free self-paced courses. Learn networking, cybersecurity, Python, Linux, and IoT with free digital badges.",
     url: 'https://www.netacad.com/catalogs/learn',
@@ -148,7 +148,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 9800,
   },
   {
-    id: -10, category: 'networking', badge: '📖 FREE',
+    id: -10, category: 'networking', badge: '🎓 FREE',
     title: 'NetworkAcademy.io – Free IT & Networking Courses',
     description: "High-quality visual guides, animated diagrams, and courses for Cisco CCNA and Python network automation.",
     url: 'https://www.networkacademy.io/courses',
@@ -189,7 +189,7 @@ const TUTORIALS_DATA = [
   },
 
   {
-    id: -14, category: 'software-dev', badge: '📖 FREE',
+    id: -14, category: 'software-dev', badge: '🎓 FREE',
     title: 'The Odin Project – Full-Stack Web Development',
     description: "Free, project-based full-stack curriculum covering Git, HTML/CSS, JavaScript, Node.js, and databases with portfolio-ready projects.",
     url: 'https://www.theodinproject.com/',
@@ -210,7 +210,7 @@ const TUTORIALS_DATA = [
   },
 
   {
-    id: -28, category: 'software-dev', badge: '📖 FREE',
+    id: -28, category: 'software-dev', badge: '🎓 FREE',
     title: 'Scrimba – Learn JavaScript & React Interactively',
     description: "Pause any video tutorial and edit the instructor's code in real time inside the browser. High-quality interactive frontend learning.",
     url: 'https://scrimba.com/learn/javascript',
@@ -220,7 +220,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 18000,
   },
   {
-    id: -29, category: 'software-dev', badge: '📖 FREE',
+    id: -29, category: 'software-dev', badge: '🎓 FREE',
     title: "web.dev – Google's Official Web Dev Learn Paths",
     description: "Google's official hub for web development. Free structured courses on modern HTML, CSS, JS, accessibility, performance, and PWAs.",
     url: 'https://web.dev/learn',
@@ -251,7 +251,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 20000,
   },
   {
-    id: -36, category: 'software-dev', badge: '📖 FREE',
+    id: -36, category: 'software-dev', badge: '🎓 FREE',
     title: 'SQLBolt – Interactive SQL Lessons',
     description: "Interactive SQL lessons in the browser with immediate feedback. Covers SELECT queries, JOINs, and aggregates with no signup needed.",
     url: 'https://sqlbolt.com/',
@@ -268,7 +268,7 @@ const TUTORIALS_DATA = [
 
 
   {
-    id: 100, category: 'software-dev', badge: '📖 FREE', title: 'freeCodeCamp – YouTube Playlists',
+    id: 100, category: 'software-dev', badge: '🎓 FREE', title: 'freeCodeCamp – YouTube Playlists',
     description: 'Access thousands of free, comprehensive video courses and playlists covering software development, DevOps, cybersecurity, networking, and databases.',
     url: 'https://www.youtube.com/@freecodecamp/playlists',
     source: 'freeCodeCamp', author: 'freeCodeCamp Team',
@@ -277,7 +277,7 @@ const TUTORIALS_DATA = [
   },
 
   {
-    id: -37, category: 'software-dev', badge: '📖 FREE',
+    id: -37, category: 'software-dev', badge: '🎓 FREE',
     title: 'MySQL for Developers',
     description: 'Free course on MySQL design, indexing strategies, query tuning, and database scaling to build highly performant applications.',
     url: 'https://planetscale.com/courses/mysql-for-developers',
@@ -287,7 +287,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 15000,
   },
   {
-    id: -41, category: 'software-dev', badge: '📖 FREE',
+    id: -41, category: 'software-dev', badge: '🎓 FREE',
     title: 'Learn Git Branching',
     description: 'Interactive, visual simulation game for learning Git branching, merging, rebasing, and remote operations with immediate feedback.',
     url: 'https://learngitbranching.js.org/',
@@ -297,7 +297,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 16000,
   },
   {
-    id: -42, category: 'software-dev', badge: '📖 FREE',
+    id: -42, category: 'software-dev', badge: '🎓 FREE',
     title: 'Android Basics with Compose',
     description: 'Official Jetpack Compose course. Learn Kotlin fundamentals, state management, and build native Android apps with declarative UIs.',
     url: 'https://developer.android.com/courses/android-basics-compose/course',
@@ -747,7 +747,7 @@ function renderTutorialCard(t) {
       <p class="tut-desc">${t.description}</p>
       <div class="tut-chips">
         <span class="chip ${levelClass(t.level)}">${t.level}</span>
-        <span class="chip ${typeClass(t.type)}"><span aria-hidden="true">${t.type === 'Video' ? '▶' : t.type === 'Article' ? '📄' : t.type === 'Course' ? '📖' : '⚡'}</span> ${t.type}</span>
+        <span class="chip ${typeClass(t.type)}"><span aria-hidden="true">${t.type === 'Video' ? '▶' : t.type === 'Article' ? '📄' : t.type === 'Course' ? '🎓' : '⚡'}</span> ${t.type}</span>
       </div>
       <div class="tut-tags">
         ${t.tags.map(tag => `<span class="tut-tag">#${tag}</span>`).join('')}
