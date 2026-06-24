@@ -8,7 +8,7 @@ const CATEGORIES = [
   { id: 'software-dev', name: 'Software Development', emoji: '💻', color: '#7c5cff' },
   { id: 'devops',  name: 'DevOps & Cloud',    emoji: '☁️', color: '#00e5a0' },
   { id: 'security',name: 'Cybersecurity',     emoji: '🔒', color: '#ff6b9d' },
-  { id: 'networking',  name: 'Networking',          emoji: '🌐🔗', color: '#38bdf8' },
+  { id: 'networking',  name: 'Networking',          emoji: '📡', color: '#38bdf8' },
 ];
 
 // ── TUTORIALS DATA ───────────────────────────────────────────────────────────
