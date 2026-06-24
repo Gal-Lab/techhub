@@ -88,16 +88,6 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 7200,
   },
   {
-    id: -3, category: 'networking', badge: '💳 PAID',
-    title: 'INE – Networking & Cybersecurity Training',
-    description: "INE is a premium platform for IT certification training covering Networking (CCNA, CCNP), Cybersecurity, Cloud, and Data Science. Offers structured learning paths, hands-on labs, and live sessions. Paid subscription required for full access — plans include INE Fundamentals and INE Premium.",
-    url: 'https://ine.com/pages/networking',
-    source: 'INE', author: 'INE Team',
-    level: 'Intermediate', type: 'Course',
-    tags: ['ccna', 'ccnp', 'cybersecurity', 'networking', 'labs', 'certification'],
-    date: '2026-06-20', views: 8100,
-  },
-  {
     id: -1, category: 'networking', freeTrial: true, trialLabel: '7-Day Free Trial',
     title: 'CBT Nuggets – IT Certification Training',
     description: "CBT Nuggets offers expert-led video training for IT certifications including Cisco (CCNA, CCNP), CompTIA (A+, Security+, Network+), Microsoft, AWS, and more. Full access includes virtual labs, practice exams, and a personal coach. Start with a free 7-day trial — no commitment required.",
