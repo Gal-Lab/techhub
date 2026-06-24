@@ -16,7 +16,7 @@ const TUTORIALS_DATA = [
   {
     id: -17, category: 'software-dev', freeTrial: true, trialLabel: '10-Day Free Trial',
     title: "O'Reilly Learning – Books, Videos & Live Training",
-    description: "One of the world's most comprehensive tech learning platforms. Access 60,000+ books, video courses, live online training, and interactive labs covering software development, networking, cybersecurity, data science, AI, cloud, and more. Start a free 10-day individual trial — no commitment.",
+    description: "Access 60,000+ books, video courses, live training, and interactive labs covering software development, networking, cybersecurity, cloud, and AI with a free 10-day trial.",
     url: 'https://www.oreilly.com/start-trial/?type=individual',
     source: "O'Reilly Media", author: "O'Reilly Team",
     level: 'Beginner', type: 'Course',
@@ -26,7 +26,7 @@ const TUTORIALS_DATA = [
   {
     id: -103, category: 'networking', badge: '🎥 FREE',
     title: "Kevin Wallace Training – Cisco CLCOR 350-801 Cert Prep",
-    description: "Expert-led video lessons covering Cisco Collaboration core technologies (CLCOR). Master collaboration infrastructure, Cisco Unified Communications Manager (CUCM) protocols, Webex cloud integrations, and SIP endpoints.",
+    description: "Expert-led video lessons covering Cisco Collaboration core technologies (CLCOR), CUCM protocols, Webex cloud integrations, and SIP endpoints.",
     url: 'https://www.youtube.com/@kwallaceccie',
     source: "YouTube – Kevin Wallace", author: "Kevin Wallace",
     level: 'Intermediate', type: 'Video',
@@ -36,7 +36,7 @@ const TUTORIALS_DATA = [
   {
     id: -104, category: 'networking', badge: '🎥 FREE',
     title: "Cisco Collaboration Technical Marketing",
-    description: "Official Cisco technical marketing channel focusing on product demonstrations, integration tutorials, and design guidance for Cisco Webex, hybrid calling, enterprise video endpoints, and contact center solutions.",
+    description: "Official Cisco channel featuring product demos, integration tutorials, and design guidance for Webex, hybrid calling, and video endpoints.",
     url: 'https://www.youtube.com/@cisocollabtechmarketing',
     source: "Cisco Collab Tech Marketing", author: "Cisco Systems",
     level: 'Advanced', type: 'Video',
@@ -47,7 +47,7 @@ const TUTORIALS_DATA = [
     id: 0, category: 'networking', featured: true, badge: '🎥 FREE',
     title: "Jeremy's IT Lab – Free CCNA 200-301 Complete Course",
     description:
-      "The most recommended free CCNA course on YouTube. Jeremy covers every topic in the Cisco 200-301 exam syllabus in a structured \"Day-by-Day\" format — IP addressing, VLANs, STP, OSPF, ACLs, NAT, security, and automation. Includes Packet Tracer labs, Anki flashcards, and end-of-video quizzes.",
+      "The most recommended free CCNA course on YouTube. Covers the complete Cisco 200-301 syllabus Day-by-Day with Packet Tracer labs and quizzes.",
     url: 'https://www.youtube.com/@JeremysITLab',
     source: "YouTube – Jeremy's IT Lab",
     author: 'Jeremy McDowall',
@@ -60,7 +60,7 @@ const TUTORIALS_DATA = [
   {
     id: -2, category: 'networking', badge: '💳 PAID',
     title: 'NetworkLessons – Cisco & Networking Courses',
-    description: "NetworkLessons.com offers in-depth, structured courses for CCNA, CCNP, and other Cisco certifications written by instructor Rene Molenaar. Sign up for a free account to access the first part of every course (300+ free lessons, no credit card needed), or unlock full access with a paid membership.",
+    description: "Offers in-depth, structured courses for CCNA, CCNP, and other Cisco certifications by Rene Molenaar. Access 300+ lessons for free.",
     url: 'https://networklessons.com',
     source: 'NetworkLessons', author: 'Rene Molenaar',
     level: 'Beginner', type: 'Course',
@@ -70,7 +70,7 @@ const TUTORIALS_DATA = [
   {
     id: -1, category: 'networking', freeTrial: true, trialLabel: '7-Day Free Trial',
     title: 'CBT Nuggets – IT Certification Training',
-    description: "CBT Nuggets offers expert-led video training for IT certifications including Cisco (CCNA, CCNP), CompTIA (A+, Security+, Network+), Microsoft, AWS, and more. Full access includes virtual labs, practice exams, and a personal coach. Start with a free 7-day trial — no commitment required.",
+    description: "Expert-led video training for IT certifications like Cisco, CompTIA, and AWS. Includes virtual labs, practice exams, and a free 7-day trial.",
     url: 'https://www.cbtnuggets.com/free-week',
     source: 'CBT Nuggets', author: 'CBT Nuggets Team',
     level: 'Beginner', type: 'Course',
@@ -80,7 +80,7 @@ const TUTORIALS_DATA = [
   {
     id: -4, category: 'security', badge: '🎓 FREE',
     title: 'Fortinet Training Institute – Free Cybersecurity Courses',
-    description: "Fortinet's official training academy offers free, self-paced courses for industry certifications like Fortinet Certified Associate (FCA) and Fortinet Certified Professional (FCP). Study network security, cloud security, firewalls, and threat detection directly from the global leader.",
+    description: "Free, self-paced courses for Fortinet certifications (FCA, FCP). Learn network security, firewalls, and threat detection from the global leader.",
     url: 'https://www.fortinet.com/training/cybersecurity-professionals',
     source: 'Fortinet', author: 'Fortinet Training Team',
     level: 'Beginner', type: 'Course',
@@ -90,7 +90,7 @@ const TUTORIALS_DATA = [
   {
     id: -18, category: 'networking', badge: '🎥 FREE',
     title: 'Kevin Wallace – Free Cisco Courses on YouTube',
-    description: "Dual CCIE Kevin Wallace shares free Cisco certification courses directly on YouTube. Covers CCNA, CCNP, and related topics with clear, structured video lessons — ideal for self-study without a paid subscription.",
+    description: "Dual CCIE Kevin Wallace shares free Cisco CCNA and CCNP certification courses directly on YouTube with clear, structured lessons.",
     url: 'https://www.youtube.com/@kwallaceccie/courses',
     source: 'YouTube – Kevin Wallace', author: 'Kevin Wallace',
     level: 'Beginner', type: 'Video',
@@ -100,7 +100,7 @@ const TUTORIALS_DATA = [
   {
     id: -19, category: 'networking', badge: '🎥 FREE',
     title: 'thinQtank Learning – Cisco & CISSP Certification Courses',
-    description: "Boot camp-style Cisco certification training on YouTube covering CCNA, CCNP (ENCOR, ENARSI, SCOR), CCIE Enterprise Infrastructure, and CISSP. Features long-form structured lessons, live session archives, and hands-on labs with GNS3, EVE-NG, and Wireshark.",
+    description: "Cisco and CISSP certification training covering CCNA, CCNP, CCIE, and CISSP. Features structured lessons and GNS3/EVE-NG lab guides.",
     url: 'https://www.youtube.com/@thinQtankS/courses',
     source: 'YouTube – thinQtank Learning', author: 'thinQtank Learning',
     level: 'Intermediate', type: 'Video',
@@ -110,7 +110,7 @@ const TUTORIALS_DATA = [
   {
     id: -20, category: 'networking', badge: '🎥 FREE',
     title: 'KishSquared – Cisco Networking Courses by Jeff Kish',
-    description: "Free Cisco networking courses by Jeff Kish, a dual-CCIE (R&S and Data Center) instructor at CBT Nuggets. Covers CCNA, CCNP ENCOR, OSPF, Spanning-Tree, LISP/VXLAN, and enterprise network design with clear, expert-led sessions.",
+    description: "Free Cisco networking courses by Jeff Kish. Covers CCNA, CCNP ENCOR, OSPF, Spanning-Tree, and enterprise design with expert-led sessions.",
     url: 'https://www.youtube.com/@KishSquared/courses',
     source: 'YouTube – KishSquared', author: 'Jeff Kish',
     level: 'Intermediate', type: 'Video',
@@ -120,7 +120,7 @@ const TUTORIALS_DATA = [
   {
     id: -21, category: 'networking', badge: '🎓 FREE',
     title: 'Cisco Networking Academy – Free IT & Networking Courses',
-    description: "Cisco's official learning platform offering free, self-paced courses with digital badges upon completion. Covers networking (CCNA prep, Networking Basics), cybersecurity (Ethical Hacker, Endpoint Security), Python, Linux, IoT, and DevNet. No cost to enroll — just create an account.",
+    description: "Cisco's official platform for free self-paced courses. Learn networking, cybersecurity, Python, Linux, and IoT with free digital badges.",
     url: 'https://www.netacad.com/',
     source: 'Cisco NetAcad', author: 'Cisco Systems',
     level: 'Beginner', type: 'Course',
@@ -130,7 +130,7 @@ const TUTORIALS_DATA = [
   {
     id: -22, category: 'networking', badge: '🎥 FREE',
     title: "Rob Riker's Tech Channel – Cisco CCNA, CCNP & CCIE Courses",
-    description: "In-depth Cisco networking education covering CCNA, CCNP (ENCOR/ENARSI), and CCIE Enterprise Infrastructure. Features the Cisco Enterprise Series with free video lessons, practical EVE-NG lab walkthroughs, and workbook solutions — ideal for serious certification candidates.",
+    description: "In-depth Cisco networking training covering CCNA, CCNP, and CCIE with free video lessons, practical EVE-NG labs, and workbook solutions.",
     url: 'https://www.youtube.com/@RobRikerTechChannel/courses',
     source: 'YouTube – Rob Riker', author: 'Rob Riker',
     level: 'Intermediate', type: 'Video',
@@ -140,7 +140,7 @@ const TUTORIALS_DATA = [
   {
     id: -25, category: 'networking', badge: '🎥 FREE',
     title: 'PowerCert Animated Videos – Visual IT & Networking Courses',
-    description: "Extremely popular animation-based training channel specializing in computer networking, cybersecurity, and hardware fundamentals. Ideal for visual learners studying for CompTIA A+, Network+, or Security+ certifications who prefer clear, animated diagrams over textbook lectures.",
+    description: "Animation-based training channel specializing in networking, security, and hardware. Ideal for CompTIA A+, Network+, and Security+ prep.",
     url: 'https://www.youtube.com/@PowerCertAnimatedVideos',
     source: 'YouTube – PowerCert', author: 'PowerCert Team',
     level: 'Beginner', type: 'Video',
@@ -150,7 +150,7 @@ const TUTORIALS_DATA = [
   {
     id: -26, category: 'networking', badge: '🎥 FREE',
     title: 'CBT Nuggets – Free IT & Networking Tutorials on YouTube',
-    description: "Free introductory IT and networking courses from CBT Nuggets on YouTube. Covers foundational topics in networking (CCNA, Network+), cybersecurity, Linux, virtualization, and career guidance, alongside short, highly-focused 'MicroNuggets' for specific technologies.",
+    description: "Free introductory IT and networking courses on CCNA, Network+, cybersecurity, Linux, and virtualization, featuring focused MicroNuggets.",
     url: 'https://www.youtube.com/@cbtnuggets/courses',
     source: 'YouTube – CBT Nuggets', author: 'CBT Nuggets Instructors',
     level: 'Beginner', type: 'Video',
@@ -160,7 +160,7 @@ const TUTORIALS_DATA = [
   {
     id: -6, category: 'devops', badge: '💳 PAID',
     title: 'TechWorld with Nana – DevOps & Cloud Training',
-    description: "Nana Janashia provides some of the web's best DevOps and Cloud Computing training. Access comprehensive, structured premium bootcamps and certification prep for Docker, Kubernetes, CI/CD, and Terraform.",
+    description: "Comprehensive DevOps and Cloud training by Nana Janashia. Access structured bootcamps for Docker, Kubernetes, CI/CD, and Terraform.",
     url: 'https://www.techworld-with-nana.com/',
     source: 'TechWorld with Nana', author: 'Nana Janashia',
     level: 'Beginner', type: 'Course',
@@ -170,7 +170,7 @@ const TUTORIALS_DATA = [
   {
     id: -7, category: 'networking', badge: '🎥 FREE',
     title: 'NetworkChuck – Free CCNA 200-301 Complete Course',
-    description: "An energetic, highly practical CCNA training course. NetworkChuck covers networking fundamentals, subnetting, routers, switches, IPv6, security, and automation with hands-on labs you can build along in GNS3 or Packet Tracer.",
+    description: "Energetic, practical CCNA course covering networking, subnetting, IPv6, and security with hands-on GNS3 and Packet Tracer labs.",
     url: 'https://www.youtube.com/playlist?list=PLIhvC56v63IJVXjvsaC47JqH1w_L8v1Y4',
     source: 'YouTube – NetworkChuck', author: 'Chuck Keith',
     level: 'Beginner', type: 'Video',
@@ -180,7 +180,7 @@ const TUTORIALS_DATA = [
   {
     id: -8, category: 'networking', badge: '🎥 FREE',
     title: "Jeremy's IT Lab – Free CCNP ENCOR 350-401 Course",
-    description: "Prepare for your CCNP Enterprise certification with the web's most structured free CCNP ENCOR series. Covers enterprise routing, switching, wireless, security, virtualization, and network automation, with free Anki flashcards and downloadable labs.",
+    description: "Free, structured CCNP ENCOR series covering enterprise routing, switching, security, wireless, and automation with labs and flashcards.",
     url: 'https://www.youtube.com/@JeremysITLab/search?query=CCNP+ENCOR',
     source: "YouTube – Jeremy's IT Lab", author: 'Jeremy McDowall',
     level: 'Intermediate', type: 'Video',
@@ -190,7 +190,7 @@ const TUTORIALS_DATA = [
   {
     id: -10, category: 'networking', badge: '🎓 FREE',
     title: 'NetworkAcademy.io – Visual Networking Tutorials',
-    description: "An independent e-learning platform featuring high-quality visual guides, animated diagrams, and interactive illustrations. Offers free study paths and beginner-friendly tutorials for CCNA, CCIE, and Python network automation.",
+    description: "High-quality visual guides, animated diagrams, and interactive tutorials for CCNA, CCIE, and Python network automation.",
     url: 'https://www.networkacademy.io',
     source: 'NetworkAcademy.io', author: 'NetworkAcademy Team',
     level: 'Beginner', type: 'Course',
@@ -200,7 +200,7 @@ const TUTORIALS_DATA = [
   {
     id: -23, category: 'networking', badge: '🎓 FREE',
     title: 'Running Cisco Modeling Labs (CML) on Hyper-V',
-    description: "A complete step-by-step technical guide to running Cisco Modeling Labs (CML) on Windows Hyper-V. Explains VM creation (Gen 2), nested virtualization setup via PowerShell, MAC spoofing, and initial networking setup to run CML labs without VMware.",
+    description: "Step-by-step guide to running Cisco Modeling Labs (CML) on Windows Hyper-V with nested virtualization and initial network setup.",
     url: 'https://www.networkacademy.io/ccna/network-fundamentals/cml-on-hyperv',
     source: 'NetworkAcademy.io', author: 'NetworkAcademy Team',
     level: 'Intermediate', type: 'Article',
@@ -210,7 +210,7 @@ const TUTORIALS_DATA = [
   {
     id: -16, category: 'networking', badge: '💳 PAID',
     title: 'Boson – Cisco & CompTIA Certification Exam Prep',
-    description: "Boson is an industry-leading exam prep platform offering ExSim-Max practice exams and the NetSim network simulator for Cisco (CCNA, CCNP) and CompTIA (Network+, Security+) certifications. Known for realistic exam simulations and detailed answer explanations. Demo versions available; full access via paid subscription.",
+    description: "Industry-leading CCNA, CCNP, and CompTIA practice exams and network simulators with detailed explanations and realistic scenarios.",
     url: 'https://www.boson.com',
     source: 'Boson', author: 'Boson Team',
     level: 'Intermediate', type: 'Interactive',
@@ -220,7 +220,7 @@ const TUTORIALS_DATA = [
   {
     id: -24, category: 'networking', badge: '🎥 FREE',
     title: 'INE – Free IT & Networking Playlists on YouTube',
-    description: "Free video training playlists provided by INE (Internetwork Expert). Includes structured playlists on networking (CCNA/CCIE prep), cybersecurity concepts, cloud computing, and webinar archives — a great starting point for deep-dive certification study.",
+    description: "Free training playlists by INE covering CCNA, CCIE, cloud computing, cybersecurity, and webinar archives for certification prep.",
     url: 'https://www.youtube.com/@INEtraining/playlists',
     source: 'YouTube – INE', author: 'INE (Internetwork Expert)',
     level: 'Intermediate', type: 'Video',
@@ -230,7 +230,7 @@ const TUTORIALS_DATA = [
   {
     id: -12, category: 'networking', badge: '🎥 FREE',
     title: 'freeCodeCamp – Computer Networking Complete Course',
-    description: "A comprehensive foundational course covering how the Internet works, network models (OSI/TCP-IP), IP addressing, subnetting, routing protocols, and network security concepts. Students will practice configuring network topologies and analyzing traffic to build key troubleshooting skills. This in-depth preparation establishes a solid foundation for major industry certifications like the Cisco CCNA.",
+    description: "Comprehensive foundational course covering TCP/IP, routing, subnetting, security, and troubleshooting. Prepares you for the Cisco CCNA.",
     url: 'https://www.youtube.com/watch?v=qiQR5rTSshw',
     source: 'freeCodeCamp', author: 'freeCodeCamp Team',
     level: 'Beginner', type: 'Video',
@@ -240,7 +240,7 @@ const TUTORIALS_DATA = [
   {
     id: -13, category: 'devops', badge: '🎥 FREE',
     title: 'freeCodeCamp – Linux Command Line for Beginners',
-    description: "Go from absolute beginner to a proficient Linux user. Covers terminal navigation, filesystem structures, package managers, user permissions, and basic bash scripting. Learners will gain hands-on experience executing essential shell commands and automating routine system administration tasks. This course builds the core command-line skills required for backend development, devops engineering, and systems administration.",
+    description: "Master Linux command line from scratch. Covers navigation, file systems, permissions, shell scripting, and systems administration.",
     url: 'https://www.youtube.com/watch?v=s02x-5FfH3M',
     source: 'freeCodeCamp', author: 'freeCodeCamp Team',
     level: 'Beginner', type: 'Video',
@@ -250,7 +250,7 @@ const TUTORIALS_DATA = [
   {
     id: -14, category: 'software-dev', badge: '🎓 FREE',
     title: 'The Odin Project – Full-Stack Web Development',
-    description: "An outstanding, project-based web development curriculum. Guides you through setting up a professional local environment, Git/GitHub, HTML/CSS, JavaScript, Node.js, and databases. Students work through real-world, portfolio-worthy projects to solidify their understanding of front-end and back-end architectures. By the end of the course, learners will have the practical skills and confidence needed to build and deploy complex full-stack web applications.",
+    description: "Free, project-based full-stack curriculum covering Git, HTML/CSS, JavaScript, Node.js, and databases with portfolio-ready projects.",
     url: 'https://www.theodinproject.com/',
     source: 'The Odin Project', author: 'Odin Project Contributors',
     level: 'Beginner', type: 'Interactive',
@@ -260,7 +260,7 @@ const TUTORIALS_DATA = [
   {
     id: -15, category: 'security', badge: '🎥 FREE',
     title: 'Simplilearn – Cyber Security Full Courses',
-    description: "A solid introductory course covering cybersecurity core fundamentals, cryptography, firewalls, network monitoring, vulnerability assessment, and threat detection. Learners explore the methodologies behind security policies, incident response, and risk management. This curriculum provides the theoretical baseline and practical insights needed to begin a career in security analysis or network defense.",
+    description: "Learn cybersecurity fundamentals, cryptography, firewalls, threat detection, risk management, and incident response strategies.",
     url: 'https://www.youtube.com/@SimplilearnOfficial/search?query=cyber+security+full+course',
     source: 'Simplilearn', author: 'Simplilearn Team',
     level: 'Beginner', type: 'Video',
@@ -270,7 +270,7 @@ const TUTORIALS_DATA = [
   {
     id: -27, category: 'software-dev', badge: '🎓 FREE',
     title: 'freeCodeCamp – Full Curriculum & Certifications',
-    description: "The gold-standard free coding curriculum — 3,000+ hours of interactive, project-based learning covering JavaScript, Python, React, Node.js, and data visualization. Earn verified, free certifications by building real projects. Perfect for motivated self-learners who want to build a portfolio without spending a cent.",
+    description: "Interactive, project-based curriculum with 3,000+ hours of lessons on JS, React, Node, Python, and databases with free certifications.",
     url: 'https://www.freecodecamp.org/learn',
     source: 'freeCodeCamp', author: 'freeCodeCamp Team',
     level: 'Beginner', type: 'Interactive',
@@ -280,7 +280,7 @@ const TUTORIALS_DATA = [
   {
     id: -28, category: 'software-dev', badge: '🎓 FREE',
     title: 'Scrimba – Learn JavaScript & React Interactively',
-    description: "Scrimba's unique format lets you pause any video tutorial and edit the instructor's code in real time — right in the browser. Their free \"Learn JavaScript\" and \"Learn React\" courses are consistently rated best-in-class for hands-on frontend learning. Stop watching and start building — the Scrimba way.",
+    description: "Pause any video tutorial and edit the instructor's code in real time inside the browser. High-quality interactive frontend learning.",
     url: 'https://scrimba.com/learn/javascript',
     source: 'Scrimba', author: 'Bob Ziroll',
     level: 'Beginner', type: 'Interactive',
@@ -290,7 +290,7 @@ const TUTORIALS_DATA = [
   {
     id: -29, category: 'software-dev', badge: '🎓 FREE',
     title: "web.dev – Google's Official Web Dev Learn Paths",
-    description: "Google's official web development learning hub — written by the Chrome team and kept rigorously up-to-date with modern web standards. Free structured courses on HTML, CSS, JavaScript, Accessibility, Performance, and PWAs. Your go-to reference for understanding not just what to build, but why it matters.",
+    description: "Google's official hub for web development. Free structured courses on modern HTML, CSS, JS, accessibility, performance, and PWAs.",
     url: 'https://web.dev/learn',
     source: 'web.dev', author: 'Google Chrome Team',
     level: 'Beginner', type: 'Article',
@@ -300,7 +300,7 @@ const TUTORIALS_DATA = [
   {
     id: -30, category: 'software-dev', badge: '🎓 FREE',
     title: 'DeepLearning.AI – Free Short Courses by Andrew Ng',
-    description: "Andrew Ng's DeepLearning.AI offers a library of free, focused short courses on the most in-demand AI topics: LLMs, generative AI, RAG, prompt engineering, and AI agents — often built in partnership with OpenAI, Google, and LangChain. Start with any 1–2 hour course and go deeper. The gold standard for practical AI education.",
+    description: "Free, focused short courses on LLMs, GenAI, RAG, prompt engineering, and agents built with partners like OpenAI and Google.",
     url: 'https://www.deeplearning.ai/courses/',
     source: 'DeepLearning.AI', author: 'Andrew Ng',
     level: 'Beginner', type: 'Course',
@@ -311,7 +311,7 @@ const TUTORIALS_DATA = [
   {
     id: -32, category: 'security', badge: '🔑 FREE',
     title: 'TryHackMe – Guided Hands-On Cybersecurity Learning',
-    description: "The #1 platform for hands-on cybersecurity beginners. TryHackMe's guided \"rooms\" walk you through Linux, networking, web hacking, OSINT, and CTF challenges in a fully browser-based environment — no setup required. Build real skills through gamified paths, with hundreds of free rooms and over 4 million learners in the community.",
+    description: "Hands-on cybersecurity platform. Guided browser rooms cover Linux, networking, web hacking, CTF, and Blue Team skills without setup.",
     url: 'https://tryhackme.com/',
     source: 'TryHackMe', author: 'TryHackMe Team',
     level: 'Beginner', type: 'Interactive',
@@ -321,7 +321,7 @@ const TUTORIALS_DATA = [
   {
     id: -33, category: 'security', badge: '🔑 FREE',
     title: 'PortSwigger Web Security Academy',
-    description: "The definitive free resource for web application security — created by the makers of Burp Suite and The Web Application Hacker's Handbook. Covers every major vulnerability class (SQLi, XSS, CSRF, OAuth, API security) with hands-on browser-based labs graded Apprentice → Practitioner → Expert. 100% free. No paywalls. The tool used by real pentesters, every day.",
+    description: "Free web security academy covering major vulnerabilities (SQLi, XSS, CSRF, OAuth, APIs) with graded browser labs from Burp Suite creators.",
     url: 'https://portswigger.net/web-security',
     source: 'PortSwigger', author: 'PortSwigger Team',
     level: 'Intermediate', type: 'Interactive',
@@ -332,7 +332,7 @@ const TUTORIALS_DATA = [
   {
     id: -35, category: 'devops', badge: '🔑 FREE',
     title: 'AWS Skill Builder – Official Free AWS Training',
-    description: "Amazon's official training hub — 600+ free, self-paced digital courses covering every AWS service, certification domain, and cloud role. From Cloud Practitioner to Solutions Architect, learn directly from the source with no paywalls on the core catalog. The essential companion for anyone building AWS cloud skills or preparing for certification.",
+    description: "Official AWS training hub with 600+ free courses. Study cloud roles and certifications from Cloud Practitioner to Solutions Architect.",
     url: 'https://skillbuilder.aws/',
     source: 'AWS', author: 'AWS Training Team',
     level: 'Beginner', type: 'Course',
@@ -342,7 +342,7 @@ const TUTORIALS_DATA = [
   {
     id: -36, category: 'software-dev', badge: '🎓 FREE',
     title: 'SQLBolt – Interactive SQL Lessons',
-    description: "The fastest, friendliest way to start writing SQL — 18 interactive lessons in your browser, no signup required. SQLBolt covers SELECT queries, JOINs, aggregates, subqueries, and basic table management with immediate feedback on every exercise. The perfect starting point for any developer who needs to learn database querying from scratch.",
+    description: "Interactive SQL lessons in the browser with immediate feedback. Covers SELECT queries, JOINs, and aggregates with no signup needed.",
     url: 'https://sqlbolt.com/',
     source: 'SQLBolt', author: 'SQLBolt Team',
     level: 'Beginner', type: 'Interactive',
@@ -360,7 +360,7 @@ const TUTORIALS_DATA = [
   },
   {
     id: 3, category: 'devops', badge: '💳 PAID', title: 'Docker & Kubernetes: The Complete Guide',
-    description: 'Master containerisation from scratch — build Docker images, write compose files, orchestrate with Kubernetes, and deploy to the cloud. You will learn to manage complex container setups, configure networking, and implement scaling strategies in production-like environments. By completing hands-on exercises, you will design robust CI/CD workflows and multi-container deployments.',
+    description: 'Master containerization: build Docker images, write compose files, orchestrate with Kubernetes, configure networks, and deploy.',
     url: 'https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/',
     source: 'Udemy', author: 'Stephen Grider',
     level: 'Intermediate', type: 'Course',
@@ -400,7 +400,7 @@ const TUTORIALS_DATA = [
   },
   {
     id: 9, category: 'devops', badge: '🛠️ FREE TOOL', title: 'Terraform in Practice',
-    description: 'Infrastructure as code with Terraform — provision cloud resources on AWS, GCP, and Azure. Modules, workspaces, remote state, and CI/CD integration. Students will learn to structure configuration files, manage state safely across teams, and automate infrastructure deployments. This course equips you with the skills to orchestrate scalable and reproducible cloud environments.',
+    description: 'Infrastructure as Code: provision cloud resources on AWS, GCP, and Azure with modules, remote state, and CI/CD automation.',
     url: 'https://developer.hashicorp.com/terraform/tutorials',
     source: 'HashiCorp', author: 'HashiCorp Team',
     level: 'Advanced', type: 'Interactive',
@@ -521,7 +521,7 @@ const TUTORIALS_DATA = [
   {
     id: -37, category: 'software-dev', badge: '🎓 FREE',
     title: 'MySQL for Developers',
-    description: 'A comprehensive, free video course on MySQL design and optimization. Learn indexing strategies, schema design, query tuning, and database scaling principles from industry experts to build highly performant applications.',
+    description: 'Free course on MySQL design, indexing strategies, query tuning, and database scaling to build highly performant applications.',
     url: 'https://planetscale.com/courses/mysql-for-developers',
     source: 'PlanetScale', author: 'Aaron Francis',
     level: 'Intermediate', type: 'Course',
@@ -531,7 +531,7 @@ const TUTORIALS_DATA = [
   {
     id: -41, category: 'software-dev', badge: '🎓 FREE',
     title: 'Learn Git Branching',
-    description: 'An interactive, visual simulation game for learning Git commands. Practice branching, merging, rebasing, cherry-picking, and remote repository operations with immediate visual feedback.',
+    description: 'Interactive, visual simulation game for learning Git branching, merging, rebasing, and remote operations with immediate feedback.',
     url: 'https://learngitbranching.js.org/',
     source: 'Learn Git Branching', author: 'Peter Cottle',
     level: 'Beginner', type: 'Interactive',
@@ -541,7 +541,7 @@ const TUTORIALS_DATA = [
   {
     id: -42, category: 'software-dev', badge: '🎓 FREE',
     title: 'Android Basics with Compose',
-    description: 'Build native Android apps from scratch with Google\'s official, self-paced Jetpack Compose course. Learn Kotlin fundamentals, design modern declarative UIs, manage state, and build a collection of portfolio-ready apps.',
+    description: 'Official Jetpack Compose course. Learn Kotlin fundamentals, state management, and build native Android apps with declarative UIs.',
     url: 'https://developer.android.com/courses/android-basics-compose/course',
     source: 'Android Developers', author: 'Google Developer Team',
     level: 'Beginner', type: 'Course',
