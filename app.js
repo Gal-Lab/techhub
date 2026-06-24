@@ -24,16 +24,6 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 21000,
   },
   {
-    id: -103, category: 'networking', badge: '🎥 FREE',
-    title: "Kevin Wallace Training – Cisco CLCOR 350-801 Cert Prep",
-    description: "Expert-led video lessons covering Cisco Collaboration core technologies (CLCOR), CUCM protocols, Webex cloud integrations, and SIP endpoints.",
-    url: 'https://www.youtube.com/@kwallaceccie',
-    source: "YouTube – Kevin Wallace", author: "Kevin Wallace",
-    level: 'Intermediate', type: 'Video',
-    tags: ['clcor', 'cisco', 'collaboration', 'ccnp', 'voip'],
-    date: '2026-06-22', views: 5100,
-  },
-  {
     id: 0, category: 'networking', featured: true, badge: '🎥 FREE',
     title: "Jeremy's IT Lab – Free CCNA 200-301 Complete Course",
     description:
@@ -81,7 +71,7 @@ const TUTORIALS_DATA = [
     id: -18, category: 'networking', badge: '🎥 FREE',
     title: 'Kevin Wallace – Free Cisco Courses on YouTube',
     description: "Dual CCIE Kevin Wallace shares free Cisco CCNA and CCNP certification courses directly on YouTube with clear, structured lessons.",
-    url: 'https://www.youtube.com/@kwallaceccie/courses',
+    url: 'https://www.youtube.com/@kwallaceccie/playlists',
     source: 'YouTube – Kevin Wallace', author: 'Kevin Wallace',
     level: 'Beginner', type: 'Video',
     tags: ['ccna', 'ccnp', 'cisco', 'networking', 'certification', 'ccie'],
