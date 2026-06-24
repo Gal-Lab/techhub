@@ -227,9 +227,9 @@ input, select, textarea { font-family: var(--font); outline: none; }
 
 /* ===== HERO ===== */
 .hero {
-  position: relative; min-height: 100vh;
+  position: relative; min-height: auto;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  overflow: hidden; padding: calc(var(--navbar-h) + 2rem) 2rem 2rem;
+  overflow: hidden; padding: calc(var(--navbar-h) + 5rem) 2rem 3rem;
 }
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
 .hero-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.25; }
@@ -422,7 +422,7 @@ input, select, textarea { font-family: var(--font); outline: none; }
 .cat-count { font-size: 0.78rem; color: var(--text2); font-family: var(--mono); }
 
 /* ===== FEATURED SECTION ===== */
-.featured-section { padding: 6rem 0; background: var(--bg); }
+.featured-section { padding: 4rem 0; background: var(--bg); }
 .featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 @media(max-width:768px) { .featured-grid { grid-template-columns: 1fr; } }
 
@@ -677,7 +677,7 @@ input, select, textarea { font-family: var(--font); outline: none; }
   .nav-links, .nav-actions .btn-primary { display: none; }
   .nav-actions { margin-left: auto; }
   .hamburger { display: flex; }
-  .hero { min-height: 90vh; padding-bottom: 4rem; }
+  .hero { min-height: auto; padding-bottom: 1.5rem; }
   .hero-stats { gap: 1rem; }
   .stat-num { font-size: 1.5rem; }
   .categories-section, .featured-section, .tutorials-section { padding: 4rem 0; }
