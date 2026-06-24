@@ -34,16 +34,6 @@ const TUTORIALS_DATA = [
     date: '2026-06-22', views: 5100,
   },
   {
-    id: -104, category: 'networking', badge: '🎥 FREE',
-    title: "Cisco Collaboration Technical Marketing",
-    description: "Official Cisco channel featuring product demos, integration tutorials, and design guidance for Webex, hybrid calling, and video endpoints.",
-    url: 'https://www.youtube.com/@cisocollabtechmarketing',
-    source: "Cisco Collab Tech Marketing", author: "Cisco Systems",
-    level: 'Advanced', type: 'Video',
-    tags: ['cisco', 'webex', 'collaboration', 'hybrid-calling', 'expressway'],
-    date: '2026-06-22', views: 2800,
-  },
-  {
     id: 0, category: 'networking', featured: true, badge: '🎥 FREE',
     title: "Jeremy's IT Lab – Free CCNA 200-301 Complete Course",
     description:
