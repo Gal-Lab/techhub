@@ -561,7 +561,7 @@ function renderCategories() {
          style="--cat-color: ${cat.color}">
       <span class="cat-emoji" aria-hidden="true">${cat.emoji}</span>
       <span class="cat-name">${cat.name}</span>
-      <span class="cat-count">${counts[cat.id] || 0} tutorials</span>
+      <span class="cat-count">${counts[cat.id] || 0} courses</span>
     </div>
   `).join('');
 
@@ -676,7 +676,7 @@ function renderTutorials(reset = true) {
   const loadMore = $('#load-more-wrapper');
 
   if (countEl) {
-    countEl.textContent = `Showing ${Math.min(slice.length, filtered.length)} of ${filtered.length} tutorial${filtered.length !== 1 ? 's' : ''}`;
+    countEl.textContent = `Showing ${Math.min(slice.length, filtered.length)} of ${filtered.length} course${filtered.length !== 1 ? 's' : ''}`;
   }
 
   if (filtered.length === 0) {
