@@ -54,16 +54,6 @@ const TUTORIALS_DATA = [
     date: '2026-06-22', views: 2800,
   },
   {
-    id: -105, category: 'networking', badge: '🎥 FREE',
-    title: "David Bombal – CCNA 200-301 Full Course",
-    description: "A comprehensive, highly practical, and hands-on CCNA course covering routing, switching, IP connectivity, IP services, security fundamentals, and automation with Packet Tracer labs.",
-    url: 'https://www.youtube.com/playlist?list=PLCDpf1W6pOhpTrxS1nFEWc8gcm8QKPPKC',
-    source: "YouTube – David Bombal", author: "David Bombal",
-    level: 'Beginner', type: 'Video',
-    tags: ['ccna', 'cisco', 'networking', 'packet-tracer', 'certification'],
-    date: '2026-06-22', views: 9800,
-  },
-  {
     id: -106, category: 'networking', badge: '🎓 FREE',
     title: "Practical Networking – Subnetting Mastery",
     description: "The ultimate free video guide to mastering IPv4 subnetting. Learn the math, binary patterns, and shortcuts to solve any subnetting problem in seconds, paired with interactive practice at SubnetIPv4.com.",
