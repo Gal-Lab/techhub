@@ -6,7 +6,7 @@
 
 const CATEGORIES = [
   { id: 'software-dev', name: 'Software Development', emoji: '💻', color: '#7c5cff' },
-  { id: 'devops',  name: 'DevOps & Cloud',    emoji: '☁️', color: '#00e5a0' },
+  { id: 'devops',  name: 'Cloud and IT',    emoji: '☁️', color: '#00e5a0' },
   { id: 'security',name: 'Cybersecurity',     emoji: '🔒', color: '#ff4a4a' },
   { id: 'networking',  name: 'Networking',          emoji: '📡', color: '#38bdf8' },
 ];
