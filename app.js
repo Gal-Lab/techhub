@@ -34,16 +34,6 @@ const TUTORIALS_DATA = [
     date: '2026-06-22', views: 4500,
   },
   {
-    id: -102, category: 'networking', badge: '🎥 FREE',
-    title: "VEYHURDAM Training – Cisco Collaboration & CUCM",
-    description: "Step-by-step technical video tutorials for Cisco collaboration administrators. Learn CUCM administration, partitions and CSS, call routing, SIP trunks, IP phone registration, and real-world troubleshooting scenarios.",
-    url: 'https://www.youtube.com/@VEYHURDAMTraining',
-    source: "YouTube – VEYHURDAM Training", author: "Veyhurdam Dikmen",
-    level: 'Intermediate', type: 'Video',
-    tags: ['cucm', 'cisco', 'collaboration', 'voip', 'networking'],
-    date: '2026-06-22', views: 3200,
-  },
-  {
     id: -103, category: 'networking', badge: '🎥 FREE',
     title: "Kevin Wallace Training – Cisco CLCOR 350-801 Cert Prep",
     description: "Expert-led video lessons covering Cisco Collaboration core technologies (CLCOR). Master collaboration infrastructure, Cisco Unified Communications Manager (CUCM) protocols, Webex cloud integrations, and SIP endpoints.",
