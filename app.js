@@ -24,16 +24,6 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 21000,
   },
   {
-    id: -101, category: 'networking', badge: '💻 FREE',
-    title: "Cisco DevNet Collaboration Sandboxes",
-    description: "Get free, 24/7 access to live Cisco Collaboration sandboxes. Practice configuring Cisco Unified Communications Manager (CUCM), Cisco Unity Connection, Expressway, and Webex integrations in a real, pre-configured enterprise lab environment.",
-    url: 'https://developer.cisco.com/site/collaboration/',
-    source: "Cisco DevNet", author: "Cisco Systems",
-    level: 'Intermediate', type: 'Interactive',
-    tags: ['cisco', 'collaboration', 'cucm', 'sandbox', 'networking', 'voip'],
-    date: '2026-06-22', views: 4500,
-  },
-  {
     id: -103, category: 'networking', badge: '🎥 FREE',
     title: "Kevin Wallace Training – Cisco CLCOR 350-801 Cert Prep",
     description: "Expert-led video lessons covering Cisco Collaboration core technologies (CLCOR). Master collaboration infrastructure, Cisco Unified Communications Manager (CUCM) protocols, Webex cloud integrations, and SIP endpoints.",
