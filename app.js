@@ -373,14 +373,6 @@ const TUTORIALS_DATA = [
     tags: ['security', 'owasp', 'xss', 'sql-injection'], date: '2024-02-10', views: 4500,
   },
   {
-    id: 12, category: 'software-dev', badge: '🎥 FREE', title: 'Next.js 14 App Router Deep Dive',
-    description: 'Master the new App Router in Next.js 14 — server components, streaming, loading states, parallel routes, caching strategies, and full-stack data fetching patterns.',
-    url: 'https://www.youtube.com/watch?v=vOP6G41J_p4',
-    source: 'Lama Dev', author: 'Safak',
-    level: 'Advanced', type: 'Video',
-    tags: ['nextjs', 'react', 'app-router', 'server-components'], date: '2024-04-20', views: 5600,
-  },
-  {
     id: 13, category: 'software-dev', badge: '🎓 FREE', title: 'PostgreSQL Tutorial — Full Beginner Course',
     description: 'Learn PostgreSQL from scratch — SQL syntax, joins, indexes, transactions, constraints, views, and stored procedures with real-world exercises.',
     url: 'https://www.postgresqltutorial.com/',
