@@ -347,16 +347,7 @@ const TUTORIALS_DATA = [
     tags: ['ai', 'machine-learning', 'llm', 'generative-ai', 'prompt-engineering', 'agents', 'andrew-ng', 'python'],
     date: '2026-06-21', views: 22000,
   },
-  {
-    id: -31, category: 'software-dev', badge: '🎓 FREE',
-    title: 'Kaggle Learn – Free ML & Data Science Micro-Courses',
-    description: "Kaggle's free micro-courses take you from Python basics to ML, deep learning, NLP, and computer vision — all in an interactive notebook environment, no setup required. With over 32 million community members and free certificates, it's the best practice ground for aspiring data scientists and ML engineers.",
-    url: 'https://www.kaggle.com/learn',
-    source: 'Kaggle', author: 'Kaggle Team',
-    level: 'Beginner', type: 'Interactive',
-    tags: ['machine-learning', 'python', 'pandas', 'deep-learning', 'nlp', 'computer-vision', 'data-science', 'competitions'],
-    date: '2026-06-21', views: 16000,
-  },
+
   {
     id: -32, category: 'security', badge: '🔑 FREE',
     title: 'TryHackMe – Guided Hands-On Cybersecurity Learning',
@@ -377,16 +368,7 @@ const TUTORIALS_DATA = [
     tags: ['web-security', 'sql-injection', 'xss', 'csrf', 'oauth', 'api-security', 'burp-suite', 'pentesting', 'owasp'],
     date: '2026-06-21', views: 28000,
   },
-  {
-    id: -34, category: 'devops', badge: '🛠️ FREE TOOL',
-    title: 'Killercoda – Free Browser-Based DevOps Labs',
-    description: "Killercoda gives you a real Linux or Kubernetes environment — running in your browser, in seconds, for free. Practice Docker, Kubernetes, Terraform, Helm, and more without installing anything. Widely used for CKA/CKAD certification prep, with guided scenarios for every skill level and an open playground for free experimentation.",
-    url: 'https://killercoda.com/',
-    source: 'Killercoda', author: 'Killercoda Team',
-    level: 'Intermediate', type: 'Interactive',
-    tags: ['kubernetes', 'docker', 'linux', 'terraform', 'helm', 'cka', 'ckad', 'devops', 'browser-based', 'labs'],
-    date: '2026-06-21', views: 19000,
-  },
+
   {
     id: -35, category: 'devops', badge: '🔑 FREE',
     title: 'AWS Skill Builder – Official Free AWS Training',
