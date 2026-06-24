@@ -148,16 +148,6 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 9800,
   },
   {
-    id: -7, category: 'networking', badge: '🎥 FREE',
-    title: 'NetworkChuck – Free CCNA 200-301 Complete Course',
-    description: "Energetic, practical CCNA course covering networking, subnetting, IPv6, and security with hands-on GNS3 and Packet Tracer labs.",
-    url: 'https://www.youtube.com/playlist?list=PLIhvC56v63IJVXjvsaC47JqH1w_L8v1Y4',
-    source: 'YouTube – NetworkChuck', author: 'Chuck Keith',
-    level: 'Beginner', type: 'Video',
-    tags: ['ccna', 'cisco', 'networking', 'subnetting', 'certification'],
-    date: '2026-06-20', views: 15400,
-  },
-  {
     id: -10, category: 'networking', badge: '🎓 FREE',
     title: 'NetworkAcademy.io – Visual Networking Tutorials',
     description: "High-quality visual guides, animated diagrams, and interactive tutorials for CCNA, CCIE, and Python network automation.",
