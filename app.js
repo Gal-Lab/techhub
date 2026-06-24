@@ -373,14 +373,6 @@ const TUTORIALS_DATA = [
     tags: ['postgresql', 'sql', 'database'], date: '2024-01-05', views: 3800,
   },
   {
-    id: 14, category: 'software-dev', badge: '🎓 FREE', title: 'Hugging Face NLP Course',
-    description: 'Learn NLP with Transformers from the creators of Hugging Face — tokenizers, fine-tuning BERT & GPT, datasets, and pushing models to the Hub.',
-    url: 'https://huggingface.co/learn/nlp-course',
-    source: 'Hugging Face', author: 'Hugging Face Team',
-    level: 'Intermediate', type: 'Interactive',
-    tags: ['nlp', 'transformers', 'python', 'bert'], date: '2024-02-20', views: 6100,
-  },
-  {
     id: 16, category: 'software-dev', badge: '🎓 FREE', title: 'FastAPI: Modern Python API Development',
     description: 'Build production-grade APIs with FastAPI — async endpoints, Pydantic models, automatic OpenAPI docs, OAuth2, and PostgreSQL with SQLAlchemy.',
     url: 'https://fastapi.tiangolo.com/tutorial/',
