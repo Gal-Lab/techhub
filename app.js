@@ -101,7 +101,7 @@ const TUTORIALS_DATA = [
     id: -21, category: 'networking', badge: '🎓 FREE',
     title: 'Cisco Networking Academy – Free IT & Networking Courses',
     description: "Cisco's official platform for free self-paced courses. Learn networking, cybersecurity, Python, Linux, and IoT with free digital badges.",
-    url: 'https://www.netacad.com/',
+    url: 'https://www.netacad.com/catalogs/learn',
     source: 'Cisco NetAcad', author: 'Cisco Systems',
     level: 'Beginner', type: 'Course',
     tags: ['ccna', 'networking', 'cybersecurity', 'python', 'linux', 'cisco', 'iot'],
