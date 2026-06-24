@@ -14,7 +14,7 @@ const CATEGORIES = [
 // ── TUTORIALS DATA ───────────────────────────────────────────────────────────
 const TUTORIALS_DATA = [
   {
-    id: -17, category: 'software-dev', freeTrial: true, trialLabel: '10-Day Free Trial',
+    id: -17, category: 'networking', freeTrial: true, trialLabel: '10-Day Free Trial',
     title: "O'Reilly Learning – Books, Videos & Live Training",
     description: "Access 60,000+ tech books, video courses, live training, and interactive labs with a free 10-day trial.",
     url: 'https://www.oreilly.com/start-trial/?type=individual',
