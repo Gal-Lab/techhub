@@ -521,6 +521,7 @@ function applyFilters() {
   const q = state.search.toLowerCase().trim();
   const qClean = q.startsWith('#') ? q.substring(1) : q;
   let list = TUTORIALS_DATA.filter(t => {
+    if (t.id === -17 || t.id === -1) return false;
     const matchSearch = !q || [t.title, t.description, t.source, t.author].some(s => s.toLowerCase().includes(q)) || t.tags.some(tag => tag.toLowerCase().includes(qClean));
     const matchCat = state.category === 'all' || t.category === state.category;
     const matchLevel = state.level === 'all' || t.level === state.level;
@@ -548,7 +549,11 @@ function renderCategories() {
   const grid = $('#category-grid');
   if (!grid) return;
   const counts = {};
-  TUTORIALS_DATA.forEach(t => { counts[t.category] = (counts[t.category] || 0) + 1; });
+  TUTORIALS_DATA.forEach(t => {
+    if (t.id !== -17 && t.id !== -1) {
+      counts[t.category] = (counts[t.category] || 0) + 1;
+    }
+  });
 
   const sortedCategories = [...CATEGORIES].sort((a, b) => {
     const countA = counts[a.id] || 0;
@@ -767,9 +772,9 @@ function updateStatsTargets() {
   const sourcesEl = $('#stat-sources');
   const heroBadge = $('#hero-badge-count');
 
-  const totalTutorials = TUTORIALS_DATA.length;
+  const totalTutorials = TUTORIALS_DATA.filter(t => t.id !== -17 && t.id !== -1).length;
   const totalCategories = CATEGORIES.length;
-  const totalSources = new Set(TUTORIALS_DATA.map(t => t.source)).size;
+  const totalSources = new Set(TUTORIALS_DATA.filter(t => t.id !== -17 && t.id !== -1).map(t => t.source)).size;
 
   if (tutorialsEl) {
     tutorialsEl.dataset.target = totalTutorials;
