@@ -6,19 +6,15 @@
 
 const CATEGORIES = [
   { id: 'software-dev', name: 'Software Development', emoji: '💻', color: '#7c5cff' },
-  { id: 'aiml',    name: 'AI / ML',           emoji: '🤖', color: '#00d4ff' },
   { id: 'devops',  name: 'DevOps & Cloud',    emoji: '☁️', color: '#00e5a0' },
-  { id: 'data',    name: 'Data Engineering',  emoji: '📊', color: '#a888ff' },
   { id: 'security',name: 'Cybersecurity',     emoji: '🔒', color: '#ff6b9d' },
-  { id: 'tools',   name: 'Dev Tools',         emoji: '🛠️', color: '#00e5a0' },
-  { id: 'databases',   name: 'Databases',         emoji: '🗄️', color: '#ffaa00' },
   { id: 'networking',  name: 'Networking',          emoji: '🌐🔗', color: '#38bdf8' },
 ];
 
 // ── TUTORIALS DATA ───────────────────────────────────────────────────────────
 const TUTORIALS_DATA = [
   {
-    id: -17, category: 'tools', freeTrial: true, trialLabel: '10-Day Free Trial',
+    id: -17, category: 'software-dev', freeTrial: true, trialLabel: '10-Day Free Trial',
     title: "O'Reilly Learning – Books, Videos & Live Training",
     description: "One of the world's most comprehensive tech learning platforms. Access 60,000+ books, video courses, live online training, and interactive labs covering software development, networking, cybersecurity, data science, AI, cloud, and more. Start a free 10-day individual trial — no commitment.",
     url: 'https://www.oreilly.com/start-trial/?type=individual',
@@ -362,7 +358,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 15000,
   },
   {
-    id: -30, category: 'aiml', badge: '🎓 FREE',
+    id: -30, category: 'software-dev', badge: '🎓 FREE',
     title: 'DeepLearning.AI – Free Short Courses by Andrew Ng',
     description: "Andrew Ng's DeepLearning.AI offers a library of free, focused short courses on the most in-demand AI topics: LLMs, generative AI, RAG, prompt engineering, and AI agents — often built in partnership with OpenAI, Google, and LangChain. Start with any 1–2 hour course and go deeper. The gold standard for practical AI education.",
     url: 'https://www.deeplearning.ai/courses/',
@@ -372,7 +368,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 22000,
   },
   {
-    id: -31, category: 'aiml', badge: '🎓 FREE',
+    id: -31, category: 'software-dev', badge: '🎓 FREE',
     title: 'Kaggle Learn – Free ML & Data Science Micro-Courses',
     description: "Kaggle's free micro-courses take you from Python basics to ML, deep learning, NLP, and computer vision — all in an interactive notebook environment, no setup required. With over 32 million community members and free certificates, it's the best practice ground for aspiring data scientists and ML engineers.",
     url: 'https://www.kaggle.com/learn',
@@ -422,7 +418,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 20000,
   },
   {
-    id: -36, category: 'databases', badge: '🎓 FREE',
+    id: -36, category: 'software-dev', badge: '🎓 FREE',
     title: 'SQLBolt – Interactive SQL Lessons',
     description: "The fastest, friendliest way to start writing SQL — 18 interactive lessons in your browser, no signup required. SQLBolt covers SELECT queries, JOINs, aggregates, subqueries, and basic table management with immediate feedback on every exercise. The perfect starting point for any developer who needs to learn database querying from scratch.",
     url: 'https://sqlbolt.com/',
@@ -433,7 +429,7 @@ const TUTORIALS_DATA = [
   },
 
   {
-    id: 2, category: 'aiml', badge: '🎓 FREE', title: 'Practical Deep Learning for Coders',
+    id: 2, category: 'software-dev', badge: '🎓 FREE', title: 'Practical Deep Learning for Coders',
     description: "Fast.ai's legendary course covering deep learning with PyTorch — image classification, NLP, tabular data, and deployment. A must-have for any ML practitioner.",
     url: 'https://course.fast.ai/',
     source: 'fast.ai', author: 'Jeremy Howard', featured: true,
@@ -489,7 +485,7 @@ const TUTORIALS_DATA = [
     tags: ['terraform', 'iac', 'aws', 'cloud'], date: '2024-03-25', views: 3100,
   },
   {
-    id: 10, category: 'data', badge: '🎓 FREE', title: 'Apache Kafka for Beginners',
+    id: 10, category: 'software-dev', badge: '🎓 FREE', title: 'Apache Kafka for Beginners',
     description: 'Understand distributed event streaming — Kafka topics, partitions, consumers, producers, and connecting it all to real-time data pipelines.',
     url: 'https://www.conduktor.io/kafka/what-is-apache-kafka/',
     source: 'Conduktor', author: 'Conduktor Team',
@@ -513,7 +509,7 @@ const TUTORIALS_DATA = [
     tags: ['nextjs', 'react', 'app-router', 'server-components'], date: '2024-04-20', views: 5600,
   },
   {
-    id: 13, category: 'databases', badge: '🎓 FREE', title: 'PostgreSQL Tutorial — Full Beginner Course',
+    id: 13, category: 'software-dev', badge: '🎓 FREE', title: 'PostgreSQL Tutorial — Full Beginner Course',
     description: 'Learn PostgreSQL from scratch — SQL syntax, joins, indexes, transactions, constraints, views, and stored procedures with real-world exercises.',
     url: 'https://www.postgresqltutorial.com/',
     source: 'PostgreSQL Tutorial', author: 'PostgreSQL Tutorial Team',
@@ -521,7 +517,7 @@ const TUTORIALS_DATA = [
     tags: ['postgresql', 'sql', 'database'], date: '2024-01-05', views: 3800,
   },
   {
-    id: 14, category: 'aiml', badge: '🎓 FREE', title: 'Hugging Face NLP Course',
+    id: 14, category: 'software-dev', badge: '🎓 FREE', title: 'Hugging Face NLP Course',
     description: 'Learn NLP with Transformers from the creators of Hugging Face — tokenizers, fine-tuning BERT & GPT, datasets, and pushing models to the Hub.',
     url: 'https://huggingface.co/learn/nlp-course',
     source: 'Hugging Face', author: 'Hugging Face Team',
@@ -537,7 +533,7 @@ const TUTORIALS_DATA = [
     tags: ['fastapi', 'python', 'api', 'async'], date: '2024-04-08', views: 4200,
   },
   {
-    id: 17, category: 'tools', badge: '🎓 FREE', title: 'Git & GitHub Masterclass',
+    id: 17, category: 'software-dev', badge: '🎓 FREE', title: 'Git & GitHub Masterclass',
     description: 'Become a Git power user — branching strategies, rebasing, cherry-picking, GitHub Actions for CI/CD, pull requests, and monorepo workflows.',
     url: 'https://www.atlassian.com/git/tutorials',
     source: 'Atlassian', author: 'Atlassian Team',
@@ -553,7 +549,7 @@ const TUTORIALS_DATA = [
     tags: ['react-native', 'javascript', 'mobile'], date: '2024-03-30', views: 3400,
   },
   {
-    id: 20, category: 'data', badge: '🎓 FREE', title: 'dbt (data build tool) Crash Course',
+    id: 20, category: 'software-dev', badge: '🎓 FREE', title: 'dbt (data build tool) Crash Course',
     description: 'Transform your data warehouse with dbt — models, tests, documentation, incremental materializations, and deploying analytics engineering pipelines.',
     url: 'https://courses.getdbt.com/courses/fundamentals',
     source: 'dbt Labs', author: 'dbt Labs Team',
@@ -577,7 +573,7 @@ const TUTORIALS_DATA = [
     tags: ['github-actions', 'ci-cd', 'devops'], date: '2024-04-22', views: 3600,
   },
   {
-    id: 23, category: 'databases', badge: '🔑 FREE', title: 'Redis: The Complete Developer Guide',
+    id: 23, category: 'software-dev', badge: '🔑 FREE', title: 'Redis: The Complete Developer Guide',
     description: 'Master Redis data structures — strings, hashes, lists, sorted sets, streams. Caching patterns, pub/sub, distributed locks, and Redis Cluster.',
     url: 'https://redis.io/learn/',
     source: 'Redis University', author: 'Redis Team',
@@ -593,7 +589,7 @@ const TUTORIALS_DATA = [
     tags: ['css', 'grid', 'flexbox', 'responsive'], date: '2024-04-18', views: 4100,
   },
   {
-    id: 25, category: 'tools', badge: '🎥 FREE', title: 'Neovim from Scratch',
+    id: 25, category: 'software-dev', badge: '🎥 FREE', title: 'Neovim from Scratch',
     description: 'Transform Neovim into a full-featured IDE — plugin ecosystem with lazy.nvim, LSP configuration, Treesitter, telescope, and custom Lua configs.',
     url: 'https://www.youtube.com/watch?v=m8C0Cq9Uv9o',
     source: 'TJ DeVries', author: 'TJ DeVries',
@@ -601,7 +597,7 @@ const TUTORIALS_DATA = [
     tags: ['neovim', 'vim', 'editor', 'lua'], date: '2024-02-25', views: 2300,
   },
   {
-    id: -37, category: 'databases', badge: '🎓 FREE',
+    id: -37, category: 'software-dev', badge: '🎓 FREE',
     title: 'MySQL for Developers',
     description: 'A comprehensive, free video course on MySQL design and optimization. Learn indexing strategies, schema design, query tuning, and database scaling principles from industry experts to build highly performant applications.',
     url: 'https://planetscale.com/courses/mysql-for-developers',
@@ -611,7 +607,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 15000,
   },
   {
-    id: -38, category: 'databases', badge: '🔑 FREE',
+    id: -38, category: 'software-dev', badge: '🔑 FREE',
     title: 'MongoDB University',
     description: 'The official learning portal for MongoDB. Learn document database principles, CRUD operations, aggregation pipelines, indexing, and schema design through self-paced courses and labs.',
     url: 'https://learn.mongodb.com/',
@@ -621,7 +617,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 12000,
   },
   {
-    id: -39, category: 'data', badge: '🎓 FREE',
+    id: -39, category: 'software-dev', badge: '🎓 FREE',
     title: 'Data Engineering Zoomcamp',
     description: 'A comprehensive, free, hands-on bootcamp for modern data engineering. Learn Docker, Terraform, PostgreSQL, Airflow, Spark, Kafka, and BigQuery by building end-to-end data pipelines.',
     url: 'https://github.com/DataTalksClub/data-engineering-zoomcamp',
@@ -631,7 +627,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 18000,
   },
   {
-    id: -40, category: 'tools', badge: '🎓 FREE',
+    id: -40, category: 'software-dev', badge: '🎓 FREE',
     title: 'The Missing Semester of Your CS Education',
     description: "MIT's legendary class on the practical tools of software engineering. Master the command-line, shell scripting, Vim, Git, SSH, security, and build systems to boost your daily developer productivity.",
     url: 'https://missing.csail.mit.edu/',
@@ -641,7 +637,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 22000,
   },
   {
-    id: -41, category: 'tools', badge: '🎓 FREE',
+    id: -41, category: 'software-dev', badge: '🎓 FREE',
     title: 'Learn Git Branching',
     description: 'An interactive, visual simulation game for learning Git commands. Practice branching, merging, rebasing, cherry-picking, and remote repository operations with immediate visual feedback.',
     url: 'https://learngitbranching.js.org/',
@@ -671,7 +667,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 26000,
   },
   {
-    id: -44, category: 'tools', badge: '🛠️ FREE TOOL',
+    id: -44, category: 'software-dev', badge: '🛠️ FREE TOOL',
     title: 'Rustlings',
     description: 'Master Rust by fixing small, broken exercises that guide you through syntax, types, borrow checker constraints, and common compiler errors. Perfect for hands-on learners looking to transition to systems programming.',
     url: 'https://github.com/rust-lang/rustlings',
