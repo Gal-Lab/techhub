@@ -111,7 +111,7 @@ const TUTORIALS_DATA = [
     id: -25, category: 'networking', badge: '🎥 FREE',
     title: 'PowerCert Animated Videos – Visual IT & Networking Courses',
     description: "Animation-based training channel specializing in networking, security, and hardware. Ideal for CompTIA A+, Network+, and Security+ prep.",
-    url: 'https://www.youtube.com/@PowerCertAnimatedVideos',
+    url: 'https://www.youtube.com/@PowerCertAnimatedVideos/playlists',
     source: 'YouTube – PowerCert', author: 'PowerCert Team',
     level: 'Beginner', type: 'Video',
     tags: ['networking', 'comptia', 'security', 'cybersecurity', 'a-plus', 'network-plus'],
