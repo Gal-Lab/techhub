@@ -111,7 +111,7 @@ const TUTORIALS_DATA = [
     id: -4, category: 'security', badge: '🎓 FREE',
     title: 'Fortinet Training Institute – Free Cybersecurity Courses',
     description: "Fortinet's official training academy offers free, self-paced courses for industry certifications like Fortinet Certified Associate (FCA) and Fortinet Certified Professional (FCP). Study network security, cloud security, firewalls, and threat detection directly from the global leader.",
-    url: 'https://training.fortinet.com',
+    url: 'https://www.fortinet.com/training/cybersecurity-professionals',
     source: 'Fortinet', author: 'Fortinet Training Team',
     level: 'Beginner', type: 'Course',
     tags: ['cybersecurity', 'firewalls', 'fortinet', 'network-security', 'certification'],
