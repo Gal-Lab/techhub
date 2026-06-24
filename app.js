@@ -300,14 +300,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 17000,
   },
 
-  {
-    id: 2, category: 'software-dev', badge: '🎓 FREE', title: 'Practical Deep Learning for Coders',
-    description: "Fast.ai's legendary course covering deep learning with PyTorch — image classification, NLP, tabular data, and deployment. A must-have for any ML practitioner.",
-    url: 'https://course.fast.ai/',
-    source: 'fast.ai', author: 'Jeremy Howard', featured: true,
-    level: 'Intermediate', type: 'Course',
-    tags: ['pytorch', 'neural-networks', 'python'], date: '2024-01-20', views: 7800,
-  },
+
 
   {
     id: 4, category: 'software-dev', badge: '▶️ FREE', title: 'TypeScript Full Course for Beginners',
