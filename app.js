@@ -389,14 +389,6 @@ const TUTORIALS_DATA = [
     tags: ['react-native', 'javascript', 'mobile'], date: '2024-03-30', views: 3400,
   },
   {
-    id: 20, category: 'software-dev', badge: '🎓 FREE', title: 'dbt (data build tool) Crash Course',
-    description: 'Transform your data warehouse with dbt — models, tests, documentation, incremental materializations, and deploying analytics engineering pipelines.',
-    url: 'https://courses.getdbt.com/courses/fundamentals',
-    source: 'dbt Labs', author: 'dbt Labs Team',
-    level: 'Intermediate', type: 'Course',
-    tags: ['dbt', 'sql', 'analytics', 'data-engineering'], date: '2024-04-15', views: 2100,
-  },
-  {
     id: 21, category: 'security', badge: '▶️ FREE', title: 'Ethical Hacking Full Course – Network Penetration Testing',
     description: 'Learn penetration testing legally — recon, scanning, exploitation with Metasploit, web hacking, privilege escalation, and writing professional reports.',
     url: 'https://www.youtube.com/watch?v=3Kq1MIfTWCE',
