@@ -588,26 +588,6 @@ const TUTORIALS_DATA = [
     tags: ['android', 'jetpack-compose', 'kotlin', 'mobile-dev', 'google'],
     date: '2026-06-21', views: 24000,
   },
-  {
-    id: -45, category: 'software-dev', badge: '🎓 FREE',
-    title: 'Gophercises',
-    description: 'Bridge the gap between knowing Go syntax and writing real applications. Build 20 diverse mini-projects, including quiz games, URL shorteners, and CLI tools, accompanied by step-by-step video walkthroughs.',
-    url: 'https://gophercises.com',
-    source: 'Calhoun.io', author: 'Jon Calhoun',
-    level: 'Intermediate', type: 'Interactive',
-    tags: ['go', 'golang', 'backend-development', 'project-based', 'gopher'],
-    date: '2026-06-21', views: 18000,
-  },
-  {
-    id: -46, category: 'software-dev', badge: '🎓 FREE',
-    title: 'Astro Build a Blog Tutorial',
-    description: 'Learn to build blazing fast, content-driven websites with the official Astro blog tutorial. Set up components, configure layouts, import Markdown, and master modern performance-focused web development from scratch.',
-    url: 'https://docs.astro.build/en/tutorial/0-introduction/',
-    source: 'Astro Docs', author: 'Astro Contributors',
-    level: 'Beginner', type: 'Course',
-    tags: ['astro', 'frontend', 'static-site-generator', 'islands-architecture', 'web-performance'],
-    date: '2026-06-21', views: 15000,
-  },
 ];
 // ── APP STATE ─────────────────────────────────────────────────────────────────
 const PAGE_SIZE = 9;
