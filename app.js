@@ -380,7 +380,7 @@ function getSuggestions(query) {
         suggestions.push({
           type: 'category',
           term: term,
-          html: `<span class="search-icon">${cat.emoji || '🌐'}</span> <span>${cat.name}</span>`
+          html: `<span>${cat.name}</span>`
         });
       }
     }
@@ -397,7 +397,7 @@ function getSuggestions(query) {
         suggestions.push({
           type: 'tag',
           term: term,
-          html: `<span class="search-icon">🏷️</span> <span>${tag}</span>`
+          html: `<span>${tag}</span>`
         });
       }
     }
@@ -412,7 +412,7 @@ function getSuggestions(query) {
         suggestions.push({
           type: 'title',
           term: term,
-          html: `<span class="search-icon">📝</span> <span>${t.title}</span>`
+          html: `<span>${t.title}</span>`
         });
       }
     }
