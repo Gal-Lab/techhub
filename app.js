@@ -111,7 +111,7 @@ const TUTORIALS_DATA = [
     id: -22, category: 'networking', badge: '🎥 FREE',
     title: "Rob Riker's Tech Channel – Cisco CCNA, CCNP & CCIE Courses",
     description: "In-depth Cisco networking training covering CCNA, CCNP, and CCIE with free video lessons, practical EVE-NG labs, and workbook solutions.",
-    url: 'https://www.youtube.com/@RobRikerTechChannel/courses',
+    url: 'https://www.youtube.com/@RobRikerTechChannel/playlists',
     source: 'YouTube – Rob Riker', author: 'Rob Riker',
     level: 'Intermediate', type: 'Video',
     tags: ['ccna', 'ccnp', 'ccie', 'encor', 'enarsi', 'cisco', 'networking', 'eve-ng'],
