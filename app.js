@@ -177,26 +177,7 @@ const TUTORIALS_DATA = [
     tags: ['ccna', 'ccnp', 'ccie', 'cybersecurity', 'cloud', 'networking', 'certification'],
     date: '2026-06-20', views: 6100,
   },
-  {
-    id: -12, category: 'networking', badge: '▶️ FREE',
-    title: 'freeCodeCamp – Computer Networking Complete Course',
-    description: "Comprehensive foundational course covering TCP/IP, routing, subnetting, security, and troubleshooting. Prepares you for the Cisco CCNA.",
-    url: 'https://www.youtube.com/watch?v=qiQR5rTSshw',
-    source: 'freeCodeCamp', author: 'freeCodeCamp Team',
-    level: 'Beginner', type: 'Video',
-    tags: ['networking', 'ccna', 'dns', 'ip-addressing', 'subnetting'],
-    date: '2026-06-20', views: 18200,
-  },
-  {
-    id: -13, category: 'devops', badge: '▶️ FREE',
-    title: 'freeCodeCamp – Linux Command Line for Beginners',
-    description: "Master Linux command line from scratch. Covers navigation, file systems, permissions, shell scripting, and systems administration.",
-    url: 'https://www.youtube.com/watch?v=s02x-5FfH3M',
-    source: 'freeCodeCamp', author: 'freeCodeCamp Team',
-    level: 'Beginner', type: 'Video',
-    tags: ['linux', 'command-line', 'bash', 'devops', 'terminal'],
-    date: '2026-06-20', views: 14500,
-  },
+
   {
     id: -14, category: 'software-dev', badge: '🎓 FREE',
     title: 'The Odin Project – Full-Stack Web Development',
@@ -217,16 +198,7 @@ const TUTORIALS_DATA = [
     tags: ['security', 'cybersecurity', 'cryptography', 'firewalls', 'threats'],
     date: '2026-06-20', views: 9200,
   },
-  {
-    id: -27, category: 'software-dev', badge: '🎓 FREE',
-    title: 'freeCodeCamp – Full Curriculum & Certifications',
-    description: "Interactive, project-based curriculum with 3,000+ hours of lessons on JS, React, Node, Python, and databases with free certifications.",
-    url: 'https://www.freecodecamp.org/learn',
-    source: 'freeCodeCamp', author: 'freeCodeCamp Team',
-    level: 'Beginner', type: 'Interactive',
-    tags: ['javascript', 'html-css', 'python', 'react', 'node', 'full-stack', 'certifications', 'project-based'],
-    date: '2026-06-21', views: 25000,
-  },
+
   {
     id: -28, category: 'software-dev', badge: '🎓 FREE',
     title: 'Scrimba – Learn JavaScript & React Interactively',
@@ -302,30 +274,7 @@ const TUTORIALS_DATA = [
 
 
 
-  {
-    id: 4, category: 'software-dev', badge: '▶️ FREE', title: 'TypeScript Full Course for Beginners',
-    description: 'Zero to hero with TypeScript — types, interfaces, generics, decorators, and integrating with React. 8 hours of hands-on learning.',
-    url: 'https://www.youtube.com/watch?v=fU90yG_1K-c',
-    source: 'freeCodeCamp', author: 'Dave Gray',
-    level: 'Beginner', type: 'Video',
-    tags: ['typescript', 'javascript', 'types'], date: '2024-04-12', views: 3300,
-  },
-  {
-    id: 6, category: 'aiml', badge: '▶️ FREE', title: 'LangChain Crash Course: Build LLM Apps',
-    description: 'Learn to chain language models, use agents and tools, build RAG pipelines, and deploy conversational AI apps with Python and LangChain in under 2 hours.',
-    url: 'https://www.youtube.com/watch?v=LbT1yp6quS8',
-    source: 'Patrick Loeber', author: 'Patrick Loeber',
-    level: 'Intermediate', type: 'Video',
-    tags: ['langchain', 'llm', 'python', 'rag'], date: '2024-03-18', views: 4800,
-  },
-  {
-    id: 7, category: 'software-dev', badge: '🎓 FREE', title: 'Building REST APIs with Node, Express & MongoDB',
-    description: 'A practical guide to designing and building production-ready REST APIs using Node.js, Express, Mongoose, and MongoDB Atlas.',
-    url: 'https://www.freecodecamp.org/news/build-a-restful-api-using-node-express-and-mongodb/',
-    source: 'freeCodeCamp', author: 'Nishant Kumar',
-    level: 'Beginner', type: 'Article',
-    tags: ['node', 'express', 'mongodb', 'rest', 'api'], date: '2024-02-28', views: 2900,
-  },
+
 
 
   {
@@ -337,20 +286,12 @@ const TUTORIALS_DATA = [
     tags: ['react-native', 'javascript', 'mobile'], date: '2024-03-30', views: 3400,
   },
   {
-    id: 21, category: 'security', badge: '▶️ FREE', title: 'Ethical Hacking Full Course – Network Penetration Testing',
-    description: 'Learn penetration testing legally — recon, scanning, exploitation with Metasploit, web hacking, privilege escalation, and writing professional reports.',
-    url: 'https://www.youtube.com/watch?v=3Kq1MIfTWCE',
-    source: 'freeCodeCamp', author: 'Heath Adams (The Cyber Mentor)',
-    level: 'Advanced', type: 'Video',
-    tags: ['ethical-hacking', 'pentesting', 'security'], date: '2024-01-08', views: 4700,
-  },
-  {
-    id: 23, category: 'software-dev', badge: '🔑 FREE', title: 'Redis: The Complete Developer Guide',
-    description: 'Master Redis data structures — strings, hashes, lists, sorted sets, streams. Caching patterns, pub/sub, distributed locks, and Redis Cluster.',
-    url: 'https://redis.io/learn/',
-    source: 'Redis University', author: 'Redis Team',
-    level: 'Intermediate', type: 'Course',
-    tags: ['redis', 'caching', 'nosql'], date: '2024-03-02', views: 2800,
+    id: 100, category: 'software-dev', badge: '🎓 FREE', title: 'freeCodeCamp – YouTube Playlists',
+    description: 'Access thousands of free, comprehensive video courses and playlists covering software development, DevOps, cybersecurity, networking, and databases.',
+    url: 'https://www.youtube.com/@freecodecamp/playlists',
+    source: 'freeCodeCamp', author: 'freeCodeCamp Team',
+    level: 'Beginner', type: 'Course',
+    tags: ['programming', 'networking', 'security', 'devops', 'video-courses'], date: '2026-06-24', views: 9800,
   },
 
   {
@@ -698,44 +639,7 @@ function renderFeatured() {
       </div>
     </div>
   `;
-
-  // Card 2: Quick Stats (span 3, row span 1)
-  const totalTutorials = TUTORIALS_DATA.length;
-  const totalCategories = CATEGORIES.length;
-  const totalSources = new Set(TUTORIALS_DATA.map(t => t.source)).size;
-
-  const statsHtml = `
-    <div class="bento-card quick-stats animate-in" style="--i:1; display: flex; flex-direction: row; align-items: center; justify-content: space-around; gap: 2rem; padding: 1.5rem 2rem;">
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <span aria-hidden="true" style="font-size: 2rem;">🌐</span>
-        <div>
-          <span style="font-family: var(--mono); font-size: 1.75rem; font-weight: 800; color: var(--accent); display: block; line-height: 1.1;" class="bento-stat-num">${totalTutorials}</span>
-          <span style="font-size: 0.72rem; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 0.05em;">Curated Tutorials</span>
-        </div>
-      </div>
-      <div style="width: 1px; height: 30px; background: var(--border);"></div>
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <span aria-hidden="true" style="font-size: 2rem;">⬡</span>
-        <div>
-          <span style="font-family: var(--mono); font-size: 1.75rem; font-weight: 800; color: var(--primary-light); display: block; line-height: 1.1;" class="bento-stat-num">${totalCategories}</span>
-          <span style="font-size: 0.72rem; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 0.05em;">Categories</span>
-        </div>
-      </div>
-      <div style="width: 1px; height: 30px; background: var(--border);"></div>
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <span aria-hidden="true" style="font-size: 2rem;">🔗</span>
-        <div>
-          <span style="font-family: var(--mono); font-size: 1.75rem; font-weight: 800; color: var(--accent3); display: block; line-height: 1.1;" class="bento-stat-num">${totalSources}</span>
-          <span style="font-size: 0.72rem; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 0.05em;">Vetted Sources</span>
-        </div>
-      </div>
-    </div>
-  `;
-
-  grid.innerHTML = `
-    ${featuredHtml}
-    ${statsHtml}
-  `;
+  grid.innerHTML = featuredHtml;
 
   observeAnimations();
 }
