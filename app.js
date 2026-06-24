@@ -277,14 +277,7 @@ const TUTORIALS_DATA = [
 
 
 
-  {
-    id: 18, category: 'software-dev', badge: '🎓 FREE', title: 'React Native: Build Native Apps with JavaScript',
-    description: 'Full React Native course covering navigation, state management with Redux Toolkit, native device APIs, Expo, and publishing to App Store & Google Play.',
-    url: 'https://reactnative.dev/docs/getting-started',
-    source: 'React Native Docs', author: 'Meta Open Source',
-    level: 'Intermediate', type: 'Article',
-    tags: ['react-native', 'javascript', 'mobile'], date: '2024-03-30', views: 3400,
-  },
+
   {
     id: 100, category: 'software-dev', badge: '🎓 FREE', title: 'freeCodeCamp – YouTube Playlists',
     description: 'Access thousands of free, comprehensive video courses and playlists covering software development, DevOps, cybersecurity, networking, and databases.',
