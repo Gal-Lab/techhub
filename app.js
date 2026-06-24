@@ -391,13 +391,13 @@ function getSuggestions(query) {
   TUTORIALS_DATA.forEach(t => t.tags.forEach(tag => allTags.add(tag)));
   Array.from(allTags).forEach(tag => {
     if (tag.toLowerCase().includes(qClean)) {
-      const term = '#' + tag;
+      const term = tag;
       if (!seenTerms.has(term)) {
         seenTerms.add(term);
         suggestions.push({
           type: 'tag',
           term: term,
-          html: `<span class="search-icon">🏷️</span> <span>#${tag}</span>`
+          html: `<span class="search-icon">🏷️</span> <span>${tag}</span>`
         });
       }
     }
@@ -622,7 +622,6 @@ function renderFeatured() {
 
   let trialsHtml = '';
   if (oreilly) {
-    const oCat = getCategoryById(oreilly.category);
     trialsHtml += `
       <div class="bento-card trial trial-o-reilly animate-in" style="--i:1">
         <div>
@@ -630,7 +629,6 @@ function renderFeatured() {
             <span class="trial-badge" style="margin-bottom: 0;">${cleanText(oreilly.trialLabel)}</span>
             <span style="font-size: 0.72rem; font-weight: 700; background: rgba(255,255,255,0.06); color: var(--text2); padding: 0.28rem 0.75rem; border-radius: 100px; border: 1px solid var(--border); letter-spacing: 0.04em;">No Credit Card Required</span>
           </div>
-          <div style="font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary-light); margin-bottom: 0.5rem; margin-top: 0.5rem;">${oCat?.emoji || ''} ${oCat?.name || oreilly.category}</div>
           <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text); margin-bottom: 0.5rem; line-height: 1.3;">${oreilly.title}</h3>
           <p style="font-size: 0.88rem; color: var(--text2); line-height: 1.5; margin-bottom: 1.5rem;">${oreilly.description}</p>
         </div>
@@ -645,12 +643,10 @@ function renderFeatured() {
   }
 
   if (cbt) {
-    const cCat = getCategoryById(cbt.category);
     trialsHtml += `
       <div class="bento-card trial trial-cbt-nuggets animate-in" style="--i:2">
         <div>
           <span class="trial-badge">${cleanText(cbt.trialLabel)}</span>
-          <div style="font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary-light); margin-bottom: 0.5rem; margin-top: 0.5rem;">${cCat?.emoji || ''} ${cCat?.name || cbt.category}</div>
           <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text); margin-bottom: 0.5rem; line-height: 1.3;">${cbt.title}</h3>
           <p style="font-size: 0.88rem; color: var(--text2); line-height: 1.5; margin-bottom: 1.5rem;">${cbt.description}</p>
         </div>
