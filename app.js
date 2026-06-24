@@ -341,28 +341,12 @@ const TUTORIALS_DATA = [
     tags: ['node', 'express', 'mongodb', 'rest', 'api'], date: '2024-02-28', views: 2900,
   },
   {
-    id: 9, category: 'devops', badge: '🛠️ FREE TOOL', title: 'Terraform in Practice',
-    description: 'Infrastructure as Code: provision cloud resources on AWS, GCP, and Azure with modules, remote state, and CI/CD automation.',
-    url: 'https://developer.hashicorp.com/terraform/tutorials',
-    source: 'HashiCorp', author: 'HashiCorp Team',
-    level: 'Advanced', type: 'Interactive',
-    tags: ['terraform', 'iac', 'aws', 'cloud'], date: '2024-03-25', views: 3100,
-  },
-  {
     id: 10, category: 'software-dev', badge: '🎓 FREE', title: 'Apache Kafka for Beginners',
     description: 'Understand distributed event streaming — Kafka topics, partitions, consumers, producers, and connecting it all to real-time data pipelines.',
     url: 'https://www.conduktor.io/kafka/what-is-apache-kafka/',
     source: 'Conduktor', author: 'Conduktor Team',
     level: 'Beginner', type: 'Article',
     tags: ['kafka', 'streaming', 'data'], date: '2024-01-15', views: 2400,
-  },
-  {
-    id: 16, category: 'software-dev', badge: '🎓 FREE', title: 'FastAPI: Modern Python API Development',
-    description: 'Build production-grade APIs with FastAPI — async endpoints, Pydantic models, automatic OpenAPI docs, OAuth2, and PostgreSQL with SQLAlchemy.',
-    url: 'https://fastapi.tiangolo.com/tutorial/',
-    source: 'FastAPI Docs', author: 'Sebastián Ramírez',
-    level: 'Intermediate', type: 'Article',
-    tags: ['fastapi', 'python', 'api', 'async'], date: '2024-04-08', views: 4200,
   },
   {
     id: 17, category: 'software-dev', badge: '🎓 FREE', title: 'Git & GitHub Masterclass',
