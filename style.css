@@ -483,7 +483,7 @@ input, select, textarea { font-family: var(--font); outline: none; }
 .light-mode .chip.type-course { background: rgba(180, 83, 9, 0.08); border-color: rgba(180, 83, 9, 0.25); color: #b45309; }
 .light-mode .chip.type-interactive { background: rgba(4, 120, 87, 0.08); border-color: rgba(4, 120, 87, 0.25); color: #047857; }
 .light-mode .chip.duration-chip { background: rgba(63, 68, 112, 0.08); border-color: rgba(63, 68, 112, 0.25); color: var(--text3); }
-.light-mode .free-account-badge { background: rgba(4, 120, 87, 0.08); border-color: rgba(4, 120, 87, 0.25); color: #047857; }
+.light-mode .free-account-badge { background: rgba(0, 0, 0, 0.04); border-color: rgba(0, 0, 0, 0.1); color: var(--text2); }
 
 /* ===== TUTORIALS SECTION ===== */
 .tutorials-section { padding: 6rem 0; background: var(--bg2); }
@@ -573,8 +573,8 @@ input, select, textarea { font-family: var(--font); outline: none; }
   display: inline-flex; align-items: center; gap: 0.3rem;
   padding: 0.28rem 0.75rem; border-radius: 100px;
   font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
-  background: rgba(0, 229, 160, 0.12);
-  color: #00e5a0; border: 1px solid rgba(0, 229, 160, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text2); border: 1px solid var(--border);
   margin-bottom: 0.6rem; align-self: flex-start;
 }
 
