@@ -604,7 +604,6 @@ function renderFeatured() {
   // Card 1: Featured Card (span 3)
   const featuredHtml = `
     <div class="bento-card featured animate-in" style="--i:0">
-      <div class="featured-card-glow" style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; border-radius: 50%; opacity: 0.05; pointer-events: none; background:radial-gradient(circle,${cat?.color || '#7c5cff'}40,transparent)"></div>
       <div class="bento-featured-content" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
         <div>
           <span class="featured-badge" style="position: static; margin-bottom: 1rem; display: inline-block; padding: 0.3rem 0.7rem; border-radius: 100px; font-size: 0.72rem; font-weight: 700; background: var(--gradient); color: #fff; letter-spacing: 0.05em;"><span aria-hidden="true">⭐</span> Featured</span>
@@ -748,9 +747,6 @@ function renderTutorialCard(t) {
       <div class="tut-chips">
         <span class="chip ${levelClass(t.level)}">${t.level}</span>
         <span class="chip ${typeClass(t.type)}"><span aria-hidden="true">${t.type === 'Video' ? '▶' : t.type === 'Article' ? '📄' : t.type === 'Course' ? '🎓' : '⚡'}</span> ${t.type}</span>
-      </div>
-      <div class="tut-tags">
-        ${t.tags.map(tag => `<span class="tut-tag">#${tag}</span>`).join('')}
       </div>
     </div>
     <div class="tut-card-footer">
