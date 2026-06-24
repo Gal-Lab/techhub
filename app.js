@@ -287,16 +287,6 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 15000,
   },
   {
-    id: -41, category: 'software-dev', badge: '🎓 FREE',
-    title: 'Learn Git Branching',
-    description: 'Interactive, visual simulation game for learning Git branching, merging, rebasing, and remote operations with immediate feedback.',
-    url: 'https://learngitbranching.js.org/',
-    source: 'Learn Git Branching', author: 'Peter Cottle',
-    level: 'Beginner', type: 'Interactive',
-    tags: ['git', 'version-control', 'git-branching', 'git-rebase', 'interactive-game'],
-    date: '2026-06-21', views: 16000,
-  },
-  {
     id: -42, category: 'software-dev', badge: '🎓 FREE',
     title: 'Android Basics with Compose',
     description: 'Official Jetpack Compose course. Learn Kotlin fundamentals, state management, and build native Android apps with declarative UIs.',
