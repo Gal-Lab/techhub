@@ -16,7 +16,7 @@ const TUTORIALS_DATA = [
   {
     id: -17, category: 'networking', freeTrial: true, trialLabel: '10-Day Free Trial',
     title: "O'Reilly Learning – Books, Videos & Live Training",
-    description: "Access 60,000+ tech books, video courses, live training, and interactive labs with a free 10-day trial.",
+    description: "Access 60,000+ tech books, video courses, live training, and interactive labs with a free 10-day trial. No credit card required.",
     url: 'https://www.oreilly.com/start-trial/?type=individual',
     source: "O'Reilly Media", author: "O'Reilly Team",
     level: 'Beginner', type: 'Course',
@@ -50,7 +50,7 @@ const TUTORIALS_DATA = [
   {
     id: -1, category: 'networking', freeTrial: true, trialLabel: '7-Day Free Trial',
     title: 'CBT Nuggets – IT Certification Training',
-    description: "Expert-led video training for IT certifications like Cisco, CompTIA, and AWS. Includes virtual labs, practice exams, and a free 7-day trial.",
+    description: "Expert-led video training for IT certifications like Cisco, CompTIA, and AWS. Includes virtual labs, practice exams, and a free 7-day trial. No credit card required.",
     url: 'https://www.cbtnuggets.com/free-week',
     source: 'CBT Nuggets', author: 'CBT Nuggets Team',
     level: 'Beginner', type: 'Course',
@@ -636,7 +636,10 @@ function renderFeatured() {
     trialsHtml += `
       <div class="bento-card trial trial-o-reilly animate-in" style="--i:1">
         <div>
-          <span class="trial-badge"><span aria-hidden="true">🎁</span> ${oreilly.trialLabel}</span>
+          <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.6rem; flex-wrap: wrap;">
+            <span class="trial-badge" style="margin-bottom: 0;">${cleanText(oreilly.trialLabel)}</span>
+            <span style="font-size: 0.72rem; font-weight: 700; background: rgba(255,255,255,0.06); color: var(--text2); padding: 0.28rem 0.75rem; border-radius: 100px; border: 1px solid var(--border); letter-spacing: 0.04em;">No Credit Card Required</span>
+          </div>
           <div style="font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary-light); margin-bottom: 0.5rem; margin-top: 0.5rem;">${oCat?.emoji || ''} ${oCat?.name || oreilly.category}</div>
           <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text); margin-bottom: 0.5rem; line-height: 1.3;">${oreilly.title}</h3>
           <p style="font-size: 0.88rem; color: var(--text2); line-height: 1.5; margin-bottom: 1.5rem;">${oreilly.description}</p>
@@ -656,7 +659,10 @@ function renderFeatured() {
     trialsHtml += `
       <div class="bento-card trial trial-cbt-nuggets animate-in" style="--i:2">
         <div>
-          <span class="trial-badge"><span aria-hidden="true">🎁</span> ${cbt.trialLabel}</span>
+          <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.6rem; flex-wrap: wrap;">
+            <span class="trial-badge" style="margin-bottom: 0;">${cleanText(cbt.trialLabel)}</span>
+            <span style="font-size: 0.72rem; font-weight: 700; background: rgba(255,255,255,0.06); color: var(--text2); padding: 0.28rem 0.75rem; border-radius: 100px; border: 1px solid var(--border); letter-spacing: 0.04em;">No Credit Card Required</span>
+          </div>
           <div style="font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary-light); margin-bottom: 0.5rem; margin-top: 0.5rem;">${cCat?.emoji || ''} ${cCat?.name || cbt.category}</div>
           <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text); margin-bottom: 0.5rem; line-height: 1.3;">${cbt.title}</h3>
           <p style="font-size: 0.88rem; color: var(--text2); line-height: 1.5; margin-bottom: 1.5rem;">${cbt.description}</p>
@@ -726,14 +732,19 @@ function renderTutorials(reset = true) {
   updateScrollButtons();
 }
 
+function cleanText(str) {
+  if (!str) return '';
+  return str.replace(/[^\x00-\x7F]/g, "").trim();
+}
+
 function renderTutorialCard(t) {
   const cat = getCategoryById(t.category);
   const trialBadge = t.freeTrial
-    ? `<span class="trial-badge"><span aria-hidden="true">🎁</span> ${t.trialLabel || 'Free Trial'}</span>`
+    ? `<span class="trial-badge">${cleanText(t.trialLabel || 'Free Trial')}</span>`
     : (t.freeAccount
-      ? `<span class="free-account-badge">🔑 Free Account Available</span>`
+      ? `<span class="free-account-badge">Free Account Available</span>`
       : (t.badge
-        ? `<span class="free-account-badge">${t.badge}</span>`
+        ? `<span class="free-account-badge">${cleanText(t.badge)}</span>`
         : ''));
   const linkLabel = t.freeTrial ? `Start Free Trial <span>→</span>` : `Open <span>↗</span>`;
   const linkClass = t.freeTrial ? 'tut-link tut-link-trial' : 'tut-link';
@@ -749,9 +760,6 @@ function renderTutorialCard(t) {
       ${trialBadge}
       <h3 class="tut-title">${t.title}</h3>
       <p class="tut-desc">${t.description}</p>
-      <div class="tut-chips">
-        <span class="chip ${typeClass(t.type)}"><span aria-hidden="true">${t.type === 'Video' ? '▶' : t.type === 'Article' ? '📄' : t.type === 'Course' ? '🎓' : '⚡'}</span> ${t.type}</span>
-      </div>
     </div>
     <div class="tut-card-footer">
       <span class="tut-source"><span aria-hidden="true">🔗</span> ${t.source}</span>
