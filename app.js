@@ -687,115 +687,6 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 15000,
   },
 ];
-// ── LEARNING PATHS DATA ──────────────────────────────────────────────────────
-const LEARNING_PATHS = [
-  {
-    id: "frontend-dev",
-    title: "Frontend Developer Path",
-    description: "Master modern web interfaces. Go from HTML basics to building complex Single Page Applications (SPAs) with React and Next.js.",
-    difficulty: "Beginner to Advanced",
-    estimatedTime: "80-100 hours",
-    color: "#7c5cff", // Theme color for timeline highlights
-    emoji: "🌐",
-    steps: [
-      {
-        id: "fe-step-1",
-        title: "1. Web Foundations (HTML & CSS)",
-        description: "Learn the core markup and styling languages of the web, including layout techniques like Flexbox and Grid.",
-        tutorials: [24, -29]
-      },
-      {
-        id: "fe-step-2",
-        title: "2. JavaScript Programming",
-        description: "Deep dive into language syntax, DOM manipulation, asynchronous programming, and API integration.",
-        tutorials: [-14, -28]
-      },
-      {
-        id: "fe-step-3",
-        title: "3. TypeScript & Modern Frameworks",
-        description: "Learn statically typed JavaScript and building scalable interfaces using component-driven frameworks.",
-        tutorials: [4, -27]
-      },
-      {
-        id: "fe-step-4",
-        title: "4. Advanced Meta-Frameworks (Next.js)",
-        description: "Master server-side rendering, routing, optimizations, and deployment using Next.js.",
-        tutorials: [12]
-      }
-    ]
-  },
-  {
-    id: "devops-cloud",
-    title: "DevOps & Cloud Engineer Path",
-    description: "Learn to automate deployments, manage infrastructure at scale, configure CI/CD pipelines, and orchestrate cloud environments.",
-    difficulty: "Intermediate to Advanced",
-    estimatedTime: "120-150 hours",
-    color: "#00e5a0",
-    emoji: "☁️",
-    steps: [
-      {
-        id: "do-step-1",
-        title: "1. Linux Fundamentals & Shell Scripting",
-        description: "Master terminal navigation, filesystem structures, system administration, and automation scripts.",
-        tutorials: [-13, -40]
-      },
-      {
-        id: "do-step-2",
-        title: "2. Containers & Orchestration",
-        description: "Understand application isolation using Docker containers and container coordination using Kubernetes.",
-        tutorials: [3, -34]
-      },
-      {
-        id: "do-step-3",
-        title: "3. Infrastructure as Code (IaC)",
-        description: "Define, provision, and configure cloud resources declaratively using Terraform.",
-        tutorials: [9, 22]
-      },
-      {
-        id: "do-step-4",
-        title: "4. Cloud Provider Competence (AWS)",
-        description: "Build robust, scalable infrastructure on Amazon Web Services using industry best practices.",
-        tutorials: [-35]
-      }
-    ]
-  },
-  {
-    id: "cybersecurity-analyst",
-    title: "Cybersecurity Analyst Path",
-    description: "Get started with security concepts, penetration testing, network defense, and web vulnerability analysis.",
-    difficulty: "Beginner to Advanced",
-    estimatedTime: "100-120 hours",
-    color: "#ff6b9d",
-    emoji: "🔒",
-    steps: [
-      {
-        id: "sec-step-1",
-        title: "1. Networking Foundations",
-        description: "Understand IP addressing, subnetting, routers, switches, and core protocols (TCP/IP, DNS).",
-        tutorials: [-12, -106]
-      },
-      {
-        id: "sec-step-2",
-        title: "2. Security Core Concepts",
-        description: "Learn basic security terminology, incident response, firewalls, and cryptographic basics.",
-        tutorials: [-15, -4]
-      },
-      {
-        id: "sec-step-3",
-        title: "3. Hands-On Lab Environments",
-        description: "Apply your security skills practically in gamified laboratories and environments.",
-        tutorials: [-32, 21]
-      },
-      {
-        id: "sec-step-4",
-        title: "4. Web Application Security",
-        description: "Identify and mitigate web-based vulnerabilities like SQL injection, XSS, CSRF, and broken access controls.",
-        tutorials: [-33, 11]
-      }
-    ]
-  }
-];
-
 // ── APP STATE ─────────────────────────────────────────────────────────────────
 const PAGE_SIZE = 9;
 let state = {
@@ -806,7 +697,6 @@ let state = {
   duration: 'all',
   sort: 'newest',
   page: 1,
-  activePathId: localStorage.getItem('active_path_id') || 'frontend-dev',
   tutorials: [...TUTORIALS_DATA],
 };
 
@@ -1112,31 +1002,13 @@ function renderFeatured() {
     </div>
   `;
 
-  // Card 2: Structured Roadmaps Guide (span 1, row span 1)
-  const roadmapsHtml = `
-    <div class="bento-card roadmaps-guide animate-in" style="--i:1">
-      <span class="section-tag" style="font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.5rem; display: block;">Learning Paths</span>
-      <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-        <span aria-hidden="true">🛣️</span> Roadmaps Guide
-      </h3>
-      <p style="font-size: 0.85rem; color: var(--text2); line-height: 1.5; margin-bottom: 1.25rem; flex: 1;">
-        Navigate your developer journey with curated, step-by-step pathways. Learn Frontend, Backend, DevOps, or Machine Learning in a structured order.
-      </p>
-      <div>
-        <a href="#learning-paths" class="btn-ghost" style="display: flex; align-items: center; justify-content: center; font-size: 0.85rem; padding: 0.5rem 1rem; border-radius: var(--radius-xs); border: 1px solid var(--border); transition: all var(--transition); text-align: center;">
-          View Learning Paths
-        </a>
-      </div>
-    </div>
-  `;
-
-  // Card 3: Quick Stats (span 3, row span 1)
+  // Card 2: Quick Stats (span 3, row span 1)
   const totalTutorials = TUTORIALS_DATA.length;
   const totalCategories = CATEGORIES.length;
   const totalSources = new Set(TUTORIALS_DATA.map(t => t.source)).size;
 
   const statsHtml = `
-    <div class="bento-card quick-stats animate-in" style="--i:2; display: flex; flex-direction: row; align-items: center; justify-content: space-around; gap: 2rem; padding: 1.5rem 2rem;">
+    <div class="bento-card quick-stats animate-in" style="--i:1; display: flex; flex-direction: row; align-items: center; justify-content: space-around; gap: 2rem; padding: 1.5rem 2rem;">
       <div style="display: flex; align-items: center; gap: 1rem;">
         <span aria-hidden="true" style="font-size: 2rem;">🌐</span>
         <div>
@@ -1165,7 +1037,6 @@ function renderFeatured() {
 
   grid.innerHTML = `
     ${featuredHtml}
-    ${roadmapsHtml}
     ${statsHtml}
   `;
 
@@ -1263,100 +1134,7 @@ function renderTutorialCard(t) {
   </article>`;
 }
 
-// ── PATH RENDERING & DYNAMIC TIMELINE ──────────────────────────────────────────
-function renderLearningPaths() {
-  const selectorContainer = $('#paths-selector');
-  const activeContainer = $('#active-path-container');
-  if (!selectorContainer || !activeContainer) return;
 
-  // Render Path Tabs (no progress fills/percentages)
-  selectorContainer.innerHTML = LEARNING_PATHS.map(path => {
-    const isActive = state.activePathId === path.id;
-    return `
-      <button class="path-tab ${isActive ? 'active' : ''}" data-pathid="${path.id}" style="--path-color: ${path.color}">
-        <span class="path-tab-emoji">${path.emoji}</span>
-        <div class="path-tab-info">
-          <span class="path-tab-title">${path.title}</span>
-          <div class="path-tab-progress-meta">
-            <span class="path-tab-difficulty">${path.difficulty}</span>
-          </div>
-        </div>
-      </button>
-    `;
-  }).join('');
-
-  // Bind path selector tabs
-  selectorContainer.querySelectorAll('.path-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      state.activePathId = tab.dataset.pathid;
-      localStorage.setItem('active_path_id', state.activePathId);
-      renderLearningPaths();
-    });
-  });
-
-  // Get active path details
-  const activePath = LEARNING_PATHS.find(p => p.id === state.activePathId);
-  if (!activePath) return;
-
-  // Render Active Path Content
-  activeContainer.innerHTML = `
-    <div class="path-overview-card" style="--path-color: ${activePath.color}">
-      <div class="path-overview-content">
-        <span class="path-overview-badge" style="background: ${activePath.color}20; color: ${activePath.color}">
-          ${activePath.difficulty} · ${activePath.estimatedTime}
-        </span>
-        <h3 class="path-overview-title">${activePath.title}</h3>
-        <p class="path-overview-desc">${activePath.description}</p>
-      </div>
-    </div>
-
-    <div class="roadmap-timeline">
-      <div class="roadmap-line" style="background: linear-gradient(to bottom, ${activePath.color} 0%, var(--border) 100%)"></div>
-      ${activePath.steps.map((step, sIdx) => {
-        return `
-          <div class="roadmap-step">
-            <div class="roadmap-node" style="background: var(--bg3); border-color: var(--border)">
-              <span class="node-icon">◆</span>
-            </div>
-            
-            <div class="roadmap-step-card animate-in">
-              <div class="step-card-header">
-                <h4 class="step-title">${step.title}</h4>
-                <p class="step-desc">${step.description}</p>
-              </div>
-              <div class="step-tutorials-list">
-                ${step.tutorials.map(tutId => {
-                  const t = TUTORIALS_DATA.find(item => item.id === tutId);
-                  if (!t) return ''; // Skip if missing in DB
-                  
-                  return `
-                    <div class="roadmap-tut-item">
-                      <span aria-hidden="true" style="font-size: 1.1rem; color: var(--accent); margin-top: 0.2rem; flex-shrink: 0; line-height: 1;">⬡</span>
-                      <div class="roadmap-tut-info" style="margin-left: 0.5rem;">
-                        <div class="roadmap-tut-main">
-                          <a href="${t.url}" target="_blank" rel="noopener noreferrer" class="roadmap-tut-link">
-                            ${t.title} <span class="external-link-arrow">↗</span>
-                          </a>
-                          <span class="roadmap-tut-source">by ${t.author} · ${t.source}</span>
-                        </div>
-                        <div class="roadmap-tut-meta">
-                          <span class="chip ${levelClass(t.level)}">${t.level}</span>
-                          <span class="chip ${typeClass(t.type)}">${t.type}</span>
-                        </div>
-                      </div>
-                    </div>
-                  `;
-                }).join('')}
-              </div>
-            </div>
-          </div>
-        `;
-      }).join('')}
-    </div>
-  `;
-
-  observeAnimations();
-}
 
 // ── UPDATE STATS TARGETS DYNAMICALLY ───────────────────────────────────────────
 function updateStatsTargets() {
@@ -1719,7 +1497,6 @@ function init() {
   populateSelects();
   renderCategories();
   renderFeatured();
-  renderLearningPaths();
   renderTutorials();
   bindEvents();
   observeAnimations();

@@ -1072,7 +1072,7 @@ textarea:focus-visible {
 }
 
 .bento-card.featured {
-  grid-column: span 2;
+  grid-column: span 3;
   display: flex;
   flex-direction: row;
   gap: 2rem;
@@ -1088,12 +1088,6 @@ textarea:focus-visible {
   }
 }
 
-.bento-card.roadmaps-guide {
-  grid-column: span 1;
-  grid-row: span 1;
-  background: radial-gradient(circle at top right, rgba(0, 212, 255, 0.05), transparent 70%), var(--surface);
-  border-color: rgba(0, 212, 255, 0.1);
-}
 .bento-card.quick-stats {
   grid-column: span 1;
   grid-row: span 1;
@@ -1129,9 +1123,6 @@ textarea:focus-visible {
 }
 .light-mode .bento-card.featured {
   background: #ffffff;
-}
-.light-mode .bento-card.roadmaps-guide {
-  background: radial-gradient(circle at top right, rgba(0, 212, 255, 0.06), transparent 70%), #ffffff;
 }
 .light-mode .bento-card.quick-stats {
   background: radial-gradient(circle at top right, rgba(0, 229, 160, 0.06), transparent 70%), #ffffff;
