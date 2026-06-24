@@ -365,14 +365,6 @@ const TUTORIALS_DATA = [
     tags: ['kafka', 'streaming', 'data'], date: '2024-01-15', views: 2400,
   },
   {
-    id: 11, category: 'security', badge: '🎓 FREE', title: 'Web Security: OWASP Top 10 Explained',
-    description: 'An essential primer on the 10 most critical web application security risks including SQL injection, XSS, CSRF, and broken auth — with mitigation strategies.',
-    url: 'https://owasp.org/www-project-top-ten/',
-    source: 'OWASP', author: 'OWASP Foundation',
-    level: 'Intermediate', type: 'Article',
-    tags: ['security', 'owasp', 'xss', 'sql-injection'], date: '2024-02-10', views: 4500,
-  },
-  {
     id: 13, category: 'software-dev', badge: '🎓 FREE', title: 'PostgreSQL Tutorial — Full Beginner Course',
     description: 'Learn PostgreSQL from scratch — SQL syntax, joins, indexes, transactions, constraints, views, and stored procedures with real-world exercises.',
     url: 'https://www.postgresqltutorial.com/',
