@@ -569,16 +569,6 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 15000,
   },
   {
-    id: -40, category: 'software-dev', badge: '🎓 FREE',
-    title: 'The Missing Semester of Your CS Education',
-    description: "MIT's legendary class on the practical tools of software engineering. Master the command-line, shell scripting, Vim, Git, SSH, security, and build systems to boost your daily developer productivity.",
-    url: 'https://missing.csail.mit.edu/',
-    source: 'MIT', author: 'MIT CSAIL Team',
-    level: 'Beginner', type: 'Course',
-    tags: ['shell', 'command-line', 'vim', 'git', 'ssh', 'data-wrangling'],
-    date: '2026-06-21', views: 22000,
-  },
-  {
     id: -41, category: 'software-dev', badge: '🎓 FREE',
     title: 'Learn Git Branching',
     description: 'An interactive, visual simulation game for learning Git commands. Practice branching, merging, rebasing, cherry-picking, and remote repository operations with immediate visual feedback.',
