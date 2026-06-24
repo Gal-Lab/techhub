@@ -25,10 +25,10 @@ const TUTORIALS_DATA = [
   },
   {
     id: 0, category: 'networking', featured: true, badge: '🎥 FREE',
-    title: "Jeremy's IT Lab – Free CCNA 200-301 Complete Course",
+    title: "Jeremy's IT Lab – Free CCNA & CCNP Courses",
     description:
-      "The most recommended free CCNA course on YouTube. Covers the complete Cisco 200-301 syllabus Day-by-Day with Packet Tracer labs and quizzes.",
-    url: 'https://www.youtube.com/@JeremysITLab',
+      "Free, highly recommended Cisco certification courses on YouTube, featuring CCNA and CCNP video lessons, Packet Tracer labs, and quizzes.",
+    url: 'https://www.youtube.com/@JeremysITLab/playlists',
     source: "YouTube – Jeremy's IT Lab",
     author: 'Jeremy McDowall',
     level: 'Beginner',
@@ -156,16 +156,6 @@ const TUTORIALS_DATA = [
     level: 'Beginner', type: 'Video',
     tags: ['ccna', 'cisco', 'networking', 'subnetting', 'certification'],
     date: '2026-06-20', views: 15400,
-  },
-  {
-    id: -8, category: 'networking', badge: '🎥 FREE',
-    title: "Jeremy's IT Lab – Free CCNP ENCOR 350-401 Course",
-    description: "Free, structured CCNP ENCOR series covering enterprise routing, switching, security, wireless, and automation with labs and flashcards.",
-    url: 'https://www.youtube.com/@JeremysITLab/search?query=CCNP+ENCOR',
-    source: "YouTube – Jeremy's IT Lab", author: 'Jeremy McDowall',
-    level: 'Intermediate', type: 'Video',
-    tags: ['ccnp', 'encor', 'cisco', 'networking', 'certification'],
-    date: '2026-06-20', views: 8700,
   },
   {
     id: -10, category: 'networking', badge: '🎓 FREE',
