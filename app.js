@@ -365,14 +365,6 @@ const TUTORIALS_DATA = [
     tags: ['kafka', 'streaming', 'data'], date: '2024-01-15', views: 2400,
   },
   {
-    id: 13, category: 'software-dev', badge: '🎓 FREE', title: 'PostgreSQL Tutorial — Full Beginner Course',
-    description: 'Learn PostgreSQL from scratch — SQL syntax, joins, indexes, transactions, constraints, views, and stored procedures with real-world exercises.',
-    url: 'https://www.postgresqltutorial.com/',
-    source: 'PostgreSQL Tutorial', author: 'PostgreSQL Tutorial Team',
-    level: 'Beginner', type: 'Article',
-    tags: ['postgresql', 'sql', 'database'], date: '2024-01-05', views: 3800,
-  },
-  {
     id: 16, category: 'software-dev', badge: '🎓 FREE', title: 'FastAPI: Modern Python API Development',
     description: 'Build production-grade APIs with FastAPI — async endpoints, Pydantic models, automatic OpenAPI docs, OAuth2, and PostgreSQL with SQLAlchemy.',
     url: 'https://fastapi.tiangolo.com/tutorial/',
