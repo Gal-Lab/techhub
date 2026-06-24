@@ -38,7 +38,7 @@ const TUTORIALS_DATA = [
     views: 12000,
   },
   {
-    id: -2, category: 'networking', badge: '💳 PAID',
+    id: -2, category: 'networking', badge: '🎓 FREE',
     title: 'NetworkLessons – Cisco & Networking Courses',
     description: "Offers in-depth, structured courses for CCNA, CCNP, and other Cisco certifications by Rene Molenaar. Access 300+ lessons for free.",
     url: 'https://networklessons.com/courses',
