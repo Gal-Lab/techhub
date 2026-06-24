@@ -692,7 +692,6 @@ function renderTutorialCard(t) {
       <div class="tut-chips">
         <span class="chip ${levelClass(t.level)}">${t.level}</span>
         <span class="chip ${typeClass(t.type)}"><span aria-hidden="true">${t.type === 'Video' ? '▶' : t.type === 'Article' ? '📄' : t.type === 'Course' ? '🎓' : '⚡'}</span> ${t.type}</span>
-        <span class="chip duration-chip"><span aria-hidden="true">⏱️</span> ${getDurationLabel(getDurationMinutes(t))}</span>
       </div>
       <div class="tut-tags">
         ${t.tags.map(tag => `<span class="tut-tag">#${tag}</span>`).join('')}
