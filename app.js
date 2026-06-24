@@ -5,11 +5,9 @@
 =================================================== */
 
 const CATEGORIES = [
-  { id: 'webdev',  name: 'Web Development',  emoji: '🌐', color: '#7c5cff' },
+  { id: 'software-dev', name: 'Software Development', emoji: '💻', color: '#7c5cff' },
   { id: 'aiml',    name: 'AI / ML',           emoji: '🤖', color: '#00d4ff' },
   { id: 'devops',  name: 'DevOps & Cloud',    emoji: '☁️', color: '#00e5a0' },
-  { id: 'mobile',  name: 'Mobile Dev',        emoji: '📱', color: '#ff6b9d' },
-  { id: 'backend', name: 'Backend / APIs',    emoji: '⚙️', color: '#ffaa00' },
   { id: 'data',    name: 'Data Engineering',  emoji: '📊', color: '#a888ff' },
   { id: 'security',name: 'Cybersecurity',     emoji: '🔒', color: '#ff6b9d' },
   { id: 'tools',   name: 'Dev Tools',         emoji: '🛠️', color: '#00e5a0' },
@@ -314,7 +312,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 14500,
   },
   {
-    id: -14, category: 'webdev', badge: '🎓 FREE',
+    id: -14, category: 'software-dev', badge: '🎓 FREE',
     title: 'The Odin Project – Full-Stack Web Development',
     description: "An outstanding, project-based web development curriculum. Guides you through setting up a professional local environment, Git/GitHub, HTML/CSS, JavaScript, Node.js, and databases. Students work through real-world, portfolio-worthy projects to solidify their understanding of front-end and back-end architectures. By the end of the course, learners will have the practical skills and confidence needed to build and deploy complex full-stack web applications.",
     url: 'https://www.theodinproject.com/',
@@ -334,7 +332,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 9200,
   },
   {
-    id: -27, category: 'webdev', badge: '🎓 FREE',
+    id: -27, category: 'software-dev', badge: '🎓 FREE',
     title: 'freeCodeCamp – Full Curriculum & Certifications',
     description: "The gold-standard free coding curriculum — 3,000+ hours of interactive, project-based learning covering JavaScript, Python, React, Node.js, and data visualization. Earn verified, free certifications by building real projects. Perfect for motivated self-learners who want to build a portfolio without spending a cent.",
     url: 'https://www.freecodecamp.org/learn',
@@ -344,7 +342,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 25000,
   },
   {
-    id: -28, category: 'webdev', badge: '🎓 FREE',
+    id: -28, category: 'software-dev', badge: '🎓 FREE',
     title: 'Scrimba – Learn JavaScript & React Interactively',
     description: "Scrimba's unique format lets you pause any video tutorial and edit the instructor's code in real time — right in the browser. Their free \"Learn JavaScript\" and \"Learn React\" courses are consistently rated best-in-class for hands-on frontend learning. Stop watching and start building — the Scrimba way.",
     url: 'https://scrimba.com/learn/javascript',
@@ -354,7 +352,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 18000,
   },
   {
-    id: -29, category: 'webdev', badge: '🎓 FREE',
+    id: -29, category: 'software-dev', badge: '🎓 FREE',
     title: "web.dev – Google's Official Web Dev Learn Paths",
     description: "Google's official web development learning hub — written by the Chrome team and kept rigorously up-to-date with modern web standards. Free structured courses on HTML, CSS, JavaScript, Accessibility, Performance, and PWAs. Your go-to reference for understanding not just what to build, but why it matters.",
     url: 'https://web.dev/learn',
@@ -451,7 +449,7 @@ const TUTORIALS_DATA = [
     tags: ['docker', 'kubernetes', 'devops'], date: '2024-02-05', views: 5100,
   },
   {
-    id: 4, category: 'webdev', badge: '🎥 FREE', title: 'TypeScript Full Course for Beginners',
+    id: 4, category: 'software-dev', badge: '🎥 FREE', title: 'TypeScript Full Course for Beginners',
     description: 'Zero to hero with TypeScript — types, interfaces, generics, decorators, and integrating with React. 8 hours of hands-on learning.',
     url: 'https://www.youtube.com/watch?v=fU90yG_1K-c',
     source: 'freeCodeCamp', author: 'Dave Gray',
@@ -467,7 +465,7 @@ const TUTORIALS_DATA = [
     tags: ['langchain', 'llm', 'python', 'rag'], date: '2024-03-18', views: 4800,
   },
   {
-    id: 7, category: 'backend', badge: '🎓 FREE', title: 'Building REST APIs with Node, Express & MongoDB',
+    id: 7, category: 'software-dev', badge: '🎓 FREE', title: 'Building REST APIs with Node, Express & MongoDB',
     description: 'A practical guide to designing and building production-ready REST APIs using Node.js, Express, Mongoose, and MongoDB Atlas.',
     url: 'https://www.freecodecamp.org/news/build-a-restful-api-using-node-express-and-mongodb/',
     source: 'freeCodeCamp', author: 'Nishant Kumar',
@@ -475,7 +473,7 @@ const TUTORIALS_DATA = [
     tags: ['node', 'express', 'mongodb', 'rest', 'api'], date: '2024-02-28', views: 2900,
   },
   {
-    id: 8, category: 'mobile', badge: '💳 PAID', title: 'Flutter & Dart – The Complete Guide',
+    id: 8, category: 'software-dev', badge: '💳 PAID', title: 'Flutter & Dart – The Complete Guide',
     description: 'Go from zero to a multi-screen mobile app with Flutter. Widgets, state management, animations, Firebase, and publishing to app stores.',
     url: 'https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/',
     source: 'Udemy', author: 'Maximilian Schwarzmüller',
@@ -507,7 +505,7 @@ const TUTORIALS_DATA = [
     tags: ['security', 'owasp', 'xss', 'sql-injection'], date: '2024-02-10', views: 4500,
   },
   {
-    id: 12, category: 'webdev', badge: '🎥 FREE', title: 'Next.js 14 App Router Deep Dive',
+    id: 12, category: 'software-dev', badge: '🎥 FREE', title: 'Next.js 14 App Router Deep Dive',
     description: 'Master the new App Router in Next.js 14 — server components, streaming, loading states, parallel routes, caching strategies, and full-stack data fetching patterns.',
     url: 'https://www.youtube.com/watch?v=vOP6G41J_p4',
     source: 'Lama Dev', author: 'Safak',
@@ -531,7 +529,7 @@ const TUTORIALS_DATA = [
     tags: ['nlp', 'transformers', 'python', 'bert'], date: '2024-02-20', views: 6100,
   },
   {
-    id: 16, category: 'backend', badge: '🎓 FREE', title: 'FastAPI: Modern Python API Development',
+    id: 16, category: 'software-dev', badge: '🎓 FREE', title: 'FastAPI: Modern Python API Development',
     description: 'Build production-grade APIs with FastAPI — async endpoints, Pydantic models, automatic OpenAPI docs, OAuth2, and PostgreSQL with SQLAlchemy.',
     url: 'https://fastapi.tiangolo.com/tutorial/',
     source: 'FastAPI Docs', author: 'Sebastián Ramírez',
@@ -547,7 +545,7 @@ const TUTORIALS_DATA = [
     tags: ['git', 'github', 'version-control'], date: '2024-01-25', views: 5300,
   },
   {
-    id: 18, category: 'mobile', badge: '🎓 FREE', title: 'React Native: Build Native Apps with JavaScript',
+    id: 18, category: 'software-dev', badge: '🎓 FREE', title: 'React Native: Build Native Apps with JavaScript',
     description: 'Full React Native course covering navigation, state management with Redux Toolkit, native device APIs, Expo, and publishing to App Store & Google Play.',
     url: 'https://reactnative.dev/docs/getting-started',
     source: 'React Native Docs', author: 'Meta Open Source',
@@ -587,7 +585,7 @@ const TUTORIALS_DATA = [
     tags: ['redis', 'caching', 'nosql'], date: '2024-03-02', views: 2800,
   },
   {
-    id: 24, category: 'webdev', badge: '🎓 FREE', title: 'CSS Grid & Flexbox Mastery',
+    id: 24, category: 'software-dev', badge: '🎓 FREE', title: 'CSS Grid & Flexbox Mastery',
     description: 'Build any layout imaginable with CSS Grid and Flexbox. Interactive exercises, real-world projects, and techniques for responsive, accessible designs.',
     url: 'https://cssgrid.io/',
     source: 'Wes Bos', author: 'Wes Bos',
@@ -653,7 +651,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 16000,
   },
   {
-    id: -42, category: 'mobile', badge: '🎓 FREE',
+    id: -42, category: 'software-dev', badge: '🎓 FREE',
     title: 'Android Basics with Compose',
     description: 'Build native Android apps from scratch with Google\'s official, self-paced Jetpack Compose course. Learn Kotlin fundamentals, design modern declarative UIs, manage state, and build a collection of portfolio-ready apps.',
     url: 'https://developer.android.com/courses/android-basics-compose/course',
@@ -663,7 +661,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 24000,
   },
   {
-    id: -43, category: 'mobile', badge: '🎓 FREE',
+    id: -43, category: 'software-dev', badge: '🎓 FREE',
     title: '100 Days of SwiftUI',
     description: 'The most recommended free path to mastering iOS app development. Learn Swift programming, build 15+ real-world SwiftUI apps, and test your skills with daily coding challenges under the guidance of Paul Hudson.',
     url: 'https://www.hackingwithswift.com/100/swiftui',
@@ -683,7 +681,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 22000,
   },
   {
-    id: -45, category: 'backend', badge: '🎓 FREE',
+    id: -45, category: 'software-dev', badge: '🎓 FREE',
     title: 'Gophercises',
     description: 'Bridge the gap between knowing Go syntax and writing real applications. Build 20 diverse mini-projects, including quiz games, URL shorteners, and CLI tools, accompanied by step-by-step video walkthroughs.',
     url: 'https://gophercises.com',
@@ -693,7 +691,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 18000,
   },
   {
-    id: -46, category: 'webdev', badge: '🎓 FREE',
+    id: -46, category: 'software-dev', badge: '🎓 FREE',
     title: 'Astro Build a Blog Tutorial',
     description: 'Learn to build blazing fast, content-driven websites with the official Astro blog tutorial. Set up components, configure layouts, import Markdown, and master modern performance-focused web development from scratch.',
     url: 'https://docs.astro.build/en/tutorial/0-introduction/',
