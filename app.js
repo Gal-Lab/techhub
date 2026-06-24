@@ -822,16 +822,9 @@ let state = {
   duration: 'all',
   sort: 'newest',
   page: 1,
-  savedIds: new Set(JSON.parse(localStorage.getItem('saved') || '[]')),
-  completedTutorialIds: new Set(JSON.parse(localStorage.getItem('completed_tutorials') || '[]')),
   activePathId: localStorage.getItem('active_path_id') || 'frontend-dev',
   tutorials: [...TUTORIALS_DATA],
-  showSavedOnly: false,
 };
-
-function saveCompleted() {
-  localStorage.setItem('completed_tutorials', JSON.stringify([...state.completedTutorialIds]));
-}
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
 const $ = (sel) => document.querySelector(sel);
@@ -881,9 +874,6 @@ function showToast(msg, dur = 2500) {
   }
 }
 
-function saveFavourites() {
-  localStorage.setItem('saved', JSON.stringify([...state.savedIds]));
-}
 
 // ── SEARCH AUTOCOMPLETE SUGGESTIONS ───────────────────────────────────────────
 let currentSuggestions = [];
@@ -1041,7 +1031,6 @@ function applyFilters() {
     const matchCat = state.category === 'all' || t.category === state.category;
     const matchLevel = state.level === 'all' || t.level === state.level;
     const matchType = state.type === 'all' || t.type === state.type;
-    const matchSaved = !state.showSavedOnly || state.savedIds.has(t.id);
     const matchDuration = (() => {
       if (state.duration === 'all') return true;
       const mins = getDurationMinutes(t);
@@ -1050,7 +1039,7 @@ function applyFilters() {
       if (state.duration === 'deep') return mins > 120;
       return true;
     })();
-    return matchSearch && matchCat && matchLevel && matchType && matchSaved && matchDuration;
+    return matchSearch && matchCat && matchLevel && matchType && matchDuration;
   });
 
   if (state.sort === 'newest') list.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -1139,73 +1128,39 @@ function renderFeatured() {
     </div>
   `;
 
-  // Card 2: Continue Learning (span 1, row span 1)
-  const activePath = LEARNING_PATHS.find(p => p.id === state.activePathId) || LEARNING_PATHS[0];
-  const allPathTutorials = activePath.steps.reduce((acc, step) => acc.concat(step.tutorials), []);
-  const completedPathTutorials = allPathTutorials.filter(id => state.completedTutorialIds.has(id));
-  const totalPercent = allPathTutorials.length > 0 
-    ? Math.round((completedPathTutorials.length / allPathTutorials.length) * 100) 
-    : 0;
-
-  const continueHtml = `
-    <div class="bento-card continue-learning animate-in" style="--i:1; --path-color: ${activePath.color}">
-      <span class="section-tag" style="font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: ${activePath.color}; margin-bottom: 0.5rem; display: block;">Continue Learning</span>
+  // Card 2: Structured Roadmaps Guide (span 1, row span 1)
+  const roadmapsHtml = `
+    <div class="bento-card roadmaps-guide animate-in" style="--i:1">
+      <span class="section-tag" style="font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.5rem; display: block;">Learning Paths</span>
       <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-        <span aria-hidden="true">${activePath.emoji}</span> ${activePath.title}
+        <span aria-hidden="true">🛣️</span> Roadmaps Guide
       </h3>
       <p style="font-size: 0.85rem; color: var(--text2); line-height: 1.5; margin-bottom: 1.25rem; flex: 1;">
-        ${completedPathTutorials.length === allPathTutorials.length ? 'Path completed! Excellent work! 🎉' : 'Pick up where you left off and complete the remaining milestones.'}
+        Navigate your developer journey with curated, step-by-step pathways. Learn Frontend, Backend, DevOps, or Machine Learning in a structured order.
       </p>
       <div>
-        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--text2); margin-bottom: 0.4rem;">
-          <span style="font-weight: 500;">${completedPathTutorials.length} / ${allPathTutorials.length} Complete</span>
-          <span style="font-family: var(--mono); font-weight: 600;">${totalPercent}%</span>
-        </div>
-        <div class="path-tab-progress-bar" style="margin-top: 0; margin-bottom: 1.25rem; width: 100%; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden;">
-          <div class="path-tab-progress-fill" style="width: ${totalPercent}%; height: 100%; border-radius: 2px; transition: width 0.4s ease-out; background: ${activePath.color}"></div>
-        </div>
         <a href="#learning-paths" class="btn-ghost" style="display: flex; align-items: center; justify-content: center; font-size: 0.85rem; padding: 0.5rem 1rem; border-radius: var(--radius-xs); border: 1px solid var(--border); transition: all var(--transition); text-align: center;">
-          Open Roadmap Timeline
+          View Learning Paths
         </a>
       </div>
     </div>
   `;
 
-  // Card 3: Recent Bookmarks (span 1, row span 1)
-  const bookmarkedIds = Array.from(state.savedIds).slice(-3).reverse();
-  const bookmarkedTuts = bookmarkedIds.map(id => TUTORIALS_DATA.find(t => t.id === id)).filter(Boolean);
-
-  let bookmarksListHtml = '';
-  if (bookmarkedTuts.length === 0) {
-    bookmarksListHtml = `
-      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: var(--text3); font-size: 0.85rem; padding: 1rem 0;">
-        <span aria-hidden="true" style="font-size: 1.75rem; margin-bottom: 0.5rem; display: block;">🏷️</span>
-        No bookmarks saved yet.
-      </div>
-    `;
-  } else {
-    bookmarksListHtml = `
-      <div style="display: flex; flex-direction: column; gap: 0.75rem; flex: 1; margin-bottom: 1.25rem;">
-        ${bookmarkedTuts.map(t => `
-          <a href="${t.url}" target="_blank" rel="noopener noreferrer" style="display: flex; flex-direction: column; gap: 0.15rem; padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); background: var(--bg2); border: 1px solid var(--border); transition: all var(--transition);" class="bookmark-link-item">
-            <span style="font-size: 0.85rem; font-weight: 600; color: var(--text); transition: color var(--transition); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${t.title}</span>
-            <span style="font-size: 0.75rem; color: var(--text3);">by ${t.source}</span>
-          </a>
-        `).join('')}
-      </div>
-    `;
-  }
-
-  const bookmarksHtml = `
-    <div class="bento-card recent-bookmarks animate-in" style="--i:2">
-      <span class="section-tag" style="font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); margin-bottom: 0.5rem; display: block;">Recently Bookmarked</span>
+  // Card 3: Suggest a Resource (span 1, row span 1)
+  const suggestHtml = `
+    <div class="bento-card suggest-resource animate-in" style="--i:2">
+      <span class="section-tag" style="font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary-light); margin-bottom: 0.5rem; display: block;">Community</span>
       <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
-        <span aria-hidden="true">🔖</span> My Bookmarks
+        <span aria-hidden="true">💡</span> Suggest a Resource
       </h3>
-      ${bookmarksListHtml}
-      <button class="bookmarks-toggle" id="bento-bookmarks-btn" style="width: 100%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; padding: 0.5rem 1rem; border-radius: var(--radius-xs); border: 1px solid var(--border); background: var(--surface); color: var(--text2); transition: all var(--transition);">
-        View All Bookmarks
-      </button>
+      <p style="font-size: 0.85rem; color: var(--text2); line-height: 1.5; margin-bottom: 1.25rem; flex: 1;">
+        Found an outstanding, high-quality tutorial that belongs in our directory? Help keep our collection updated by suggesting new learning resources.
+      </p>
+      <div>
+        <a href="mailto:hello@techhub.directory?subject=TechHub Resource Suggestion" class="btn-ghost" style="display: flex; align-items: center; justify-content: center; font-size: 0.85rem; padding: 0.5rem 1rem; border-radius: var(--radius-xs); border: 1px solid var(--border); transition: all var(--transition); text-align: center;">
+          Submit Suggestion
+        </a>
+      </div>
     </div>
   `;
 
@@ -1244,21 +1199,10 @@ function renderFeatured() {
 
   grid.innerHTML = `
     ${featuredHtml}
-    ${continueHtml}
-    ${bookmarksHtml}
+    ${roadmapsHtml}
+    ${suggestHtml}
     ${statsHtml}
   `;
-
-  // Bind the bento bookmarks view toggle button
-  const bentoBookBtn = $('#bento-bookmarks-btn');
-  if (bentoBookBtn) {
-    bentoBookBtn.addEventListener('click', () => {
-      const toggleBtn = $('#bookmarks-toggle');
-      if (toggleBtn) {
-        toggleBtn.click();
-      }
-    });
-  }
 
   observeAnimations();
 }
@@ -1289,29 +1233,12 @@ function renderTutorials(reset = true) {
   if (grid) {
     if (reset) {
       grid.innerHTML = slice.map(t => renderTutorialCard(t)).join('');
-      grid.querySelectorAll('.tut-bookmark').forEach(btn => {
-        const id = Number(btn.dataset.id);
-        btn.addEventListener('click', () => toggleSave(id, btn));
-      });
-      grid.querySelectorAll('.tut-complete-btn').forEach(btn => {
-        const id = Number(btn.dataset.id);
-        btn.addEventListener('click', () => toggleTutorialCompletion(id));
-      });
     } else {
       const currentCount = grid.querySelectorAll('.tut-card').length;
       const newItems = slice.slice(currentCount);
       const tempDiv = document.createElement('div');
       tempDiv.innerHTML = newItems.map(t => renderTutorialCard(t)).join('');
       
-      tempDiv.querySelectorAll('.tut-bookmark').forEach(btn => {
-        const id = Number(btn.dataset.id);
-        btn.addEventListener('click', () => toggleSave(id, btn));
-      });
-      tempDiv.querySelectorAll('.tut-complete-btn').forEach(btn => {
-        const id = Number(btn.dataset.id);
-        btn.addEventListener('click', () => toggleTutorialCompletion(id));
-      });
-
       while (tempDiv.firstChild) {
         grid.appendChild(tempDiv.firstChild);
       }
@@ -1332,8 +1259,6 @@ function renderTutorials(reset = true) {
 
 function renderTutorialCard(t) {
   const cat = getCategoryById(t.category);
-  const saved = state.savedIds.has(t.id);
-  const completed = state.completedTutorialIds.has(t.id);
   const trialBadge = t.freeTrial
     ? `<span class="trial-badge"><span aria-hidden="true">🎁</span> ${t.trialLabel || 'Free Trial'}</span>`
     : (t.freeAccount
@@ -1344,21 +1269,13 @@ function renderTutorialCard(t) {
   const linkLabel = t.freeTrial ? `Start Free Trial <span>→</span>` : `Open <span>↗</span>`;
   const linkClass = t.freeTrial ? 'tut-link tut-link-trial' : 'tut-link';
   return `
-  <article class="tut-card animate-in ${t.freeTrial ? 'tut-card-trial' : ''} ${completed ? 'completed' : ''}" id="tut-${t.id}">
+  <article class="tut-card animate-in ${t.freeTrial ? 'tut-card-trial' : ''}" id="tut-${t.id}">
     <div class="tut-card-accent"></div>
     <div class="tut-card-body">
       <div class="tut-card-top">
         <span class="tut-cat-badge chip" style="background:${cat?.color || '#7c5cff'}22;border-color:${cat?.color || '#7c5cff'}44;color:${cat?.color || '#7c5cff'}">
           <span aria-hidden="true">${cat?.emoji || ''}</span> ${cat?.name || t.category}
         </span>
-        <div class="tut-card-actions">
-          <button class="tut-complete-btn ${completed ? 'completed' : ''}" data-id="${t.id}" aria-label="${completed ? 'Mark incomplete' : 'Mark complete'}" title="${completed ? 'Mark incomplete' : 'Mark complete'}">
-            ${completed ? '✅' : '✓'}
-          </button>
-          <button class="tut-bookmark ${saved ? 'saved' : ''}" data-id="${t.id}" aria-label="${saved ? 'Remove bookmark' : 'Bookmark tutorial'}" title="${saved ? 'Remove bookmark' : 'Bookmark'}">
-            ${saved ? '🔖' : '🏷️'}
-          </button>
-        </div>
       </div>
       ${trialBadge}
       <h3 class="tut-title">${t.title}</h3>
@@ -1381,86 +1298,14 @@ function renderTutorialCard(t) {
   </article>`;
 }
 
-function toggleSave(id, btn) {
-  if (state.savedIds.has(id)) {
-    state.savedIds.delete(id);
-    if (btn) {
-      btn.classList.remove('saved');
-      btn.textContent = '🏷️';
-    }
-    showToast('Bookmark removed');
-  } else {
-    state.savedIds.add(id);
-    if (btn) {
-      btn.classList.add('saved');
-      btn.textContent = '🔖';
-    }
-    showToast('Tutorial bookmarked! 🔖');
-  }
-  saveFavourites();
-  renderFeatured(); // Update Bento Grid Bookmarks card in real-time
-  
-  if (state.showSavedOnly) {
-    renderTutorials(true);
-  }
-}
-
-// ── TOGGLE TUTORIAL COMPLETION ───────────────────────────────────────────────
-function toggleTutorialCompletion(id) {
-  if (state.completedTutorialIds.has(id)) {
-    state.completedTutorialIds.delete(id);
-    showToast('Tutorial marked as incomplete');
-  } else {
-    state.completedTutorialIds.add(id);
-    showToast('Tutorial marked as completed! 🎉');
-  }
-  saveCompleted();
-
-  // 1. Refresh active path timeline & radial meters
-  if ($('#active-path-container')) {
-    renderLearningPaths();
-  }
-
-  // 2. Sync tutorial cards currently displayed in all other grids
-  const completeBtns = $$(`.tut-complete-btn[data-id="${id}"]`);
-  completeBtns.forEach(btn => {
-    const isCompleted = state.completedTutorialIds.has(id);
-    btn.classList.toggle('completed', isCompleted);
-    btn.innerHTML = isCompleted ? '✅' : '✓';
-    btn.setAttribute('aria-label', isCompleted ? 'Mark incomplete' : 'Mark complete');
-    
-    const card = btn.closest('.tut-card');
-    if (card) {
-      card.classList.toggle('completed', isCompleted);
-    }
-  });
-
-  // 3. Update Bento grid's "Continue Learning" progress card
-  renderFeatured();
-}
-
 // ── PATH RENDERING & DYNAMIC TIMELINE ──────────────────────────────────────────
 function renderLearningPaths() {
   const selectorContainer = $('#paths-selector');
   const activeContainer = $('#active-path-container');
   if (!selectorContainer || !activeContainer) return;
 
-  // Save keyboard focus context if focus is on a milestone checkbox
-  let focusedTutId = null;
-  const activeEl = document.activeElement;
-  if (activeEl && activeEl.classList.contains('roadmap-checkbox') && activeContainer.contains(activeEl)) {
-    focusedTutId = activeEl.dataset.tutid;
-  }
-
-  // Render Path Tabs with mini progress indicators
+  // Render Path Tabs (no progress fills/percentages)
   selectorContainer.innerHTML = LEARNING_PATHS.map(path => {
-    // Gather all tutorials in this pathway
-    const allTutorialsInPath = path.steps.reduce((acc, step) => acc.concat(step.tutorials), []);
-    const completedInPath = allTutorialsInPath.filter(id => state.completedTutorialIds.has(id));
-    const percent = allTutorialsInPath.length > 0 
-      ? Math.round((completedInPath.length / allTutorialsInPath.length) * 100) 
-      : 0;
-    
     const isActive = state.activePathId === path.id;
     return `
       <button class="path-tab ${isActive ? 'active' : ''}" data-pathid="${path.id}" style="--path-color: ${path.color}">
@@ -1469,10 +1314,6 @@ function renderLearningPaths() {
           <span class="path-tab-title">${path.title}</span>
           <div class="path-tab-progress-meta">
             <span class="path-tab-difficulty">${path.difficulty}</span>
-            <span class="path-tab-percent">${percent}%</span>
-          </div>
-          <div class="path-tab-progress-bar">
-            <div class="path-tab-progress-fill" style="width: ${percent}%; background: ${path.color}"></div>
           </div>
         </div>
       </button>
@@ -1492,13 +1333,6 @@ function renderLearningPaths() {
   const activePath = LEARNING_PATHS.find(p => p.id === state.activePathId);
   if (!activePath) return;
 
-  // Calculate overall metrics
-  const allPathTutorials = activePath.steps.reduce((acc, step) => acc.concat(step.tutorials), []);
-  const completedPathTutorials = allPathTutorials.filter(id => state.completedTutorialIds.has(id));
-  const totalPercent = allPathTutorials.length > 0 
-    ? Math.round((completedPathTutorials.length / allPathTutorials.length) * 100) 
-    : 0;
-
   // Render Active Path Content
   activeContainer.innerHTML = `
     <div class="path-overview-card" style="--path-color: ${activePath.color}">
@@ -1509,43 +1343,15 @@ function renderLearningPaths() {
         <h3 class="path-overview-title">${activePath.title}</h3>
         <p class="path-overview-desc">${activePath.description}</p>
       </div>
-      <div class="path-overall-progress">
-        <div class="progress-radial-container">
-          <svg class="progress-ring" width="80" height="80">
-            <circle class="progress-ring-circle-bg" stroke="var(--border)" stroke-width="6" fill="transparent" r="34" cx="40" cy="40"/>
-            <circle class="progress-ring-circle" stroke="${activePath.color}" stroke-width="6" fill="transparent" r="34" cx="40" cy="40"
-                    style="stroke-dasharray: ${2 * Math.PI * 34}; stroke-dashoffset: ${2 * Math.PI * 34 * (1 - totalPercent / 100)}"/>
-          </svg>
-          <span class="progress-percent-text">${totalPercent}%</span>
-        </div>
-        <div class="progress-stats-text">
-          <span class="progress-completed-count">${completedPathTutorials.length} / ${allPathTutorials.length} Finished</span>
-          <span class="progress-label">Overall Progress</span>
-        </div>
-      </div>
     </div>
 
     <div class="roadmap-timeline">
       <div class="roadmap-line" style="background: linear-gradient(to bottom, ${activePath.color} 0%, var(--border) 100%)"></div>
       ${activePath.steps.map((step, sIdx) => {
-        // Calculate step progress details
-        const stepCompleted = step.tutorials.every(id => state.completedTutorialIds.has(id));
-        const stepInProgress = step.tutorials.some(id => state.completedTutorialIds.has(id)) && !stepCompleted;
-        
-        let stepStatusClass = 'pending';
-        let stepStatusIcon = '○';
-        if (stepCompleted) {
-          stepStatusClass = 'completed';
-          stepStatusIcon = '✓';
-        } else if (stepInProgress) {
-          stepStatusClass = 'in-progress';
-          stepStatusIcon = '●';
-        }
-
         return `
-          <div class="roadmap-step ${stepStatusClass}">
-            <div class="roadmap-node" style="background: ${stepCompleted ? activePath.color : 'var(--bg3)'}; border-color: ${stepCompleted || stepInProgress ? activePath.color : 'var(--border)'}">
-              <span class="node-icon">${stepStatusIcon}</span>
+          <div class="roadmap-step">
+            <div class="roadmap-node" style="background: var(--bg3); border-color: var(--border)">
+              <span class="node-icon">◆</span>
             </div>
             
             <div class="roadmap-step-card animate-in">
@@ -1558,15 +1364,10 @@ function renderLearningPaths() {
                   const t = TUTORIALS_DATA.find(item => item.id === tutId);
                   if (!t) return ''; // Skip if missing in DB
                   
-                  const isTutCompleted = state.completedTutorialIds.has(t.id);
-                  
                   return `
-                    <div class="roadmap-tut-item ${isTutCompleted ? 'completed' : ''}">
-                      <label class="roadmap-checkbox-label">
-                        <input type="checkbox" class="roadmap-checkbox" ${isTutCompleted ? 'checked' : ''} data-tutid="${t.id}" />
-                        <span class="custom-checkbox" style="--path-color: ${activePath.color}"></span>
-                      </label>
-                      <div class="roadmap-tut-info">
+                    <div class="roadmap-tut-item">
+                      <span aria-hidden="true" style="font-size: 1.1rem; color: var(--accent); margin-top: 0.2rem; flex-shrink: 0; line-height: 1;">⬡</span>
+                      <div class="roadmap-tut-info" style="margin-left: 0.5rem;">
                         <div class="roadmap-tut-main">
                           <a href="${t.url}" target="_blank" rel="noopener noreferrer" class="roadmap-tut-link">
                             ${t.title} <span class="external-link-arrow">↗</span>
@@ -1588,22 +1389,6 @@ function renderLearningPaths() {
       }).join('')}
     </div>
   `;
-
-  // Bind roadmap checkbox changes
-  activeContainer.querySelectorAll('.roadmap-checkbox').forEach(box => {
-    box.addEventListener('change', () => {
-      const tutId = Number(box.dataset.tutid);
-      toggleTutorialCompletion(tutId);
-    });
-  });
-
-  // Restore keyboard focus if it was on a milestone checkbox
-  if (focusedTutId !== null) {
-    const boxToFocus = activeContainer.querySelector(`.roadmap-checkbox[data-tutid="${focusedTutId}"]`);
-    if (boxToFocus) {
-      boxToFocus.focus();
-    }
-  }
 
   observeAnimations();
 }
@@ -1881,7 +1666,6 @@ function bindEvents() {
       state.level = 'all';
       state.type = 'all';
       state.duration = 'all';
-      state.showSavedOnly = false;
       state.page = 1;
       const catF = $('#cat-filter');
       if (catF) catF.value = 'all';
@@ -1891,8 +1675,6 @@ function bindEvents() {
       if (typeF) typeF.value = 'all';
       const durF = $('#duration-filter');
       if (durF) durF.value = 'all';
-      const bookmarksToggle = $('#bookmarks-toggle');
-      if (bookmarksToggle) bookmarksToggle.classList.remove('active');
       renderCategories();
       renderTutorials();
     });
@@ -1924,28 +1706,16 @@ function bindEvents() {
       renderTutorials();
     });
   }
-  const bookmarksToggle = $('#bookmarks-toggle');
-  if (bookmarksToggle) {
-    bookmarksToggle.setAttribute('aria-pressed', state.showSavedOnly ? 'true' : 'false');
-    bookmarksToggle.addEventListener('click', () => {
-      state.showSavedOnly = !state.showSavedOnly;
-      bookmarksToggle.classList.toggle('active', state.showSavedOnly);
-      bookmarksToggle.setAttribute('aria-pressed', state.showSavedOnly ? 'true' : 'false');
-      renderTutorials();
-    });
-  }
   const resetFiltersBtn = $('#reset-filters');
   if (resetFiltersBtn) {
     resetFiltersBtn.addEventListener('click', () => {
       state.category = 'all'; state.level = 'all'; state.type = 'all'; state.duration = 'all'; state.search = '';
-      state.showSavedOnly = false;
       if (searchInput) searchInput.value = '';
       if (catFilter) catFilter.value = 'all';
       if (diffFilter) diffFilter.value = 'all';
       if (typeFilter) typeFilter.value = 'all';
       const durFilter = $('#duration-filter');
       if (durFilter) durFilter.value = 'all';
-      if (bookmarksToggle) bookmarksToggle.classList.remove('active');
       state.page = 1;
       renderCategories();
       renderTutorials();
