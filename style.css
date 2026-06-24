@@ -390,8 +390,15 @@ input, select, textarea { font-family: var(--font); outline: none; }
 .section-tag {
   display: inline-block; font-size: 0.75rem; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.1em;
-  color: var(--primary-light); background: rgba(124,92,255,0.1); border: 1px solid rgba(124,92,255,0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text2);
+  border: 1px solid var(--border);
   padding: 0.3rem 0.875rem; border-radius: 100px; margin-bottom: 0.75rem;
+}
+.light-mode .section-tag {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: var(--text2);
 }
 .section-title { font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; color: var(--text); margin-bottom: 0.75rem; line-height: 1.2; }
 .section-sub { font-size: 1.05rem; color: var(--text2); max-width: 520px; margin: 0 auto; }
