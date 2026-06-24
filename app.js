@@ -7,7 +7,7 @@
 const CATEGORIES = [
   { id: 'software-dev', name: 'Software Development', emoji: '💻', color: '#7c5cff' },
   { id: 'devops',  name: 'DevOps & Cloud',    emoji: '☁️', color: '#00e5a0' },
-  { id: 'security',name: 'Cybersecurity',     emoji: '🔒', color: '#ff6b9d' },
+  { id: 'security',name: 'Cybersecurity',     emoji: '🔒', color: '#ff4a4a' },
   { id: 'networking',  name: 'Networking',          emoji: '📡', color: '#38bdf8' },
 ];
 
@@ -308,14 +308,7 @@ const TUTORIALS_DATA = [
     level: 'Intermediate', type: 'Course',
     tags: ['pytorch', 'neural-networks', 'python'], date: '2024-01-20', views: 7800,
   },
-  {
-    id: 3, category: 'devops', badge: '💳 PAID', title: 'Docker & Kubernetes: The Complete Guide',
-    description: 'Master containerization: build Docker images, write compose files, orchestrate with Kubernetes, configure networks, and deploy.',
-    url: 'https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/',
-    source: 'Udemy', author: 'Stephen Grider',
-    level: 'Intermediate', type: 'Course',
-    tags: ['docker', 'kubernetes', 'devops'], date: '2024-02-05', views: 5100,
-  },
+
   {
     id: 4, category: 'software-dev', badge: '▶️ FREE', title: 'TypeScript Full Course for Beginners',
     description: 'Zero to hero with TypeScript — types, interfaces, generics, decorators, and integrating with React. 8 hours of hands-on learning.',
@@ -340,22 +333,8 @@ const TUTORIALS_DATA = [
     level: 'Beginner', type: 'Article',
     tags: ['node', 'express', 'mongodb', 'rest', 'api'], date: '2024-02-28', views: 2900,
   },
-  {
-    id: 10, category: 'software-dev', badge: '🎓 FREE', title: 'Apache Kafka for Beginners',
-    description: 'Understand distributed event streaming — Kafka topics, partitions, consumers, producers, and connecting it all to real-time data pipelines.',
-    url: 'https://www.conduktor.io/kafka/what-is-apache-kafka/',
-    source: 'Conduktor', author: 'Conduktor Team',
-    level: 'Beginner', type: 'Article',
-    tags: ['kafka', 'streaming', 'data'], date: '2024-01-15', views: 2400,
-  },
-  {
-    id: 17, category: 'software-dev', badge: '🎓 FREE', title: 'Git & GitHub Masterclass',
-    description: 'Become a Git power user — branching strategies, rebasing, cherry-picking, GitHub Actions for CI/CD, pull requests, and monorepo workflows.',
-    url: 'https://www.atlassian.com/git/tutorials',
-    source: 'Atlassian', author: 'Atlassian Team',
-    level: 'Beginner', type: 'Article',
-    tags: ['git', 'github', 'version-control'], date: '2024-01-25', views: 5300,
-  },
+
+
   {
     id: 18, category: 'software-dev', badge: '🎓 FREE', title: 'React Native: Build Native Apps with JavaScript',
     description: 'Full React Native course covering navigation, state management with Redux Toolkit, native device APIs, Expo, and publishing to App Store & Google Play.',
@@ -380,14 +359,7 @@ const TUTORIALS_DATA = [
     level: 'Intermediate', type: 'Course',
     tags: ['redis', 'caching', 'nosql'], date: '2024-03-02', views: 2800,
   },
-  {
-    id: 25, category: 'software-dev', badge: '▶️ FREE', title: 'Neovim from Scratch',
-    description: 'Transform Neovim into a full-featured IDE — plugin ecosystem with lazy.nvim, LSP configuration, Treesitter, telescope, and custom Lua configs.',
-    url: 'https://www.youtube.com/watch?v=m8C0Cq9Uv9o',
-    source: 'TJ DeVries', author: 'TJ DeVries',
-    level: 'Advanced', type: 'Video',
-    tags: ['neovim', 'vim', 'editor', 'lua'], date: '2024-02-25', views: 2300,
-  },
+
   {
     id: -37, category: 'software-dev', badge: '🎓 FREE',
     title: 'MySQL for Developers',
@@ -837,7 +809,7 @@ function renderTutorialCard(t) {
   const linkLabel = t.freeTrial ? `Start Free Trial <span>→</span>` : `Open <span>↗</span>`;
   const linkClass = t.freeTrial ? 'tut-link tut-link-trial' : 'tut-link';
   return `
-  <article class="tut-card animate-in ${t.freeTrial ? 'tut-card-trial' : ''}" id="tut-${t.id}">
+  <article class="tut-card animate-in ${t.freeTrial ? 'tut-card-trial' : ''}" id="tut-${t.id}" style="--cat-color: ${cat?.color || '#7c5cff'}">
     <div class="tut-card-accent"></div>
     <div class="tut-card-body">
       <div class="tut-card-top">
