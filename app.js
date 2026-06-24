@@ -50,7 +50,7 @@ const TUTORIALS_DATA = [
   {
     id: -1, category: 'networking', freeTrial: true, trialLabel: '7-Day Free Trial',
     title: 'CBT Nuggets – IT Certification Training',
-    description: "Expert-led video training for IT certifications like Cisco, CompTIA, and AWS. Includes virtual labs, practice exams, and a free 7-day trial. No credit card required.",
+    description: "Expert-led video training for IT certifications like Cisco, CompTIA, and AWS. Includes virtual labs, practice exams, and a free 7-day trial.",
     url: 'https://www.cbtnuggets.com/free-week',
     source: 'CBT Nuggets', author: 'CBT Nuggets Team',
     level: 'Beginner', type: 'Course',
@@ -659,10 +659,7 @@ function renderFeatured() {
     trialsHtml += `
       <div class="bento-card trial trial-cbt-nuggets animate-in" style="--i:2">
         <div>
-          <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.6rem; flex-wrap: wrap;">
-            <span class="trial-badge" style="margin-bottom: 0;">${cleanText(cbt.trialLabel)}</span>
-            <span style="font-size: 0.72rem; font-weight: 700; background: rgba(255,255,255,0.06); color: var(--text2); padding: 0.28rem 0.75rem; border-radius: 100px; border: 1px solid var(--border); letter-spacing: 0.04em;">No Credit Card Required</span>
-          </div>
+          <span class="trial-badge">${cleanText(cbt.trialLabel)}</span>
           <div style="font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary-light); margin-bottom: 0.5rem; margin-top: 0.5rem;">${cCat?.emoji || ''} ${cCat?.name || cbt.category}</div>
           <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text); margin-bottom: 0.5rem; line-height: 1.3;">${cbt.title}</h3>
           <p style="font-size: 0.88rem; color: var(--text2); line-height: 1.5; margin-bottom: 1.5rem;">${cbt.description}</p>
