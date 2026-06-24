@@ -531,7 +531,7 @@ const TUTORIALS_DATA = [
     tags: ['nlp', 'transformers', 'python', 'bert'], date: '2024-02-20', views: 6100,
   },
   {
-    id: 16, category: 'backend', title: 'FastAPI: Modern Python API Development',
+    id: 16, category: 'backend', badge: '🎓 FREE', title: 'FastAPI: Modern Python API Development',
     description: 'Build production-grade APIs with FastAPI — async endpoints, Pydantic models, automatic OpenAPI docs, OAuth2, and PostgreSQL with SQLAlchemy.',
     url: 'https://fastapi.tiangolo.com/tutorial/',
     source: 'FastAPI Docs', author: 'Sebastián Ramírez',
