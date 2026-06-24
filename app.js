@@ -1146,31 +1146,13 @@ function renderFeatured() {
     </div>
   `;
 
-  // Card 3: Suggest a Resource (span 1, row span 1)
-  const suggestHtml = `
-    <div class="bento-card suggest-resource animate-in" style="--i:2">
-      <span class="section-tag" style="font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary-light); margin-bottom: 0.5rem; display: block;">Community</span>
-      <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
-        <span aria-hidden="true">💡</span> Suggest a Resource
-      </h3>
-      <p style="font-size: 0.85rem; color: var(--text2); line-height: 1.5; margin-bottom: 1.25rem; flex: 1;">
-        Found an outstanding, high-quality tutorial that belongs in our directory? Help keep our collection updated by suggesting new learning resources.
-      </p>
-      <div>
-        <a href="mailto:hello@techhub.directory?subject=TechHub Resource Suggestion" class="btn-ghost" style="display: flex; align-items: center; justify-content: center; font-size: 0.85rem; padding: 0.5rem 1rem; border-radius: var(--radius-xs); border: 1px solid var(--border); transition: all var(--transition); text-align: center;">
-          Submit Suggestion
-        </a>
-      </div>
-    </div>
-  `;
-
-  // Card 4: Quick Stats (span 3, row span 1)
+  // Card 3: Quick Stats (span 3, row span 1)
   const totalTutorials = TUTORIALS_DATA.length;
   const totalCategories = CATEGORIES.length;
   const totalSources = new Set(TUTORIALS_DATA.map(t => t.source)).size;
 
   const statsHtml = `
-    <div class="bento-card quick-stats animate-in" style="--i:3; display: flex; flex-direction: row; align-items: center; justify-content: space-around; gap: 2rem; padding: 1.5rem 2rem;">
+    <div class="bento-card quick-stats animate-in" style="--i:2; display: flex; flex-direction: row; align-items: center; justify-content: space-around; gap: 2rem; padding: 1.5rem 2rem;">
       <div style="display: flex; align-items: center; gap: 1rem;">
         <span aria-hidden="true" style="font-size: 2rem;">🌐</span>
         <div>
@@ -1200,7 +1182,6 @@ function renderFeatured() {
   grid.innerHTML = `
     ${featuredHtml}
     ${roadmapsHtml}
-    ${suggestHtml}
     ${statsHtml}
   `;
 
