@@ -24,7 +24,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 21000,
   },
   {
-    id: 0, category: 'networking', featured: true, badge: '🎥 FREE',
+    id: 0, category: 'networking', featured: true, badge: '▶️ FREE',
     title: "Jeremy's IT Lab – Free CCNA & CCNP Courses",
     description:
       "Free, highly recommended Cisco certification courses on YouTube, featuring CCNA and CCNP video lessons, Packet Tracer labs, and quizzes.",
@@ -68,7 +68,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 8900,
   },
   {
-    id: -18, category: 'networking', badge: '🎥 FREE',
+    id: -18, category: 'networking', badge: '▶️ FREE',
     title: 'Kevin Wallace – Free Cisco Courses on YouTube',
     description: "Dual CCIE Kevin Wallace shares free Cisco CCNA and CCNP certification courses directly on YouTube with clear, structured lessons.",
     url: 'https://www.youtube.com/@kwallaceccie/playlists',
@@ -78,7 +78,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 5800,
   },
   {
-    id: -19, category: 'networking', badge: '🎥 FREE',
+    id: -19, category: 'networking', badge: '▶️ FREE',
     title: 'thinQtank Learning – Cisco & CISSP Certification Courses',
     description: "Cisco and CISSP certification training covering CCNA, CCNP, CCIE, and CISSP. Features structured lessons and GNS3/EVE-NG lab guides.",
     url: 'https://www.youtube.com/@thinQtankS/playlists',
@@ -98,7 +98,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 19500,
   },
   {
-    id: -22, category: 'networking', badge: '🎥 FREE',
+    id: -22, category: 'networking', badge: '▶️ FREE',
     title: "Rob Riker's Tech Channel – Cisco CCNA, CCNP & CCIE Courses",
     description: "In-depth Cisco networking training covering CCNA, CCNP, and CCIE with free video lessons, practical EVE-NG labs, and workbook solutions.",
     url: 'https://www.youtube.com/@RobRikerTechChannel/playlists',
@@ -108,7 +108,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 5100,
   },
   {
-    id: -25, category: 'networking', badge: '🎥 FREE',
+    id: -25, category: 'networking', badge: '▶️ FREE',
     title: 'PowerCert Animated Videos – Visual IT & Networking Courses',
     description: "Animation-based training channel specializing in networking, security, and hardware. Ideal for CompTIA A+, Network+, and Security+ prep.",
     url: 'https://www.youtube.com/@PowerCertAnimatedVideos/playlists',
@@ -118,7 +118,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 18400,
   },
   {
-    id: -26, category: 'networking', badge: '🎥 FREE',
+    id: -26, category: 'networking', badge: '▶️ FREE',
     title: 'CBT Nuggets – Free IT & Networking Tutorials on YouTube',
     description: "Free introductory IT and networking courses on CCNA, Network+, cybersecurity, Linux, and virtualization, featuring focused MicroNuggets.",
     url: 'https://www.youtube.com/@cbtnuggets/courses',
@@ -128,7 +128,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 12500,
   },
   {
-    id: -6, category: 'devops', badge: '🎥 FREE',
+    id: -6, category: 'devops', badge: '▶️ FREE',
     title: 'TechWorld with Nana – DevOps & Cloud Tutorials',
     description: "Free DevOps and cloud computing tutorials on YouTube, featuring hands-on guides for Docker, Kubernetes, CI/CD, and Terraform.",
     url: 'https://www.youtube.com/@TechWorldwithNana/playlists',
@@ -148,7 +148,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 7600,
   },
   {
-    id: -106, category: 'networking', badge: '🎥 FREE',
+    id: -106, category: 'networking', badge: '▶️ FREE',
     title: 'Practical Networking – Free IT & Networking Courses',
     description: "Free, high-quality computer networking tutorials on YouTube covering subnetting, routing, switching, and firewall concepts.",
     url: 'https://www.youtube.com/@PracticalNetworking/playlists',
@@ -168,7 +168,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 8300,
   },
   {
-    id: -24, category: 'networking', badge: '🎥 FREE',
+    id: -24, category: 'networking', badge: '▶️ FREE',
     title: 'INE – Free IT & Networking Playlists on YouTube',
     description: "Free training playlists by INE covering CCNA, CCIE, cloud computing, cybersecurity, and webinar archives for certification prep.",
     url: 'https://www.youtube.com/@INEtraining/playlists',
@@ -178,7 +178,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 6100,
   },
   {
-    id: -12, category: 'networking', badge: '🎥 FREE',
+    id: -12, category: 'networking', badge: '▶️ FREE',
     title: 'freeCodeCamp – Computer Networking Complete Course',
     description: "Comprehensive foundational course covering TCP/IP, routing, subnetting, security, and troubleshooting. Prepares you for the Cisco CCNA.",
     url: 'https://www.youtube.com/watch?v=qiQR5rTSshw',
@@ -188,7 +188,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 18200,
   },
   {
-    id: -13, category: 'devops', badge: '🎥 FREE',
+    id: -13, category: 'devops', badge: '▶️ FREE',
     title: 'freeCodeCamp – Linux Command Line for Beginners',
     description: "Master Linux command line from scratch. Covers navigation, file systems, permissions, shell scripting, and systems administration.",
     url: 'https://www.youtube.com/watch?v=s02x-5FfH3M',
@@ -208,7 +208,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 22000,
   },
   {
-    id: -15, category: 'security', badge: '🎥 FREE',
+    id: -15, category: 'security', badge: '▶️ FREE',
     title: 'Simplilearn – Free IT & Cybersecurity Courses',
     description: "Free IT, cloud computing, and cybersecurity courses on YouTube, covering fundamentals, risk management, and professional certifications.",
     url: 'https://www.youtube.com/@SimplilearnOfficial/courses',
@@ -317,7 +317,7 @@ const TUTORIALS_DATA = [
     tags: ['docker', 'kubernetes', 'devops'], date: '2024-02-05', views: 5100,
   },
   {
-    id: 4, category: 'software-dev', badge: '🎥 FREE', title: 'TypeScript Full Course for Beginners',
+    id: 4, category: 'software-dev', badge: '▶️ FREE', title: 'TypeScript Full Course for Beginners',
     description: 'Zero to hero with TypeScript — types, interfaces, generics, decorators, and integrating with React. 8 hours of hands-on learning.',
     url: 'https://www.youtube.com/watch?v=fU90yG_1K-c',
     source: 'freeCodeCamp', author: 'Dave Gray',
@@ -325,7 +325,7 @@ const TUTORIALS_DATA = [
     tags: ['typescript', 'javascript', 'types'], date: '2024-04-12', views: 3300,
   },
   {
-    id: 6, category: 'aiml', badge: '🎥 FREE', title: 'LangChain Crash Course: Build LLM Apps',
+    id: 6, category: 'aiml', badge: '▶️ FREE', title: 'LangChain Crash Course: Build LLM Apps',
     description: 'Learn to chain language models, use agents and tools, build RAG pipelines, and deploy conversational AI apps with Python and LangChain in under 2 hours.',
     url: 'https://www.youtube.com/watch?v=LbT1yp6quS8',
     source: 'Patrick Loeber', author: 'Patrick Loeber',
@@ -413,20 +413,12 @@ const TUTORIALS_DATA = [
     tags: ['dbt', 'sql', 'analytics', 'data-engineering'], date: '2024-04-15', views: 2100,
   },
   {
-    id: 21, category: 'security', badge: '🎥 FREE', title: 'Ethical Hacking Full Course – Network Penetration Testing',
+    id: 21, category: 'security', badge: '▶️ FREE', title: 'Ethical Hacking Full Course – Network Penetration Testing',
     description: 'Learn penetration testing legally — recon, scanning, exploitation with Metasploit, web hacking, privilege escalation, and writing professional reports.',
     url: 'https://www.youtube.com/watch?v=3Kq1MIfTWCE',
     source: 'freeCodeCamp', author: 'Heath Adams (The Cyber Mentor)',
     level: 'Advanced', type: 'Video',
     tags: ['ethical-hacking', 'pentesting', 'security'], date: '2024-01-08', views: 4700,
-  },
-  {
-    id: 22, category: 'devops', badge: '🎓 FREE', title: 'GitHub Actions: CI/CD from Zero to Hero',
-    description: 'Automate everything with GitHub Actions — build, test, and deploy pipelines, matrix builds, caching, reusable workflows, and self-hosted runners.',
-    url: 'https://docs.github.com/en/actions/learn-github-actions',
-    source: 'GitHub Docs', author: 'GitHub Team',
-    level: 'Beginner', type: 'Article',
-    tags: ['github-actions', 'ci-cd', 'devops'], date: '2024-04-22', views: 3600,
   },
   {
     id: 23, category: 'software-dev', badge: '🔑 FREE', title: 'Redis: The Complete Developer Guide',
@@ -445,7 +437,7 @@ const TUTORIALS_DATA = [
     tags: ['css', 'grid', 'flexbox', 'responsive'], date: '2024-04-18', views: 4100,
   },
   {
-    id: 25, category: 'software-dev', badge: '🎥 FREE', title: 'Neovim from Scratch',
+    id: 25, category: 'software-dev', badge: '▶️ FREE', title: 'Neovim from Scratch',
     description: 'Transform Neovim into a full-featured IDE — plugin ecosystem with lazy.nvim, LSP configuration, Treesitter, telescope, and custom Lua configs.',
     url: 'https://www.youtube.com/watch?v=m8C0Cq9Uv9o',
     source: 'TJ DeVries', author: 'TJ DeVries',
