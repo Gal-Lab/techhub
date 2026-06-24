@@ -88,16 +88,6 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 4700,
   },
   {
-    id: -20, category: 'networking', badge: '🎥 FREE',
-    title: 'KishSquared – Cisco Networking Courses by Jeff Kish',
-    description: "Free Cisco networking courses by Jeff Kish. Covers CCNA, CCNP ENCOR, OSPF, Spanning-Tree, and enterprise design with expert-led sessions.",
-    url: 'https://www.youtube.com/@KishSquared/courses',
-    source: 'YouTube – KishSquared', author: 'Jeff Kish',
-    level: 'Intermediate', type: 'Video',
-    tags: ['ccna', 'ccnp', 'encor', 'cisco', 'networking', 'ccie', 'ospf'],
-    date: '2026-06-20', views: 4200,
-  },
-  {
     id: -21, category: 'networking', badge: '🎓 FREE',
     title: 'Cisco Networking Academy – Free IT & Networking Courses',
     description: "Cisco's official platform for free self-paced courses. Learn networking, cybersecurity, Python, Linux, and IoT with free digital badges.",
