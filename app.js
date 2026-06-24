@@ -220,17 +220,6 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 15000,
   },
   {
-    id: -30, category: 'software-dev', badge: '🎓 FREE',
-    title: 'DeepLearning.AI – Free Short Courses by Andrew Ng',
-    description: "Free, focused short courses on LLMs, GenAI, RAG, prompt engineering, and agents built with partners like OpenAI and Google.",
-    url: 'https://www.deeplearning.ai/courses/',
-    source: 'DeepLearning.AI', author: 'Andrew Ng',
-    level: 'Beginner', type: 'Course',
-    tags: ['ai', 'machine-learning', 'llm', 'generative-ai', 'prompt-engineering', 'agents', 'andrew-ng', 'python'],
-    date: '2026-06-21', views: 22000,
-  },
-
-  {
     id: -32, category: 'security', badge: '🔑 FREE',
     title: 'TryHackMe – Guided Hands-On Cybersecurity Learning',
     description: "Hands-on cybersecurity platform. Guided browser rooms cover Linux, networking, web hacking, CTF, and Blue Team skills without setup.",
