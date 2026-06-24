@@ -750,7 +750,6 @@ function renderTutorialCard(t) {
       <h3 class="tut-title">${t.title}</h3>
       <p class="tut-desc">${t.description}</p>
       <div class="tut-chips">
-        <span class="chip ${levelClass(t.level)}">${t.level}</span>
         <span class="chip ${typeClass(t.type)}"><span aria-hidden="true">${t.type === 'Video' ? '▶' : t.type === 'Article' ? '📄' : t.type === 'Course' ? '🎓' : '⚡'}</span> ${t.type}</span>
       </div>
     </div>
