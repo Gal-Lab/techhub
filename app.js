@@ -397,14 +397,6 @@ const TUTORIALS_DATA = [
     tags: ['redis', 'caching', 'nosql'], date: '2024-03-02', views: 2800,
   },
   {
-    id: 24, category: 'software-dev', badge: '🎓 FREE', title: 'CSS Grid & Flexbox Mastery',
-    description: 'Build any layout imaginable with CSS Grid and Flexbox. Interactive exercises, real-world projects, and techniques for responsive, accessible designs.',
-    url: 'https://cssgrid.io/',
-    source: 'Wes Bos', author: 'Wes Bos',
-    level: 'Beginner', type: 'Interactive',
-    tags: ['css', 'grid', 'flexbox', 'responsive'], date: '2024-04-18', views: 4100,
-  },
-  {
     id: 25, category: 'software-dev', badge: '▶️ FREE', title: 'Neovim from Scratch',
     description: 'Transform Neovim into a full-featured IDE — plugin ecosystem with lazy.nvim, LSP configuration, Treesitter, telescope, and custom Lua configs.',
     url: 'https://www.youtube.com/watch?v=m8C0Cq9Uv9o',
