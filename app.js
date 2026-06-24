@@ -240,16 +240,6 @@ const TUTORIALS_DATA = [
     tags: ['cybersecurity', 'ethical-hacking', 'pentesting', 'linux', 'ctf', 'blue-team', 'guided-paths', 'browser-based'],
     date: '2026-06-21', views: 24000,
   },
-  {
-    id: -33, category: 'security', badge: '🔑 FREE',
-    title: 'PortSwigger Web Security Academy',
-    description: "Free web security academy covering major vulnerabilities (SQLi, XSS, CSRF, OAuth, APIs) with graded browser labs from Burp Suite creators.",
-    url: 'https://portswigger.net/web-security',
-    source: 'PortSwigger', author: 'PortSwigger Team',
-    level: 'Intermediate', type: 'Interactive',
-    tags: ['web-security', 'sql-injection', 'xss', 'csrf', 'oauth', 'api-security', 'burp-suite', 'pentesting', 'owasp'],
-    date: '2026-06-21', views: 28000,
-  },
 
   {
     id: -35, category: 'devops', badge: '🔑 FREE',

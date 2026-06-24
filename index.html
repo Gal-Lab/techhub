@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=1.1" />
+  <link rel="stylesheet" href="style.css?v=1.2" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -80,7 +80,6 @@
   <!-- ── HERO ── -->
   <section class="hero" id="home">
     <div class="hero-bg">
-      <img src="hero_banner.png" alt="" class="hero-img" aria-hidden="true" />
       <div class="hero-overlay"></div>
       <div class="hero-orb hero-orb-1"></div>
       <div class="hero-orb hero-orb-2"></div>
@@ -117,13 +116,6 @@
           <div class="search-suggestions hidden" id="search-suggestions" role="listbox"></div>
           <button class="search-btn" id="search-btn">Search</button>
         </div>
-      </div>
-      <div class="hero-stats">
-        <div class="stat"><span class="stat-num" id="stat-tutorials" data-target="500">0</span><span class="stat-label">Tutorials</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num" id="stat-categories" data-target="10">0</span><span class="stat-label">Categories</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num" id="stat-sources" data-target="50">0</span><span class="stat-label">Sources</span></div>
       </div>
     </div>
     <div class="hero-scroll-hint">
@@ -176,15 +168,6 @@
             </select>
           </div>
           <div class="filter-group">
-            <label class="filter-label" for="diff-filter">Level</label>
-            <select id="diff-filter" class="filter-select">
-              <option value="all">All Levels</option>
-              <option value="Beginner">Beginner</option>
-              <option value="Intermediate">Intermediate</option>
-              <option value="Advanced">Advanced</option>
-            </select>
-          </div>
-          <div class="filter-group">
             <label class="filter-label" for="type-filter">Format</label>
             <select id="type-filter" class="filter-select">
               <option value="all">All Formats</option>
@@ -194,27 +177,12 @@
               <option value="Interactive">Interactive</option>
             </select>
           </div>
-          <div class="filter-group">
-            <label class="filter-label" for="duration-filter">Duration</label>
-            <select id="duration-filter" class="filter-select">
-              <option value="all">All Durations</option>
-              <option value="quick">Quick (&lt; 30m)</option>
-              <option value="medium">Medium (30m - 2h)</option>
-              <option value="deep">Deep Dive (&gt; 2h)</option>
-            </select>
-          </div>
           <button class="btn-ghost filter-reset" id="reset-filters">Reset</button>
         </div>
       </div>
 
       <div class="sort-bar">
         <span class="results-count" id="results-count">Showing all tutorials</span>
-        <div class="sort-group">
-          <span class="sort-label">Sort by:</span>
-          <button class="sort-btn active" data-sort="newest" id="sort-newest">Newest</button>
-          <button class="sort-btn" data-sort="popular" id="sort-popular">Popular</button>
-          <button class="sort-btn" data-sort="az" id="sort-az">A–Z</button>
-        </div>
       </div>
 
       <div class="tutorials-grid" id="tutorials-grid">

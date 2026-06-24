@@ -410,12 +410,12 @@ input, select, textarea { font-family: var(--font); outline: none; }
 }
 .cat-card::before {
   content: ''; position: absolute; inset: 0; opacity: 0;
-  background: radial-gradient(circle, rgba(124,92,255,0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--cat-color) 12%, transparent) 0%, transparent 70%);
   transition: opacity var(--transition);
 }
 .cat-card:hover::before { opacity: 1; }
-.cat-card:hover { border-color: var(--border2); transform: translateY(-4px); box-shadow: var(--shadow); }
-.cat-card.active { border-color: var(--primary); background: rgba(124,92,255,0.1); }
+.cat-card:hover { border-color: color-mix(in srgb, var(--cat-color) 40%, transparent); transform: translateY(-4px); box-shadow: var(--shadow); }
+.cat-card.active { border-color: var(--cat-color); background: color-mix(in srgb, var(--cat-color) 10%, transparent); }
 .cat-emoji { font-size: 2rem; transition: transform var(--transition); }
 .cat-card:hover .cat-emoji { transform: scale(1.15); }
 .cat-name { font-size: 0.95rem; font-weight: 700; color: var(--text); }
