@@ -557,15 +557,26 @@ input, select, textarea { font-family: var(--font); outline: none; }
 .tut-link {
   display: inline-flex; align-items: center; gap: 0.35rem;
   padding: 0.45rem 1.1rem; border-radius: 100px; font-size: 0.82rem; font-weight: 600;
-  background: color-mix(in srgb, var(--cat-color, var(--primary-light)) 15%, transparent);
-  color: var(--cat-color, var(--primary-light));
-  border: 1px solid color-mix(in srgb, var(--cat-color, var(--primary-light)) 25%, transparent);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text2);
+  border: 1px solid var(--border);
   transition: all var(--transition);
 }
 .tut-link:hover {
-  background: color-mix(in srgb, var(--cat-color, var(--primary-light)) 28%, transparent);
-  border-color: var(--cat-color, var(--primary));
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text);
+  border-color: var(--text3);
   transform: translateX(2px);
+}
+.light-mode .tut-link {
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--text2);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+.light-mode .tut-link:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--text);
+  border-color: rgba(0, 0, 0, 0.25);
 }
 
 /* Free trial card & badge */
