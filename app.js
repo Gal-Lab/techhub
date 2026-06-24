@@ -81,7 +81,7 @@ const TUTORIALS_DATA = [
     id: -19, category: 'networking', badge: '🎥 FREE',
     title: 'thinQtank Learning – Cisco & CISSP Certification Courses',
     description: "Cisco and CISSP certification training covering CCNA, CCNP, CCIE, and CISSP. Features structured lessons and GNS3/EVE-NG lab guides.",
-    url: 'https://www.youtube.com/@thinQtankS/courses',
+    url: 'https://www.youtube.com/@thinQtankS/playlists',
     source: 'YouTube – thinQtank Learning', author: 'thinQtank Learning',
     level: 'Intermediate', type: 'Video',
     tags: ['ccna', 'ccnp', 'ccie', 'cissp', 'networking', 'cisco', 'certification'],
