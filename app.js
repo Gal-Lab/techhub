@@ -341,14 +341,6 @@ const TUTORIALS_DATA = [
     tags: ['node', 'express', 'mongodb', 'rest', 'api'], date: '2024-02-28', views: 2900,
   },
   {
-    id: 8, category: 'software-dev', badge: '💳 PAID', title: 'Flutter & Dart – The Complete Guide',
-    description: 'Go from zero to a multi-screen mobile app with Flutter. Widgets, state management, animations, Firebase, and publishing to app stores.',
-    url: 'https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/',
-    source: 'Udemy', author: 'Maximilian Schwarzmüller',
-    level: 'Beginner', type: 'Course',
-    tags: ['flutter', 'dart', 'mobile', 'ios', 'android'], date: '2024-04-01', views: 3700,
-  },
-  {
     id: 9, category: 'devops', badge: '🛠️ FREE TOOL', title: 'Terraform in Practice',
     description: 'Infrastructure as Code: provision cloud resources on AWS, GCP, and Azure with modules, remote state, and CI/CD automation.',
     url: 'https://developer.hashicorp.com/terraform/tutorials',
