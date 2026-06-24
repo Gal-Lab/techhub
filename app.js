@@ -108,16 +108,6 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 8900,
   },
   {
-    id: -5, category: 'networking', badge: '💳 PAID',
-    title: 'Kevin Wallace Training – Cisco Certifications',
-    description: "Led by dual CCIE Kevin Wallace, this training offers structured preparation for Cisco certifications like CCNA, CCNP, and ENCOR. Features high-quality YouTube tutorials, exam-prep blueprints, and an All-Access Pass for in-depth premium courses.",
-    url: 'https://kwtrain.com',
-    source: 'Kevin Wallace Training', author: 'Kevin Wallace',
-    level: 'Beginner', type: 'Course',
-    tags: ['ccna', 'ccnp', 'cisco', 'networking', 'certification'],
-    date: '2026-06-20', views: 6500,
-  },
-  {
     id: -18, category: 'networking', badge: '🎥 FREE',
     title: 'Kevin Wallace – Free Cisco Courses on YouTube',
     description: "Dual CCIE Kevin Wallace shares free Cisco certification courses directly on YouTube. Covers CCNA, CCNP, and related topics with clear, structured video lessons — ideal for self-study without a paid subscription.",
