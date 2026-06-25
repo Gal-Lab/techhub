@@ -38,7 +38,7 @@ const TUTORIALS_DATA = [
     views: 12000,
   },
   {
-    id: -2, category: 'networking', badge: '🎓 FREE',
+    id: -2, category: 'networking', freeAccount: true,
     title: 'NetworkLessons – Cisco & Networking Courses',
     description: "Offers in-depth, structured courses for CCNA, CCNP, and other Cisco certifications by Rene Molenaar. Access 300+ lessons for free.",
     url: 'https://networklessons.com/courses',
@@ -58,7 +58,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 9500,
   },
   {
-    id: -37, category: 'networking', badge: '🎥 FREE',
+    id: -37, category: 'networking', badge: '▶️ FREE',
     title: 'Keith Barker – Free CCNA & Networking Playlists',
     description: "Free Cisco certification training on YouTube by a CCIE instructor. Detailed video lessons cover CCNA topics, networking fundamentals, and exam quizzes.",
     url: 'https://www.youtube.com/@KeithBarker/playlists',
@@ -277,7 +277,7 @@ const TUTORIALS_DATA = [
   },
 
   {
-    id: -37, category: 'software-dev', badge: '🎓 FREE',
+    id: -38, category: 'software-dev', badge: '🎓 FREE',
     title: 'MySQL for Developers',
     description: 'Free course on MySQL design, indexing strategies, query tuning, and database scaling to build highly performant applications.',
     url: 'https://planetscale.com/courses/mysql-for-developers',
