@@ -354,6 +354,109 @@ function getDurationLabel(minutes) {
   return `${hours}h ${mins}m`;
 }
 
+// ── SEO & URL SYNCHRONIZATION HELPERS ──────────────────────────────────────────
+function updateMetaFromState() {
+  let title = 'TechHub – Curated Tech Courses';
+  let desc = 'TechHub is your curated directory of the best tech courses across web dev, AI/ML, DevOps, mobile, and more. Discover, filter, and browse top-quality learning resources from across the web.';
+
+  if (state.category && state.category !== 'all') {
+    const catObj = getCategoryById(state.category);
+    if (catObj) {
+      title = `TechHub – Curated ${catObj.name} Courses`;
+      desc = `Browse the best hand-picked ${catObj.name} courses on TechHub. Discover top-quality tutorial resources and learn ${catObj.name} today.`;
+    }
+  } else if (state.search && state.search.trim() !== '') {
+    title = `TechHub – Search results for "${state.search.trim()}"`;
+    desc = `Search results for "${state.search.trim()}" on TechHub. Find the best courses matching your query.`;
+  }
+
+  document.title = title;
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) {
+    metaDesc.setAttribute('content', desc);
+  }
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle) ogTitle.setAttribute('content', title);
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  if (ogDesc) ogDesc.setAttribute('content', desc);
+  const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+  if (twitterTitle) twitterTitle.setAttribute('content', title);
+  const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+  if (twitterDesc) twitterDesc.setAttribute('content', desc);
+}
+
+function syncUrlFromState() {
+  const url = new URL(window.location.href);
+  const params = new URLSearchParams();
+
+  if (state.category && state.category !== 'all') {
+    params.set('category', state.category);
+  }
+  if (state.search && state.search.trim() !== '') {
+    params.set('search', state.search.trim());
+  }
+  if (state.level && state.level !== 'all') {
+    params.set('level', state.level);
+  }
+  if (state.type && state.type !== 'all') {
+    params.set('type', state.type);
+  }
+  if (state.duration && state.duration !== 'all') {
+    params.set('duration', state.duration);
+  }
+  if (state.sort && state.sort !== 'newest') {
+    params.set('sort', state.sort);
+  }
+
+  const newQuery = params.toString();
+  const newRelativePathQuery = window.location.pathname + (newQuery ? '?' + newQuery : '');
+
+  if (window.location.search !== (newQuery ? '?' + newQuery : '')) {
+    history.replaceState(null, '', newRelativePathQuery);
+  }
+
+  updateMetaFromState();
+}
+
+function loadStateFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.has('category')) {
+    state.category = params.get('category');
+  }
+  if (params.has('search')) {
+    const searchVal = params.get('search');
+    state.search = searchVal;
+    const searchInput = $('#search-input');
+    if (searchInput) searchInput.value = searchVal;
+  }
+  if (params.has('level')) {
+    state.level = params.get('level');
+    const diffFilter = $('#diff-filter');
+    if (diffFilter) diffFilter.value = state.level;
+  }
+  if (params.has('type')) {
+    state.type = params.get('type');
+    const typeFilter = $('#type-filter');
+    if (typeFilter) typeFilter.value = state.type;
+  }
+  if (params.has('duration')) {
+    state.duration = params.get('duration');
+    const durationFilter = $('#duration-filter');
+    if (durationFilter) durationFilter.value = state.duration;
+  }
+  if (params.has('sort')) {
+    state.sort = params.get('sort');
+    $$('.sort-btn').forEach(btn => {
+      const isActive = btn.dataset.sort === state.sort;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+  }
+
+  updateCatFilter();
+}
+
 let toastTimeout = null;
 function showToast(msg, dur = 2500) {
   const el = $('#toast');
@@ -563,20 +666,22 @@ function renderCategories() {
   });
 
   grid.innerHTML = sortedCategories.map(cat => `
-    <div class="cat-card animate-in ${state.category === cat.id ? 'active' : ''}"
-         data-catid="${cat.id}"
-         role="button" tabindex="0"
-         aria-label="Filter by ${cat.name}"
-         aria-pressed="${state.category === cat.id ? 'true' : 'false'}"
-         style="--cat-color: ${cat.color}">
+    <a href="?category=${state.category === cat.id ? 'all' : cat.id}"
+       class="cat-card animate-in ${state.category === cat.id ? 'active' : ''}"
+       data-catid="${cat.id}"
+       role="button" tabindex="0"
+       aria-label="Filter by ${cat.name}"
+       aria-pressed="${state.category === cat.id ? 'true' : 'false'}"
+       style="--cat-color: ${cat.color}">
       <span class="cat-emoji" aria-hidden="true">${cat.emoji}</span>
       <span class="cat-name">${cat.name}</span>
       <span class="cat-count">${counts[cat.id] || 0} courses</span>
-    </div>
+    </a>
   `).join('');
 
   grid.querySelectorAll('.cat-card').forEach(card => {
-    const handler = () => {
+    const handler = (e) => {
+      if (e) e.preventDefault();
       const id = card.dataset.catid;
       state.category = (state.category === id) ? 'all' : id;
       state.page = 1;
@@ -587,7 +692,7 @@ function renderCategories() {
       if (tutSec) tutSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
     card.addEventListener('click', handler);
-    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') handler(); });
+    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') handler(e); });
   });
 
   observeAnimations();
@@ -679,6 +784,7 @@ function renderFeatured() {
 function renderTutorials(reset = true) {
   if (reset) state.page = 1;
   const filtered = applyFilters();
+  syncUrlFromState();
   const slice = filtered.slice(0, state.page * PAGE_SIZE);
   const grid = $('#tutorials-grid');
   const countEl = $('#results-count');
@@ -1122,6 +1228,7 @@ function bindEvents() {
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
 function init() {
+  loadStateFromUrl();
   updateStatsTargets();
   populateSelects();
   renderCategories();
