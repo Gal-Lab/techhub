@@ -4,6 +4,53 @@
    search, dark mode, forms, animations.
 =================================================== */
 
+// ── MONETIZATION & AFFILIATE CONFIGURATION ──────────────────────────────────────
+// Replace these placeholders with your actual affiliate IDs or referral tokens.
+const MONETIZATION_CONFIG = {
+  enabled: true,
+  // Add your tracking parameters for each platform
+  parameters: {
+    coursera: { utm_source: 'techhub', utm_medium: 'affiliate' },
+    udemy: { utm_source: 'techhub', utm_medium: 'affiliate' },
+    oreilly: { utm_source: 'techhub', utm_medium: 'affiliate' },
+    cbtnuggets: { utm_source: 'techhub' },
+    amazon: { tag: 'techhub-20' }
+  },
+  // Custom redirect wrapper if using an ad-network or link-cloaker (optional)
+  customWrapper: null
+};
+
+/**
+ * Wraps a standard course URL with tracking/affiliate parameters if configured.
+ * @param {string} urlStr - The destination URL
+ * @returns {string} The updated affiliate URL
+ */
+function getAffiliateUrl(urlStr) {
+  if (!MONETIZATION_CONFIG.enabled || !urlStr) return urlStr;
+  try {
+    const url = new URL(urlStr);
+    const host = url.hostname.toLowerCase();
+    
+    // Check match for specific platforms and append parameters
+    for (const [platform, params] of Object.entries(MONETIZATION_CONFIG.parameters)) {
+      if (host.includes(platform)) {
+        for (const [key, val] of Object.entries(params)) {
+          if (val) url.searchParams.set(key, val);
+        }
+        break;
+      }
+    }
+    
+    if (typeof MONETIZATION_CONFIG.customWrapper === 'function') {
+      return MONETIZATION_CONFIG.customWrapper(url.toString());
+    }
+    
+    return url.toString();
+  } catch (e) {
+    return urlStr;
+  }
+}
+
 const CATEGORIES = [
   { id: 'software-dev', name: 'Software Development', emoji: '💻', color: '#7c5cff' },
   { id: 'devops',  name: 'Cloud and IT',    emoji: '☁️', color: '#f59e0b' },
@@ -723,7 +770,7 @@ function renderFeatured() {
         </div>
         <div class="featured-footer" style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
           <span class="featured-author" style="font-size: 0.82rem; color: var(--text3);">by ${featured.author} · ${featured.source}</span>
-          <a href="${featured.url}" target="_blank" rel="noopener noreferrer" class="btn-featured">
+          <a href="${getAffiliateUrl(featured.url)}" target="_blank" rel="noopener noreferrer" class="btn-featured">
             Start Learning <span>→</span>
           </a>
         </div>
@@ -749,7 +796,7 @@ function renderFeatured() {
         </div>
         <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
           <span style="font-size: 0.8rem; color: var(--text3);">by ${oreilly.author}</span>
-          <a href="${oreilly.url}" target="_blank" rel="noopener noreferrer" class="btn-featured" style="background: linear-gradient(135deg, #ffaa00, #ff6b00); color: #fff; box-shadow: 0 4px 12px rgba(255,170,0,0.25);">
+          <a href="${getAffiliateUrl(oreilly.url)}" target="_blank" rel="noopener noreferrer" class="btn-featured" style="background: linear-gradient(135deg, #ffaa00, #ff6b00); color: #fff; box-shadow: 0 4px 12px rgba(255,170,0,0.25);">
             Start Trial <span>→</span>
           </a>
         </div>
@@ -767,7 +814,7 @@ function renderFeatured() {
         </div>
         <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
           <span style="font-size: 0.8rem; color: var(--text3);">by ${cbt.author}</span>
-          <a href="${cbt.url}" target="_blank" rel="noopener noreferrer" class="btn-featured" style="background: linear-gradient(135deg, #ffaa00, #ff6b00); color: #fff; box-shadow: 0 4px 12px rgba(255,170,0,0.25);">
+          <a href="${getAffiliateUrl(cbt.url)}" target="_blank" rel="noopener noreferrer" class="btn-featured" style="background: linear-gradient(135deg, #ffaa00, #ff6b00); color: #fff; box-shadow: 0 4px 12px rgba(255,170,0,0.25);">
             Start Trial <span>→</span>
           </a>
         </div>
@@ -862,7 +909,7 @@ function renderTutorialCard(t) {
     </div>
     <div class="tut-card-footer">
       <span class="tut-source"><span aria-hidden="true">🔗</span> ${t.source}</span>
-      <a href="${t.url}" target="_blank" rel="noopener noreferrer" class="${linkClass}" id="open-tut-${t.id}">
+      <a href="${getAffiliateUrl(t.url)}" target="_blank" rel="noopener noreferrer" class="${linkClass}" id="open-tut-${t.id}">
         ${linkLabel}
       </a>
     </div>
