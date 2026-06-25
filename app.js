@@ -1,5 +1,5 @@
 /* ===================================================
-   TechHub – app.js
+   DevNest – app.js
    Main application logic: data, rendering, filtering,
    search, dark mode, forms, animations.
 =================================================== */
@@ -10,11 +10,11 @@ const MONETIZATION_CONFIG = {
   enabled: true,
   // Add your tracking parameters for each platform
   parameters: {
-    coursera: { utm_source: 'techhub', utm_medium: 'affiliate' },
-    udemy: { utm_source: 'techhub', utm_medium: 'affiliate' },
-    oreilly: { utm_source: 'techhub', utm_medium: 'affiliate' },
-    cbtnuggets: { utm_source: 'techhub' },
-    amazon: { tag: 'techhub-20' }
+    coursera: { utm_source: 'devnest', utm_medium: 'affiliate' },
+    udemy: { utm_source: 'devnest', utm_medium: 'affiliate' },
+    oreilly: { utm_source: 'devnest', utm_medium: 'affiliate' },
+    cbtnuggets: { utm_source: 'devnest' },
+    amazon: { tag: 'devnest-20' }
   },
   // Custom redirect wrapper if using an ad-network or link-cloaker (optional)
   customWrapper: null
@@ -403,18 +403,18 @@ function getDurationLabel(minutes) {
 
 // ── SEO & URL SYNCHRONIZATION HELPERS ──────────────────────────────────────────
 function updateMetaFromState() {
-  let title = 'TechHub – Curated Tech Courses';
-  let desc = 'TechHub is your curated directory of the best tech courses across web dev, AI/ML, DevOps, mobile, and more. Discover, filter, and browse top-quality learning resources from across the web.';
+  let title = 'DevNest – Curated Tech Courses';
+  let desc = 'DevNest is your curated directory of the best tech courses across web dev, AI/ML, DevOps, mobile, and more. Discover, filter, and browse top-quality learning resources from across the web.';
 
   if (state.category && state.category !== 'all') {
     const catObj = getCategoryById(state.category);
     if (catObj) {
-      title = `TechHub – Curated ${catObj.name} Courses`;
-      desc = `Browse the best hand-picked ${catObj.name} courses on TechHub. Discover top-quality tutorial resources and learn ${catObj.name} today.`;
+      title = `DevNest – Curated ${catObj.name} Courses`;
+      desc = `Browse the best hand-picked ${catObj.name} courses on DevNest. Discover top-quality tutorial resources and learn ${catObj.name} today.`;
     }
   } else if (state.search && state.search.trim() !== '') {
-    title = `TechHub – Search results for "${state.search.trim()}"`;
-    desc = `Search results for "${state.search.trim()}" on TechHub. Find the best courses matching your query.`;
+    title = `DevNest – Search results for "${state.search.trim()}"`;
+    desc = `Search results for "${state.search.trim()}" on DevNest. Find the best courses matching your query.`;
   }
 
   document.title = title;
