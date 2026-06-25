@@ -624,6 +624,17 @@ input, select, textarea { font-family: var(--font); outline: none; }
 }
 .tut-link-trial:hover { background: linear-gradient(135deg, rgba(255,170,0,0.35), rgba(255,107,0,0.35)); border-color: #ffaa00; transform: translateX(2px); }
 
+.light-mode .tut-link-trial {
+  background: linear-gradient(135deg, rgba(180, 83, 9, 0.08), rgba(180, 83, 9, 0.08));
+  color: #b45309;
+  border-color: rgba(180, 83, 9, 0.25);
+}
+.light-mode .tut-link-trial:hover {
+  background: linear-gradient(135deg, rgba(180, 83, 9, 0.15), rgba(180, 83, 9, 0.15));
+  border-color: #b45309;
+}
+
+
 /* ===== NO RESULTS ===== */
 .no-results { text-align: center; padding: 5rem 2rem; }
 .no-results-icon { font-size: 4rem; margin-bottom: 1rem; }

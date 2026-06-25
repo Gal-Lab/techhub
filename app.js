@@ -71,7 +71,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 21000,
   },
   {
-    id: 0, category: 'networking', featured: true, badge: '▶️ FREE',
+    id: 0, category: 'networking', featured: true, badge: '🎥 FREE',
     title: "Jeremy's IT Lab – Free CCNA & CCNP Courses",
     description:
       "Free, highly recommended Cisco certification courses on YouTube, featuring CCNA and CCNP video lessons, Packet Tracer labs, and quizzes.",
@@ -105,7 +105,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 9500,
   },
   {
-    id: -37, category: 'networking', badge: '▶️ FREE',
+    id: -37, category: 'networking', badge: '🎥 FREE',
     title: 'Keith Barker – Free CCNA & Networking Playlists',
     description: "Free Cisco certification training on YouTube by a CCIE instructor. Detailed video lessons cover CCNA topics, networking fundamentals, and exam quizzes.",
     url: 'https://www.youtube.com/@KeithBarker/playlists',
@@ -125,7 +125,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 8900,
   },
   {
-    id: -18, category: 'networking', badge: '▶️ FREE',
+    id: -18, category: 'networking', badge: '🎥 FREE',
     title: 'Kevin Wallace – Free Cisco Courses on YouTube',
     description: "Dual CCIE Kevin Wallace shares free Cisco CCNA and CCNP certification courses directly on YouTube with clear, structured lessons.",
     url: 'https://www.youtube.com/@kwallaceccie/playlists',
@@ -135,7 +135,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 5800,
   },
   {
-    id: -19, category: 'networking', badge: '▶️ FREE',
+    id: -19, category: 'networking', badge: '🎥 FREE',
     title: 'thinQtank Learning – Cisco & CISSP Certification Courses',
     description: "Cisco and CISSP certification training covering CCNA, CCNP, CCIE, and CISSP. Features structured lessons and GNS3/EVE-NG lab guides.",
     url: 'https://www.youtube.com/@thinQtankS/playlists',
@@ -155,7 +155,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 19500,
   },
   {
-    id: -22, category: 'networking', badge: '▶️ FREE',
+    id: -22, category: 'networking', badge: '🎥 FREE',
     title: "Rob Riker's Tech Channel – Cisco CCNA, CCNP & CCIE Courses",
     description: "In-depth Cisco networking training covering CCNA, CCNP, and CCIE with free video lessons, practical EVE-NG labs, and workbook solutions.",
     url: 'https://www.youtube.com/@RobRikerTechChannel/playlists',
@@ -165,7 +165,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 5100,
   },
   {
-    id: -25, category: 'networking', badge: '▶️ FREE',
+    id: -25, category: 'networking', badge: '🎥 FREE',
     title: 'PowerCert Animated Videos – Visual IT & Networking Courses',
     description: "Animation-based training channel specializing in networking, security, and hardware. Ideal for CompTIA A+, Network+, and Security+ prep.",
     url: 'https://www.youtube.com/@PowerCertAnimatedVideos/playlists',
@@ -175,7 +175,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 18400,
   },
   {
-    id: -26, category: 'networking', badge: '▶️ FREE',
+    id: -26, category: 'networking', badge: '🎥 FREE',
     title: 'CBT Nuggets – Free IT & Networking Tutorials on YouTube',
     description: "Free introductory IT and networking courses on CCNA, Network+, cybersecurity, Linux, and virtualization, featuring focused MicroNuggets.",
     url: 'https://www.youtube.com/@cbtnuggets/courses',
@@ -185,7 +185,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 12500,
   },
   {
-    id: -6, category: 'devops', badge: '▶️ FREE',
+    id: -6, category: 'devops', badge: '🎥 FREE',
     title: 'TechWorld with Nana – DevOps & Cloud Tutorials',
     description: "Free DevOps and cloud computing tutorials on YouTube, featuring hands-on guides for Docker, Kubernetes, CI/CD, and Terraform.",
     url: 'https://www.youtube.com/@TechWorldwithNana/playlists',
@@ -205,7 +205,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 7600,
   },
   {
-    id: -106, category: 'networking', badge: '▶️ FREE',
+    id: -106, category: 'networking', badge: '🎥 FREE',
     title: 'Practical Networking – Free IT & Networking Courses',
     description: "Free, high-quality computer networking tutorials on YouTube covering subnetting, routing, switching, and firewall concepts.",
     url: 'https://www.youtube.com/@PracticalNetworking/playlists',
@@ -225,7 +225,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 8300,
   },
   {
-    id: -24, category: 'networking', badge: '▶️ FREE',
+    id: -24, category: 'networking', badge: '🎥 FREE',
     title: 'INE – Free IT & Networking Playlists on YouTube',
     description: "Free training playlists by INE covering CCNA, CCIE, cloud computing, cybersecurity, and webinar archives for certification prep.",
     url: 'https://www.youtube.com/@INEtraining/playlists',
@@ -246,7 +246,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 22000,
   },
   {
-    id: -15, category: 'devops', badge: '▶️ FREE',
+    id: -15, category: 'devops', badge: '🎥 FREE',
     title: 'Simplilearn – Free IT & Cybersecurity Courses',
     description: "Free IT, cloud computing, and cybersecurity courses on YouTube, covering fundamentals, risk management, and professional certifications.",
     url: 'https://www.youtube.com/@SimplilearnOfficial/courses',
@@ -267,7 +267,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 18000,
   },
   {
-    id: -29, category: 'software-dev', badge: '🎓 FREE',
+    id: -29, category: 'software-dev', badge: '📝 GUIDE',
     title: "web.dev – Google's Official Web Dev Learn Paths",
     description: "Google's official hub for web development. Free structured courses on modern HTML, CSS, JS, accessibility, performance, and PWAs.",
     url: 'https://web.dev/learn',
@@ -298,7 +298,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 20000,
   },
   {
-    id: -36, category: 'software-dev', badge: '🎓 FREE',
+    id: -36, category: 'software-dev', badge: '🛠️ FREE TOOL',
     title: 'SQLBolt – Interactive SQL Lessons',
     description: "Interactive SQL lessons in the browser with immediate feedback. Covers SELECT queries, JOINs, and aggregates with no signup needed.",
     url: 'https://sqlbolt.com/',
@@ -308,14 +308,8 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 17000,
   },
 
-
-
-
-
-
-
   {
-    id: 100, category: 'software-dev', badge: '🎓 FREE', title: 'freeCodeCamp – YouTube Playlists',
+    id: 100, category: 'software-dev', badge: '🎥 FREE', title: 'freeCodeCamp – YouTube Playlists',
     description: 'Access thousands of free, comprehensive video courses and playlists covering software development, DevOps, cybersecurity, networking, and databases.',
     url: 'https://www.youtube.com/@freecodecamp/playlists',
     source: 'freeCodeCamp', author: 'freeCodeCamp Team',
@@ -359,10 +353,6 @@ const PAGE_SIZE = 9;
 let state = {
   search: '',
   category: 'all',
-  level: 'all',
-  type: 'all',
-  duration: 'all',
-  sort: 'newest',
   page: 1,
   tutorials: [...TUTORIALS_DATA],
 };
@@ -442,18 +432,6 @@ function syncUrlFromState() {
   if (state.search && state.search.trim() !== '') {
     params.set('search', state.search.trim());
   }
-  if (state.level && state.level !== 'all') {
-    params.set('level', state.level);
-  }
-  if (state.type && state.type !== 'all') {
-    params.set('type', state.type);
-  }
-  if (state.duration && state.duration !== 'all') {
-    params.set('duration', state.duration);
-  }
-  if (state.sort && state.sort !== 'newest') {
-    params.set('sort', state.sort);
-  }
 
   const newQuery = params.toString();
   const newRelativePathQuery = window.location.pathname + (newQuery ? '?' + newQuery : '');
@@ -476,29 +454,6 @@ function loadStateFromUrl() {
     state.search = searchVal;
     const searchInput = $('#search-input');
     if (searchInput) searchInput.value = searchVal;
-  }
-  if (params.has('level')) {
-    state.level = params.get('level');
-    const diffFilter = $('#diff-filter');
-    if (diffFilter) diffFilter.value = state.level;
-  }
-  if (params.has('type')) {
-    state.type = params.get('type');
-    const typeFilter = $('#type-filter');
-    if (typeFilter) typeFilter.value = state.type;
-  }
-  if (params.has('duration')) {
-    state.duration = params.get('duration');
-    const durationFilter = $('#duration-filter');
-    if (durationFilter) durationFilter.value = state.duration;
-  }
-  if (params.has('sort')) {
-    state.sort = params.get('sort');
-    $$('.sort-btn').forEach(btn => {
-      const isActive = btn.dataset.sort === state.sort;
-      btn.classList.toggle('active', isActive);
-      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-    });
   }
 
   updateCatFilter();
@@ -674,23 +629,10 @@ function applyFilters() {
     if (t.id === -17 || t.id === -1) return false;
     const matchSearch = !q || [t.title, t.description, t.source, t.author].some(s => s.toLowerCase().includes(q)) || t.tags.some(tag => tag.toLowerCase().includes(qClean));
     const matchCat = state.category === 'all' || t.category === state.category;
-    const matchLevel = state.level === 'all' || t.level === state.level;
-    const matchType = state.type === 'all' || t.type === state.type;
-    const matchDuration = (() => {
-      if (state.duration === 'all') return true;
-      const mins = getDurationMinutes(t);
-      if (state.duration === 'quick') return mins < 30;
-      if (state.duration === 'medium') return mins >= 30 && mins <= 120;
-      if (state.duration === 'deep') return mins > 120;
-      return true;
-    })();
-    return matchSearch && matchCat && matchLevel && matchType && matchDuration;
+    return matchSearch && matchCat;
   });
 
-  if (state.sort === 'newest') list.sort((a, b) => new Date(b.date) - new Date(a.date));
-  else if (state.sort === 'popular') list.sort((a, b) => b.views - a.views);
-  else if (state.sort === 'az') list.sort((a, b) => a.title.localeCompare(b.title));
-
+  list.sort((a, b) => new Date(b.date) - new Date(a.date));
   return list;
 }
 
@@ -1188,18 +1130,9 @@ function bindEvents() {
       state.search = '';
       if (searchInput) searchInput.value = '';
       state.category = 'all';
-      state.level = 'all';
-      state.type = 'all';
-      state.duration = 'all';
       state.page = 1;
       const catF = $('#cat-filter');
       if (catF) catF.value = 'all';
-      const diffF = $('#diff-filter');
-      if (diffF) diffF.value = 'all';
-      const typeF = $('#type-filter');
-      if (typeF) typeF.value = 'all';
-      const durF = $('#duration-filter');
-      if (durF) durF.value = 'all';
       renderCategories();
       renderTutorials();
     });
@@ -1215,52 +1148,17 @@ function bindEvents() {
       renderTutorials();
     });
   }
-  const diffFilter = $('#diff-filter');
-  if (diffFilter) {
-    diffFilter.addEventListener('change', e => { state.level = e.target.value; state.page = 1; renderTutorials(); });
-  }
-  const typeFilter = $('#type-filter');
-  if (typeFilter) {
-    typeFilter.addEventListener('change', e => { state.type = e.target.value; state.page = 1; renderTutorials(); });
-  }
-  const durationFilter = $('#duration-filter');
-  if (durationFilter) {
-    durationFilter.addEventListener('change', e => {
-      state.duration = e.target.value;
-      state.page = 1;
-      renderTutorials();
-    });
-  }
   const resetFiltersBtn = $('#reset-filters');
   if (resetFiltersBtn) {
     resetFiltersBtn.addEventListener('click', () => {
-      state.category = 'all'; state.level = 'all'; state.type = 'all'; state.duration = 'all'; state.search = '';
+      state.category = 'all'; state.search = '';
       if (searchInput) searchInput.value = '';
       if (catFilter) catFilter.value = 'all';
-      if (diffFilter) diffFilter.value = 'all';
-      if (typeFilter) typeFilter.value = 'all';
-      const durFilter = $('#duration-filter');
-      if (durFilter) durFilter.value = 'all';
       state.page = 1;
       renderCategories();
       renderTutorials();
     });
   }
-
-  // ── Sort
-  $$('.sort-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      $$('.sort-btn').forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-pressed', 'false');
-      });
-      btn.classList.add('active');
-      btn.setAttribute('aria-pressed', 'true');
-      state.sort = btn.dataset.sort;
-      state.page = 1;
-      renderTutorials();
-    });
-  });
 
   // ── Load more
   const loadMoreBtn = $('#load-more-btn');
@@ -1287,12 +1185,6 @@ function init() {
   // Connect statsObserver once
   const stats = $('.hero-stats');
   if (stats) statsObserver.observe(stats);
-
-  // Set initial aria-pressed on sort buttons
-  $$('.sort-btn').forEach(btn => {
-    const isActive = btn.classList.contains('active');
-    btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-  });
 
   // Animate hero entrance staggered
   setTimeout(() => {
