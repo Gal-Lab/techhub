@@ -296,6 +296,16 @@ const TUTORIALS_DATA = [
     tags: ['android', 'jetpack-compose', 'kotlin', 'mobile-dev', 'google'],
     date: '2026-06-21', views: 24000,
   },
+  {
+    id: -11, category: 'software-dev', badge: '🎓 FREE',
+    title: 'Harvard CS50x – Introduction to Computer Science',
+    description: "Harvard's legendary introduction to computer science. Learn C, Python, SQL, HTML, CSS, JavaScript, algorithms, and data structures through rigorous problem sets.",
+    url: 'https://cs50.harvard.edu/x/',
+    source: 'Harvard University', author: 'David J. Malan',
+    level: 'Beginner', type: 'Course',
+    tags: ['c', 'python', 'sql', 'html-css', 'javascript', 'algorithms', 'cs-fundamentals'],
+    date: '2026-06-25', views: 32000,
+  },
 ];
 // ── APP STATE ─────────────────────────────────────────────────────────────────
 const PAGE_SIZE = 9;
