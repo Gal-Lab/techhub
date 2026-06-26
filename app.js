@@ -74,7 +74,7 @@ const TUTORIALS_DATA = [
     id: 0, category: 'networking', featured: true, badge: '🎥 FREE',
     title: "Jeremy's IT Lab – Free CCNA & CCNP Courses",
     description:
-      "Free, highly recommended Cisco certification courses on YouTube, featuring CCNA and CCNP video lessons, Packet Tracer labs, and quizzes.",
+      "Free, highly recommended Cisco certification courses on YouTube, featuring CCNA and CCNP video lessons, Packet Tracer labs, and quizzes. Students will gain hands-on practice with Packet Tracer and prepare for Cisco examinations.",
     url: 'https://www.youtube.com/@JeremysITLab/playlists',
     source: "YouTube – Jeremy's IT Lab",
     author: 'Jeremy McDowall',
@@ -85,7 +85,7 @@ const TUTORIALS_DATA = [
     views: 12000,
   },
   {
-    id: -2, category: 'networking', freeAccount: true,
+    id: -2, category: 'networking', badge: '🔑 FREE',
     title: 'NetworkLessons – Cisco & Networking Courses',
     description: "Offers in-depth, structured courses for CCNA, CCNP, and other Cisco certifications by Rene Molenaar. Access 300+ lessons for free.",
     url: 'https://networklessons.com/courses',
@@ -127,7 +127,7 @@ const TUTORIALS_DATA = [
   {
     id: -18, category: 'networking', badge: '🎥 FREE',
     title: 'Kevin Wallace – Free Cisco Courses on YouTube',
-    description: "Dual CCIE Kevin Wallace shares free Cisco CCNA and CCNP certification courses directly on YouTube with clear, structured lessons.",
+    description: "Dual CCIE Kevin Wallace shares free Cisco CCNA and CCNP certification courses directly on YouTube with clear, structured lessons. These videos provide real-world insights and help students pass their exams.",
     url: 'https://www.youtube.com/@kwallaceccie/playlists',
     source: 'YouTube – Kevin Wallace', author: 'Kevin Wallace',
     level: 'Beginner', type: 'Video',
@@ -157,7 +157,7 @@ const TUTORIALS_DATA = [
   {
     id: -22, category: 'networking', badge: '🎥 FREE',
     title: "Rob Riker's Tech Channel – Cisco CCNA, CCNP & CCIE Courses",
-    description: "In-depth Cisco networking training covering CCNA, CCNP, and CCIE with free video lessons, practical EVE-NG labs, and workbook solutions.",
+    description: "In-depth Cisco networking training covering CCNA, CCNP, and CCIE with free video lessons, practical EVE-NG labs, and workbook solutions. Learners will master advanced configuration protocols and troubleshooting workflows.",
     url: 'https://www.youtube.com/@RobRikerTechChannel/playlists',
     source: 'YouTube – Rob Riker', author: 'Rob Riker',
     level: 'Intermediate', type: 'Video',
@@ -177,7 +177,7 @@ const TUTORIALS_DATA = [
   {
     id: -26, category: 'networking', badge: '🎥 FREE',
     title: 'CBT Nuggets – Free IT & Networking Tutorials on YouTube',
-    description: "Free introductory IT and networking courses on CCNA, Network+, cybersecurity, Linux, and virtualization, featuring focused MicroNuggets.",
+    description: "Free introductory IT and networking courses on CCNA, Network+, cybersecurity, Linux, and virtualization, featuring focused MicroNuggets. These bite-sized videos help students quickly grasp challenging technology topics.",
     url: 'https://www.youtube.com/@cbtnuggets/courses',
     source: 'YouTube – CBT Nuggets', author: 'CBT Nuggets Instructors',
     level: 'Beginner', type: 'Video',
@@ -187,7 +187,7 @@ const TUTORIALS_DATA = [
   {
     id: -6, category: 'devops', badge: '🎥 FREE',
     title: 'TechWorld with Nana – DevOps & Cloud Tutorials',
-    description: "Free DevOps and cloud computing tutorials on YouTube, featuring hands-on guides for Docker, Kubernetes, CI/CD, and Terraform.",
+    description: "Free DevOps and cloud computing tutorials on YouTube, featuring hands-on guides for Docker, Kubernetes, CI/CD, and Terraform. Students will build actual deployment pipelines and manage cloud-native infrastructure.",
     url: 'https://www.youtube.com/@TechWorldwithNana/playlists',
     source: 'YouTube – TechWorld with Nana', author: 'Nana Janashia',
     level: 'Beginner', type: 'Video',
@@ -197,7 +197,7 @@ const TUTORIALS_DATA = [
   {
     id: -10, category: 'networking', badge: '🎓 FREE',
     title: 'NetworkAcademy.io – Free IT & Networking Courses',
-    description: "High-quality visual guides, animated diagrams, and courses for Cisco CCNA and Python network automation.",
+    description: "High-quality visual guides, animated diagrams, and courses for Cisco CCNA and Python network automation. Learn how network components interact and write custom scripts to automate device configurations.",
     url: 'https://www.networkacademy.io/courses',
     source: 'NetworkAcademy.io', author: 'NetworkAcademy Team',
     level: 'Beginner', type: 'Course',
@@ -207,7 +207,7 @@ const TUTORIALS_DATA = [
   {
     id: -106, category: 'networking', badge: '🎥 FREE',
     title: 'Practical Networking – Free IT & Networking Courses',
-    description: "Free, high-quality computer networking tutorials on YouTube covering subnetting, routing, switching, and firewall concepts.",
+    description: "Free, high-quality computer networking tutorials on YouTube covering subnetting, routing, switching, and firewall concepts. Master network operations through visual, step-by-step technical walk-throughs.",
     url: 'https://www.youtube.com/@PracticalNetworking/playlists',
     source: 'YouTube – Practical Networking', author: 'Ed Harmoush',
     level: 'Beginner', type: 'Video',
@@ -217,7 +217,7 @@ const TUTORIALS_DATA = [
   {
     id: -16, category: 'networking', badge: '💳 PAID',
     title: 'Boson – Cisco & CompTIA Certification Exam Prep',
-    description: "Industry-leading CCNA, CCNP, and CompTIA practice exams and network simulators with detailed explanations and realistic scenarios.",
+    description: "Industry-leading CCNA, CCNP, and CompTIA practice exams and network simulators with detailed explanations and realistic scenarios. Students will test their certification readiness and build practical network topologies.",
     url: 'https://www.boson.com',
     source: 'Boson', author: 'Boson Team',
     level: 'Intermediate', type: 'Interactive',
@@ -227,7 +227,7 @@ const TUTORIALS_DATA = [
   {
     id: -24, category: 'networking', badge: '🎥 FREE',
     title: 'INE – Free IT & Networking Playlists on YouTube',
-    description: "Free training playlists by INE covering CCNA, CCIE, cloud computing, cybersecurity, and webinar archives for certification prep.",
+    description: "Free training playlists by INE covering CCNA, CCIE, cloud computing, cybersecurity, and webinar archives for certification prep. Build deep network engineering and security knowledge using structured vendor-level videos.",
     url: 'https://www.youtube.com/@INEtraining/playlists',
     source: 'YouTube – INE', author: 'INE (Internetwork Expert)',
     level: 'Intermediate', type: 'Video',
@@ -238,7 +238,7 @@ const TUTORIALS_DATA = [
   {
     id: -14, category: 'software-dev', badge: '🎓 FREE',
     title: 'The Odin Project – Full-Stack Web Development',
-    description: "Free, project-based full-stack curriculum covering Git, HTML/CSS, JavaScript, Node.js, and databases with portfolio-ready projects.",
+    description: "Free, project-based full-stack curriculum covering Git, HTML/CSS, JavaScript, Node.js, and databases with portfolio-ready projects. Learn real developer workflows by building complete web applications from scratch.",
     url: 'https://www.theodinproject.com/',
     source: 'The Odin Project', author: 'Odin Project Contributors',
     level: 'Beginner', type: 'Interactive',
@@ -246,9 +246,9 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 22000,
   },
   {
-    id: -15, category: 'devops', badge: '🎥 FREE',
+    id: -15, category: 'security', badge: '🎥 FREE',
     title: 'Simplilearn – Free IT & Cybersecurity Courses',
-    description: "Free IT, cloud computing, and cybersecurity courses on YouTube, covering fundamentals, risk management, and professional certifications.",
+    description: "Free IT, cloud computing, and cybersecurity courses on YouTube, covering fundamentals, risk management, and professional certifications. Students will explore basic network security concepts, threat intelligence, and compliance frameworks.",
     url: 'https://www.youtube.com/@SimplilearnOfficial/courses',
     source: 'YouTube – Simplilearn', author: 'Simplilearn Team',
     level: 'Beginner', type: 'Video',
@@ -267,7 +267,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 18000,
   },
   {
-    id: -29, category: 'software-dev', badge: '📝 GUIDE',
+    id: -29, category: 'software-dev', badge: '🎓 FREE',
     title: "web.dev – Google's Official Web Dev Learn Paths",
     description: "Google's official hub for web development. Free structured courses on modern HTML, CSS, JS, accessibility, performance, and PWAs.",
     url: 'https://web.dev/learn',
@@ -310,7 +310,7 @@ const TUTORIALS_DATA = [
 
   {
     id: 100, category: 'software-dev', badge: '🎥 FREE', title: 'freeCodeCamp – YouTube Playlists',
-    description: 'Access thousands of free, comprehensive video courses and playlists covering software development, DevOps, cybersecurity, networking, and databases.',
+    description: 'Access thousands of free, comprehensive video courses and playlists covering software development, DevOps, cybersecurity, networking, and databases. Build skills at your own pace through structured technical guides and challenges.',
     url: 'https://www.youtube.com/@freecodecamp/playlists',
     source: 'freeCodeCamp', author: 'freeCodeCamp Team',
     level: 'Beginner', type: 'Course',
@@ -320,7 +320,7 @@ const TUTORIALS_DATA = [
   {
     id: -38, category: 'software-dev', badge: '🎓 FREE',
     title: 'MySQL for Developers',
-    description: 'Free course on MySQL design, indexing strategies, query tuning, and database scaling to build highly performant applications.',
+    description: 'Free course on MySQL design, indexing strategies, query tuning, and database scaling to build highly performant applications. Students will learn how to optimize queries and structure databases for production scale.',
     url: 'https://planetscale.com/courses/mysql-for-developers',
     source: 'PlanetScale', author: 'Aaron Francis',
     level: 'Intermediate', type: 'Course',
@@ -360,7 +360,7 @@ const TUTORIALS_DATA = [
   {
     id: -108, category: 'devops', badge: '🎥 FREE',
     title: 'IBM Technology – Free IT & Cloud Architecture Playlists',
-    description: "Clear, visually illustrated explanations of cloud computing, containers, Kubernetes, microservices, databases, and IT infrastructure by IBM engineers.",
+    description: "Clear, visually illustrated explanations of cloud computing, containers, Kubernetes, microservices, databases, and IT infrastructure by IBM engineers. Students will learn core architectural concepts and modern system designs.",
     url: 'https://www.youtube.com/@IBMTechnology/playlists',
     source: 'YouTube – IBM Technology', author: 'IBM Technology Team',
     level: 'Beginner', type: 'Video',
@@ -370,7 +370,7 @@ const TUTORIALS_DATA = [
   {
     id: -109, category: 'devops', badge: '🎥 FREE',
     title: "John Savill's Technical Training – Free Azure & DevOps Courses",
-    description: "Comprehensive, free deep dives and certification preparation playlists for Microsoft Azure, cloud computing, and DevOps architectures by master class instructor John Savill.",
+    description: "Comprehensive, free deep dives and certification preparation playlists for Microsoft Azure, cloud computing, and DevOps architectures by master class instructor John Savill. Get ready for official Azure exams with structured, in-depth design walk-throughs.",
     url: 'https://www.youtube.com/@NTFAQGuy/playlists',
     source: "YouTube – John Savill's Technical Training", author: 'John Savill',
     level: 'Beginner', type: 'Video',
@@ -380,7 +380,7 @@ const TUTORIALS_DATA = [
   {
     id: -110, category: 'networking', badge: '🎥 FREE',
     title: 'Telecom Tech Explained – Mobile Network & 5G Architecture Playlists',
-    description: "Deep-dive video guides on mobile network engineering, 4G/5G cellular core architecture, LTE signaling, and telecommunications protocols.",
+    description: "Deep-dive video guides on mobile network engineering, 4G/5G cellular core architecture, LTE signaling, and telecommunications protocols. Learn how cellular signals are routed and managed across modern wireless telecom infrastructures.",
     url: 'https://www.youtube.com/@telecomTech.explained/playlists',
     source: 'YouTube – Telecom Tech Explained', author: 'Telecom Tech Explained Team',
     level: 'Intermediate', type: 'Video',
