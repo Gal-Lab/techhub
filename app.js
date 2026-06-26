@@ -347,6 +347,16 @@ const TUTORIALS_DATA = [
     tags: ['c', 'python', 'sql', 'html-css', 'javascript', 'algorithms', 'cs-fundamentals'],
     date: '2026-06-25', views: 32000,
   },
+  {
+    id: -107, category: 'software-dev', badge: '🛠️ FREE TOOL',
+    title: 'roadmap.sh – Developer Roadmaps & Learning Paths',
+    description: "Interactive roadmaps, guides, and learning paths for developer roles, technologies, and computer science concepts. Helps visualize and plan your learning path with community-voted resources.",
+    url: 'https://roadmap.sh',
+    source: 'roadmap.sh', author: 'roadmap.sh Team',
+    level: 'Beginner', type: 'Tool',
+    tags: ['roadmaps', 'developer-path', 'frontend', 'backend', 'devops', 'guides'],
+    date: '2026-06-26', views: 28000,
+  },
 ];
 // ── APP STATE ─────────────────────────────────────────────────────────────────
 const PAGE_SIZE = 9;
