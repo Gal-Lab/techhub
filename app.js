@@ -360,6 +360,16 @@ const TUTORIALS_DATA = [
     date: '2026-06-26', views: 26000,
   },
   {
+    id: -111, category: 'software-dev', badge: '🎓 FREE',
+    title: 'freeCodeCamp – Interactive Web & Programming Curriculum',
+    description: 'Free, structured interactive curriculum covering Responsive Web Design, JavaScript, Python, Data Analysis, Machine Learning, and back-end development. Earn verified certificates by completing projects without ever paying a fee.',
+    url: 'https://www.freecodecamp.org/learn',
+    source: 'freeCodeCamp', author: 'freeCodeCamp Team',
+    level: 'Beginner', type: 'Interactive',
+    tags: ['javascript', 'python', 'html-css', 'data-science', 'machine-learning', 'full-stack', 'certification'],
+    date: '2026-06-26', views: 35000,
+  },
+  {
     id: -110, category: 'networking', badge: '🎥 FREE',
     title: 'Telecom Tech Explained – Mobile Network & 5G Architecture Playlists',
     description: "Deep-dive video guides on mobile network engineering, 4G/5G cellular core architecture, LTE signaling, and telecommunications protocols. Learn how cellular signals are routed and managed across modern wireless telecom infrastructures.",
