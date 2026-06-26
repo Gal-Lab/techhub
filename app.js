@@ -433,18 +433,18 @@ function getDurationLabel(minutes) {
 
 // ── SEO & URL SYNCHRONIZATION HELPERS ──────────────────────────────────────────
 function updateMetaFromState() {
-  let title = 'DevNest – Curated Tech Courses';
-  let desc = 'DevNest is your curated directory of the best tech courses across web dev, AI/ML, DevOps, mobile, and more. Discover, filter, and browse top-quality learning resources from across the web.';
+  let title = 'DevNest – Curated Tech Resources';
+  let desc = 'DevNest is your curated directory of the best tech resources across web dev, AI/ML, DevOps, mobile, and more. Discover, filter, and browse top-quality learning resources from across the web.';
 
   if (state.category && state.category !== 'all') {
     const catObj = getCategoryById(state.category);
     if (catObj) {
-      title = `DevNest – Curated ${catObj.name} Courses`;
-      desc = `Browse the best hand-picked ${catObj.name} courses on DevNest. Discover top-quality tutorial resources and learn ${catObj.name} today.`;
+      title = `DevNest – Curated ${catObj.name} Resources`;
+      desc = `Browse the best hand-picked ${catObj.name} resources on DevNest. Discover top-quality tutorial resources and learn ${catObj.name} today.`;
     }
   } else if (state.search && state.search.trim() !== '') {
     title = `DevNest – Search results for "${state.search.trim()}"`;
-    desc = `Search results for "${state.search.trim()}" on DevNest. Find the best courses matching your query.`;
+    desc = `Search results for "${state.search.trim()}" on DevNest. Find the best resources matching your query.`;
   }
 
   document.title = title;
@@ -704,7 +704,7 @@ function renderCategories() {
        style="--cat-color: ${cat.color}">
       <span class="cat-emoji" aria-hidden="true">${cat.emoji}</span>
       <span class="cat-name">${cat.name}</span>
-      <span class="cat-count">${counts[cat.id] || 0} courses</span>
+      <span class="cat-count">${counts[cat.id] || 0} resources</span>
     </a>
   `).join('');
 
@@ -821,7 +821,7 @@ function renderTutorials(reset = true) {
   const loadMore = $('#load-more-wrapper');
 
   if (countEl) {
-    countEl.textContent = `Showing ${Math.min(slice.length, filtered.length)} of ${filtered.length} course${filtered.length !== 1 ? 's' : ''}`;
+    countEl.textContent = `Showing ${Math.min(slice.length, filtered.length)} of ${filtered.length} resource${filtered.length !== 1 ? 's' : ''}`;
   }
 
   if (filtered.length === 0) {

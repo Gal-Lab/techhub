@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:;" />
-  <title>DevNest – Curated Tech Courses</title>
-  <meta name="description" content="DevNest is your curated directory of the best tech courses across web dev, AI/ML, DevOps, mobile, and more. Discover, filter, and browse top-quality learning resources from across the web." />
-  <meta name="keywords" content="tech courses, programming, web development, machine learning, DevOps, learning resources" />
+  <title>DevNest – Curated Tech Resources</title>
+  <meta name="description" content="DevNest is your curated directory of the best tech resources across web dev, AI/ML, DevOps, mobile, and more. Discover, filter, and browse top-quality learning resources from across the web." />
+  <meta name="keywords" content="tech resources, programming, web development, machine learning, DevOps, learning resources" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://devnest-learn.netlify.app/" />
-  <meta property="og:title" content="DevNest – Curated Tech Courses" />
-  <meta property="og:description" content="Discover the best hand-picked tech courses from across the web." />
+  <meta property="og:title" content="DevNest – Curated Tech Resources" />
+  <meta property="og:description" content="Discover the best hand-picked tech resources from across the web." />
   <meta property="og:image" content="https://devnest-learn.netlify.app/hero_banner.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="DevNest – Curated Tech Courses" />
-  <meta name="twitter:description" content="Discover the best hand-picked tech courses from across the web." />
+  <meta name="twitter:title" content="DevNest – Curated Tech Resources" />
+  <meta name="twitter:description" content="Discover the best hand-picked tech resources from across the web." />
   <meta name="twitter:image" content="https://devnest-learn.netlify.app/hero_banner.png" />
   <link rel="canonical" href="https://devnest-learn.netlify.app/" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⬡</text></svg>">
@@ -28,7 +28,7 @@
     "@type": "WebSite",
     "name": "DevNest",
     "url": "https://devnest-learn.netlify.app/",
-    "description": "Curated directory of the best tech courses across web development, AI/ML, DevOps, and mobile development.",
+    "description": "Curated directory of the best tech resources across web development, AI/ML, DevOps, and mobile development.",
     "potentialAction": {
       "@type": "SearchAction",
       "target": "https://devnest-learn.netlify.app/?search={search_term_string}",
@@ -57,7 +57,7 @@
       </a>
       <nav class="nav-links" id="nav-links">
         <a href="#featured" class="nav-link">Featured</a>
-        <a href="#tutorials" class="nav-link">Courses</a>
+        <a href="#tutorials" class="nav-link">Resources</a>
         <a href="#categories" class="nav-link">Categories</a>
       </nav>
       <div class="nav-actions">
@@ -72,7 +72,7 @@
   <!-- ── MOBILE MENU ── -->
   <nav aria-label="Mobile navigation" class="mobile-menu" id="mobile-menu">
     <a href="#featured" class="mobile-link">Featured</a>
-    <a href="#tutorials" class="mobile-link">Courses</a>
+    <a href="#tutorials" class="mobile-link">Resources</a>
     <a href="#categories" class="mobile-link">Categories</a>
   </nav>
 
@@ -81,20 +81,22 @@
   <!-- ── HERO ── -->
   <section class="hero" id="home">
     <div class="hero-bg">
-      <img class="hero-img" src="hero_banner.png" alt="DevNest Hero Banner" width="1920" height="1080" />
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
       <div class="hero-badge">
         <span class="badge-dot"></span>
-        <span id="hero-badge-count">500+ Curated Courses</span>
+        <span id="hero-badge-count">500+ Curated Resources</span>
       </div>
       <h1 class="hero-title">
-        Find the Best Tech Courses<br />
+        Find the Best Tech Resources<br />
         <span class="gradient-text">All in One Place</span>
       </h1>
       <p class="hero-subtitle">
-        Discover trusted courses, save time
+        Discover trusted resources, save time
       </p>
       <div class="search-bar-wrapper" id="search-wrapper">
         <div class="search-bar">
@@ -103,8 +105,8 @@
             type="search"
             id="search-input"
             class="search-input"
-            placeholder="Search courses, topics, or technologies…"
-            aria-label="Search courses"
+            placeholder="Search resources, topics, or technologies…"
+            aria-label="Search resources"
             autocomplete="off"
             aria-autocomplete="list"
             aria-controls="search-suggestions"
@@ -123,7 +125,7 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Editor's Choice</span>
-        <h2 class="section-title">Featured Courses</h2>
+        <h2 class="section-title">Featured Resources</h2>
       </div>
       <div class="bento-dashboard" id="featured-grid">
         <!-- generated by JS -->
@@ -149,7 +151,7 @@
     <div class="container">
       <div class="tutorials-header">
         <div class="section-header" style="text-align:left;margin:0">
-          <span class="section-tag">All Courses</span>
+          <span class="section-tag">All Resources</span>
           <h2 class="section-title">Discover</h2>
         </div>
         <div class="filter-bar" id="filter-bar">
@@ -165,7 +167,7 @@
       </div>
 
       <div class="sort-bar">
-        <span class="results-count" id="results-count">Showing all courses</span>
+        <span class="results-count" id="results-count">Showing all resources</span>
       </div>
 
       <div class="tutorials-grid" id="tutorials-grid">
@@ -173,12 +175,12 @@
       </div>
       <div class="no-results hidden" id="no-results">
         <div class="no-results-icon">🔭</div>
-        <h3>No courses found</h3>
+        <h3>No resources found</h3>
         <p>Try adjusting your search or filters</p>
         <button class="btn-primary" id="clear-search">Clear Search</button>
       </div>
       <div class="load-more-wrapper" id="load-more-wrapper">
-        <button class="btn-outline" id="load-more-btn">Load More Courses</button>
+        <button class="btn-outline" id="load-more-btn">Load More Resources</button>
       </div>
     </div>
   </section>
@@ -194,13 +196,13 @@
             <span class="logo-icon">⬡</span>
             <span class="logo-text">Dev<span class="logo-accent">Nest</span></span>
           </a>
-          <p class="footer-tagline">Hand-picked courses for everyone in tech. Learn faster, grow further.</p>
+          <p class="footer-tagline">Hand-picked resources for everyone in tech. Learn faster, grow further.</p>
         </div>
         <div class="footer-links-grid">
           <div class="footer-col">
             <h3 class="footer-col-title">Browse</h3>
             <a href="#categories" class="footer-link">Categories</a>
-            <a href="#tutorials" class="footer-link">All Courses</a>
+            <a href="#tutorials" class="footer-link">All Resources</a>
           </div>
         </div>
       </div>
