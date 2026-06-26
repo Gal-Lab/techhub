@@ -357,6 +357,16 @@ const TUTORIALS_DATA = [
     tags: ['roadmaps', 'developer-path', 'frontend', 'backend', 'devops', 'guides'],
     date: '2026-06-26', views: 28000,
   },
+  {
+    id: -108, category: 'devops', badge: '🎥 FREE',
+    title: 'IBM Technology – Free IT & Cloud Architecture Playlists',
+    description: "Clear, visually illustrated explanations of cloud computing, containers, Kubernetes, microservices, databases, and IT infrastructure by IBM engineers.",
+    url: 'https://www.youtube.com/@IBMTechnology/playlists',
+    source: 'YouTube – IBM Technology', author: 'IBM Technology Team',
+    level: 'Beginner', type: 'Video',
+    tags: ['cloud', 'devops', 'kubernetes', 'architecture', 'containers', 'it-fundamentals'],
+    date: '2026-06-26', views: 24000,
+  },
 ];
 // ── APP STATE ─────────────────────────────────────────────────────────────────
 const PAGE_SIZE = 9;
