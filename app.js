@@ -308,16 +308,7 @@ const TUTORIALS_DATA = [
     tags: ['programming', 'networking', 'security', 'devops', 'video-courses'], date: '2026-06-24', views: 9800,
   },
 
-  {
-    id: -38, category: 'software-dev', badge: '🎓 FREE',
-    title: 'MySQL for Developers',
-    description: 'Free course on MySQL design, indexing strategies, query tuning, and database scaling to build highly performant applications. Students will learn how to optimize queries and structure databases for production scale.',
-    url: 'https://planetscale.com/courses/mysql-for-developers',
-    source: 'PlanetScale', author: 'Aaron Francis',
-    level: 'Intermediate', type: 'Course',
-    tags: ['mysql', 'database-design', 'indexing', 'performance', 'sql'],
-    date: '2026-06-21', views: 15000,
-  },
+
   {
     id: -42, category: 'software-dev', badge: '🎓 FREE',
     title: 'Android Basics with Compose',
