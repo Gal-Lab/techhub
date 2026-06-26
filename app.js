@@ -367,6 +367,16 @@ const TUTORIALS_DATA = [
     tags: ['cloud', 'devops', 'kubernetes', 'architecture', 'containers', 'it-fundamentals'],
     date: '2026-06-26', views: 24000,
   },
+  {
+    id: -109, category: 'devops', badge: '🎥 FREE',
+    title: "John Savill's Technical Training – Free Azure & DevOps Courses",
+    description: "Comprehensive, free deep dives and certification preparation playlists for Microsoft Azure, cloud computing, and DevOps architectures by master class instructor John Savill.",
+    url: 'https://www.youtube.com/@NTFAQGuy/playlists',
+    source: "YouTube – John Savill's Technical Training", author: 'John Savill',
+    level: 'Beginner', type: 'Video',
+    tags: ['azure', 'cloud', 'devops', 'infrastructure', 'certification', 'microsoft'],
+    date: '2026-06-26', views: 26000,
+  },
 ];
 // ── APP STATE ─────────────────────────────────────────────────────────────────
 const PAGE_SIZE = 9;
