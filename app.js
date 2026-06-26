@@ -460,6 +460,13 @@ function updateMetaFromState() {
   if (twitterTitle) twitterTitle.setAttribute('content', title);
   const twitterDesc = document.querySelector('meta[name="twitter:description"]');
   if (twitterDesc) twitterDesc.setAttribute('content', desc);
+
+  // Dynamically update canonical link and og:url based on current state
+  const currentUrl = window.location.href;
+  const canonicalLink = document.querySelector('link[rel="canonical"]');
+  if (canonicalLink) canonicalLink.setAttribute('href', currentUrl);
+  const ogUrl = document.querySelector('meta[property="og:url"]');
+  if (ogUrl) ogUrl.setAttribute('content', currentUrl);
 }
 
 function syncUrlFromState() {
