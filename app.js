@@ -52,7 +52,7 @@ function getAffiliateUrl(urlStr) {
 }
 
 const CATEGORIES = [
-  { id: 'software-dev', name: 'Software Development', emoji: '💻', color: '#7c5cff' },
+  { id: 'software-dev', name: 'Software Development', emoji: '💻', color: '#6366f1' },
   { id: 'devops',  name: 'Cloud and IT',    emoji: '☁️', color: '#f59e0b' },
   { id: 'security',name: 'Cybersecurity',     emoji: '🔒', color: '#ff4a4a' },
   { id: 'networking',  name: 'Networking',          emoji: '📡', color: '#38bdf8' },
