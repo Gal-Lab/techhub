@@ -256,16 +256,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 9200,
   },
 
-  {
-    id: -28, category: 'software-dev', badge: '🔑 FREE',
-    title: 'Scrimba – Learn JavaScript & React Interactively',
-    description: "Pause any video tutorial and edit the instructor's code in real time inside the browser. High-quality interactive frontend learning.",
-    url: 'https://scrimba.com/learn/javascript',
-    source: 'Scrimba', author: 'Bob Ziroll',
-    level: 'Beginner', type: 'Interactive',
-    tags: ['javascript', 'react', 'html-css', 'interactive', 'frontend', 'hands-on'],
-    date: '2026-06-21', views: 18000,
-  },
+
   {
     id: -29, category: 'software-dev', badge: '🎓 FREE',
     title: "web.dev – Google's Official Web Dev Learn Paths",
