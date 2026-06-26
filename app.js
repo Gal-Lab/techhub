@@ -377,6 +377,16 @@ const TUTORIALS_DATA = [
     tags: ['azure', 'cloud', 'devops', 'infrastructure', 'certification', 'microsoft'],
     date: '2026-06-26', views: 26000,
   },
+  {
+    id: -110, category: 'networking', badge: '🎥 FREE',
+    title: 'Telecom Tech Explained – Mobile Network & 5G Architecture Playlists',
+    description: "Deep-dive video guides on mobile network engineering, 4G/5G cellular core architecture, LTE signaling, and telecommunications protocols.",
+    url: 'https://www.youtube.com/@telecomTech.explained/playlists',
+    source: 'YouTube – Telecom Tech Explained', author: 'Telecom Tech Explained Team',
+    level: 'Intermediate', type: 'Video',
+    tags: ['networking', '5g', 'lte', 'telecommunications', 'cellular', 'architecture'],
+    date: '2026-06-26', views: 18000,
+  },
 ];
 // ── APP STATE ─────────────────────────────────────────────────────────────────
 const PAGE_SIZE = 9;
