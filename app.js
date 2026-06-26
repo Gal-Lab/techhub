@@ -115,7 +115,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-24', views: 8900,
   },
   {
-    id: -4, category: 'security', badge: '🎓 FREE',
+    id: -4, category: 'security', badge: '🏅 FREE + CERT',
     title: 'Fortinet Training Institute – Free Cybersecurity Courses',
     description: "Free, self-paced courses for Fortinet certifications (FCA, FCP). Learn network security, firewalls, and threat detection from the global leader.",
     url: 'https://www.fortinet.com/training/cybersecurity-professionals',
@@ -145,7 +145,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 4700,
   },
   {
-    id: -21, category: 'networking', badge: '🎓 FREE',
+    id: -21, category: 'networking', badge: '🏅 FREE + CERT',
     title: 'Cisco Networking Academy – Free IT & Networking Courses',
     description: "Cisco's official platform for free self-paced courses. Learn networking, cybersecurity, Python, Linux, and IoT with free digital badges.",
     url: 'https://www.netacad.com/catalogs/learn',
@@ -195,7 +195,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 9800,
   },
   {
-    id: -10, category: 'networking', badge: '🎓 FREE',
+    id: -10, category: 'networking', badge: '🔑 FREE',
     title: 'NetworkAcademy.io – Free IT & Networking Courses',
     description: "High-quality visual guides, animated diagrams, and courses for Cisco CCNA and Python network automation. Learn how network components interact and write custom scripts to automate device configurations.",
     url: 'https://www.networkacademy.io/courses',
@@ -257,13 +257,13 @@ const TUTORIALS_DATA = [
   },
 
   {
-    id: -28, category: 'software-dev', badge: '🎓 FREE',
+    id: -28, category: 'software-dev', badge: '🔑 FREE',
     title: 'Scrimba – Learn JavaScript & React Interactively',
     description: "Pause any video tutorial and edit the instructor's code in real time inside the browser. High-quality interactive frontend learning.",
     url: 'https://scrimba.com/learn/javascript',
     source: 'Scrimba', author: 'Bob Ziroll',
     level: 'Beginner', type: 'Interactive',
-    tags: ['javascript', 'react', 'html-css', 'interactive', 'frontend', 'hands-on', 'free-courses'],
+    tags: ['javascript', 'react', 'html-css', 'interactive', 'frontend', 'hands-on'],
     date: '2026-06-21', views: 18000,
   },
   {
@@ -298,13 +298,13 @@ const TUTORIALS_DATA = [
     date: '2026-06-21', views: 20000,
   },
   {
-    id: -36, category: 'software-dev', badge: '🛠️ FREE TOOL',
+    id: -36, category: 'software-dev', badge: '🎓 FREE',
     title: 'SQLBolt – Interactive SQL Lessons',
     description: "Interactive SQL lessons in the browser with immediate feedback. Covers SELECT queries, JOINs, and aggregates with no signup needed.",
     url: 'https://sqlbolt.com/',
     source: 'SQLBolt', author: 'SQLBolt Team',
     level: 'Beginner', type: 'Interactive',
-    tags: ['sql', 'database', 'select', 'joins', 'aggregates', 'beginner', 'no-signup', 'interactive'],
+    tags: ['sql', 'database', 'select', 'joins', 'aggregates', 'interactive'],
     date: '2026-06-21', views: 17000,
   },
 
