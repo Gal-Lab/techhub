@@ -115,7 +115,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-24', views: 8900,
   },
   {
-    id: -4, category: 'security', badge: '🏅 FREE + CERT',
+    id: -4, category: 'security', badge: '🔑 FREE',
     title: 'Fortinet Training Institute – Free Cybersecurity Courses',
     description: "Free, self-paced courses from Fortinet covering network security, firewall management, and threat detection leading to official FCA and FCP certifications. Learners will gain practical skills in defending enterprise networks using Fortinet products and industry-standard security principles.",
     url: 'https://www.fortinet.com/training/cybersecurity-professionals',
