@@ -246,7 +246,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 22000,
   },
   {
-    id: -15, category: 'security', badge: '🎥 FREE',
+    id: -15, category: 'devops', badge: '🎥 FREE',
     title: 'Simplilearn – Free IT & Cybersecurity Courses',
     description: "Free IT, cloud computing, and cybersecurity courses on YouTube, covering fundamentals, risk management, and professional certifications. Students will explore basic network security concepts, threat intelligence, and compliance frameworks.",
     url: 'https://www.youtube.com/@SimplilearnOfficial/courses',
