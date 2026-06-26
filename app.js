@@ -87,7 +87,7 @@ const TUTORIALS_DATA = [
   {
     id: -2, category: 'networking', badge: '🔑 FREE',
     title: 'NetworkLessons – Cisco & Networking Courses',
-    description: "Offers in-depth, structured courses for CCNA, CCNP, and other Cisco certifications by Rene Molenaar. Access 300+ lessons for free.",
+    description: "Offers in-depth, structured courses for CCNA, CCNP, and other Cisco certifications by Rene Molenaar, with 300+ free lessons organized by topic. Students will develop a thorough understanding of routing protocols, switching, subnetting, and network troubleshooting.",
     url: 'https://networklessons.com/courses',
     source: 'NetworkLessons', author: 'Rene Molenaar',
     level: 'Beginner', type: 'Course',
@@ -117,7 +117,7 @@ const TUTORIALS_DATA = [
   {
     id: -4, category: 'security', badge: '🏅 FREE + CERT',
     title: 'Fortinet Training Institute – Free Cybersecurity Courses',
-    description: "Free, self-paced courses for Fortinet certifications (FCA, FCP). Learn network security, firewalls, and threat detection from the global leader.",
+    description: "Free, self-paced courses from Fortinet covering network security, firewall management, and threat detection leading to official FCA and FCP certifications. Learners will gain practical skills in defending enterprise networks using Fortinet products and industry-standard security principles.",
     url: 'https://www.fortinet.com/training/cybersecurity-professionals',
     source: 'Fortinet', author: 'Fortinet Training Team',
     level: 'Beginner', type: 'Course',
@@ -242,7 +242,7 @@ const TUTORIALS_DATA = [
     url: 'https://www.theodinproject.com/',
     source: 'The Odin Project', author: 'Odin Project Contributors',
     level: 'Beginner', type: 'Interactive',
-    tags: ['javascript', 'node', 'git', 'full-stack', 'html-css'],
+    tags: ['javascript', 'node', 'git', 'full-stack', 'html-css', 'web-dev', 'open-source'],
     date: '2026-06-20', views: 22000,
   },
   {
@@ -252,7 +252,7 @@ const TUTORIALS_DATA = [
     url: 'https://www.youtube.com/@SimplilearnOfficial/courses',
     source: 'YouTube – Simplilearn', author: 'Simplilearn Team',
     level: 'Beginner', type: 'Video',
-    tags: ['security', 'cybersecurity', 'cryptography', 'firewalls', 'threats'],
+    tags: ['security', 'cybersecurity', 'cryptography', 'firewalls', 'threats', 'cloud', 'it-training'],
     date: '2026-06-20', views: 9200,
   },
 
@@ -260,7 +260,7 @@ const TUTORIALS_DATA = [
   {
     id: -29, category: 'software-dev', badge: '🎓 FREE',
     title: "web.dev – Google's Official Web Dev Learn Paths",
-    description: "Google's official hub for web development. Free structured courses on modern HTML, CSS, JS, accessibility, performance, and PWAs.",
+    description: "Google's official hub for modern web development, offering free structured learning paths on HTML, CSS, JavaScript, accessibility, performance, and Progressive Web Apps. Students will gain production-ready knowledge of web standards and best practices championed by the Chrome team.",
     url: 'https://web.dev/learn',
     source: 'web.dev', author: 'Google Chrome Team',
     level: 'Beginner', type: 'Article',
@@ -270,7 +270,7 @@ const TUTORIALS_DATA = [
   {
     id: -32, category: 'security', badge: '🔑 FREE',
     title: 'TryHackMe – Guided Hands-On Cybersecurity Learning',
-    description: "Hands-on cybersecurity platform. Guided browser rooms cover Linux, networking, web hacking, CTF, and Blue Team skills without setup.",
+    description: "Hands-on cybersecurity platform with guided browser-based rooms covering Linux, networking, web hacking, CTF challenges, and Blue Team defense skills — no local setup required. Students follow structured learning paths from absolute beginner to job-ready security professional.",
     url: 'https://tryhackme.com/',
     source: 'TryHackMe', author: 'TryHackMe Team',
     level: 'Beginner', type: 'Interactive',
@@ -281,7 +281,7 @@ const TUTORIALS_DATA = [
   {
     id: -35, category: 'devops', badge: '🔑 FREE',
     title: 'AWS Skill Builder – Official Free AWS Training',
-    description: "Official AWS training hub with 600+ free courses. Study cloud roles and certifications from Cloud Practitioner to Solutions Architect.",
+    description: "Official AWS training hub offering 600+ free courses across cloud roles and certifications, from Cloud Practitioner to Solutions Architect and beyond. Students build job-ready AWS skills through guided learning plans, video lessons, and hands-on digital labs.",
     url: 'https://skillbuilder.aws/',
     source: 'AWS', author: 'AWS Training Team',
     level: 'Beginner', type: 'Course',
@@ -291,11 +291,11 @@ const TUTORIALS_DATA = [
   {
     id: -36, category: 'software-dev', badge: '🎓 FREE',
     title: 'SQLBolt – Interactive SQL Lessons',
-    description: "Interactive SQL lessons in the browser with immediate feedback. Covers SELECT queries, JOINs, and aggregates with no signup needed.",
+    description: "Interactive SQL lessons run entirely in the browser with instant feedback — no signup or installation required. Students progressively master SELECT queries, filtering, JOINs, subqueries, and aggregate functions through hands-on exercises.",
     url: 'https://sqlbolt.com/',
     source: 'SQLBolt', author: 'SQLBolt Team',
     level: 'Beginner', type: 'Interactive',
-    tags: ['sql', 'database', 'select', 'joins', 'aggregates', 'interactive'],
+    tags: ['sql', 'database', 'select', 'joins', 'aggregates', 'interactive', 'beginner', 'no-signup'],
     date: '2026-06-21', views: 17000,
   },
 
@@ -304,7 +304,7 @@ const TUTORIALS_DATA = [
     description: 'Access thousands of free, comprehensive video courses and playlists covering software development, DevOps, cybersecurity, networking, and databases. Build skills at your own pace through structured technical guides and challenges.',
     url: 'https://www.youtube.com/@freecodecamp/playlists',
     source: 'freeCodeCamp', author: 'freeCodeCamp Team',
-    level: 'Beginner', type: 'Course',
+    level: 'Beginner', type: 'Video',
     tags: ['programming', 'networking', 'security', 'devops', 'video-courses'], date: '2026-06-24', views: 9800,
   },
 
@@ -312,7 +312,7 @@ const TUTORIALS_DATA = [
   {
     id: -42, category: 'software-dev', badge: '🎓 FREE',
     title: 'Android Basics with Compose',
-    description: 'Official Jetpack Compose course. Learn Kotlin fundamentals, state management, and build native Android apps with declarative UIs.',
+    description: 'Official Google course teaching Android development with Jetpack Compose, covering Kotlin fundamentals, state management, navigation, and UI design with declarative components. By the end students will have built and published multiple real Android apps using modern architecture patterns.',
     url: 'https://developer.android.com/courses/android-basics-compose/course',
     source: 'Android Developers', author: 'Google Developer Team',
     level: 'Beginner', type: 'Course',
@@ -322,7 +322,7 @@ const TUTORIALS_DATA = [
   {
     id: -11, category: 'software-dev', badge: '🎓 FREE',
     title: 'Harvard CS50x – Introduction to Computer Science',
-    description: "Harvard's legendary introduction to computer science. Learn C, Python, SQL, HTML, CSS, JavaScript, algorithms, and data structures through rigorous problem sets.",
+    description: "Harvard's world-renowned introduction to computer science, teaching C, Python, SQL, HTML, CSS, and JavaScript through rigorous weekly problem sets and a final project. Students graduate with a deep understanding of algorithms, memory management, data structures, and software engineering principles.",
     url: 'https://cs50.harvard.edu/x/',
     source: 'Harvard University', author: 'David J. Malan',
     level: 'Beginner', type: 'Course',
@@ -336,7 +336,7 @@ const TUTORIALS_DATA = [
     url: 'https://roadmap.sh',
     source: 'roadmap.sh', author: 'roadmap.sh Team',
     level: 'Beginner', type: 'Tool',
-    tags: ['roadmaps', 'developer-path', 'frontend', 'backend', 'devops', 'guides'],
+    tags: ['roadmaps', 'developer-path', 'frontend', 'backend', 'devops', 'guides', 'career', 'computer-science'],
     date: '2026-06-26', views: 28000,
   },
   {
@@ -366,7 +366,7 @@ const TUTORIALS_DATA = [
     url: 'https://www.freecodecamp.org/learn',
     source: 'freeCodeCamp', author: 'freeCodeCamp Team',
     level: 'Beginner', type: 'Interactive',
-    tags: ['javascript', 'python', 'html-css', 'data-science', 'machine-learning', 'full-stack', 'certification'],
+    tags: ['javascript', 'python', 'html-css', 'data-science', 'machine-learning', 'full-stack', 'certification', 'responsive-design', 'web-dev'],
     date: '2026-06-26', views: 35000,
   },
   {
