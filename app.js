@@ -742,10 +742,6 @@ function renderCategories() {
       updateCatFilter();
       renderCategories();
       renderTutorials();
-      if (isSelecting) {
-        const tutSec = document.getElementById('tutorials');
-        if (tutSec) tutSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
     };
     card.addEventListener('click', handler);
     card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') handler(e); });
