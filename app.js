@@ -778,7 +778,7 @@ function renderFeatured() {
         </div>
         <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
           <span style="font-size: 0.8rem; color: var(--text3);">by ${oreilly.author}</span>
-          <a href="${getAffiliateUrl(oreilly.url)}" target="_blank" rel="noopener noreferrer" class="btn-featured" style="background: linear-gradient(135deg, #ffaa00, #ff6b00); color: #fff; box-shadow: 0 4px 12px rgba(255,170,0,0.25);">
+          <a href="${getAffiliateUrl(oreilly.url)}" target="_blank" rel="noopener noreferrer" class="btn-featured" style="background: linear-gradient(135deg, #ffaa00, #ff6b00); color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
             Start Trial <span>→</span>
           </a>
         </div>
@@ -796,7 +796,7 @@ function renderFeatured() {
         </div>
         <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
           <span style="font-size: 0.8rem; color: var(--text3);">by ${cbt.author}</span>
-          <a href="${getAffiliateUrl(cbt.url)}" target="_blank" rel="noopener noreferrer" class="btn-featured" style="background: linear-gradient(135deg, #ffaa00, #ff6b00); color: #fff; box-shadow: 0 4px 12px rgba(255,170,0,0.25);">
+          <a href="${getAffiliateUrl(cbt.url)}" target="_blank" rel="noopener noreferrer" class="btn-featured" style="background: linear-gradient(135deg, #ffaa00, #ff6b00); color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
             Start Trial <span>→</span>
           </a>
         </div>
