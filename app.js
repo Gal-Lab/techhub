@@ -736,13 +736,16 @@ function renderCategories() {
     const handler = (e) => {
       if (e) e.preventDefault();
       const id = card.dataset.catid;
-      state.category = (state.category === id) ? 'all' : id;
+      const isSelecting = (state.category !== id);
+      state.category = isSelecting ? id : 'all';
       state.page = 1;
       updateCatFilter();
       renderCategories();
       renderTutorials();
-      const tutSec = document.getElementById('tutorials');
-      if (tutSec) tutSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (isSelecting) {
+        const tutSec = document.getElementById('tutorials');
+        if (tutSec) tutSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     };
     card.addEventListener('click', handler);
     card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') handler(e); });
