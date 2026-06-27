@@ -425,6 +425,7 @@ function getDurationLabel(minutes) {
 
 // ── SEO & URL SYNCHRONIZATION HELPERS ──────────────────────────────────────────
 function updateMetaFromState() {
+  if (window.location.pathname.includes('/blog/')) return;
   let title = 'DevNest – Curated Tech Resources';
   let desc = 'DevNest is your curated directory of the best tech resources across web dev, AI/ML, DevOps, mobile, and more. Discover, filter, and browse top-quality learning resources from across the web.';
 
@@ -462,6 +463,7 @@ function updateMetaFromState() {
 }
 
 function syncUrlFromState() {
+  if (window.location.pathname.includes('/blog/')) return;
   const url = new URL(window.location.href);
   const params = new URLSearchParams();
 

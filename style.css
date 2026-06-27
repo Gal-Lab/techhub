@@ -205,6 +205,28 @@ input, select, textarea { font-family: var(--font); outline: none; }
   transform: scale(0.8) rotate(30deg);
 }
 
+.btn-support {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.5rem 1.1rem; border-radius: 100px; font-weight: 600; font-size: 0.85rem;
+  color: #fff; background: #ff5e5b;
+  border: none; transition: all var(--transition);
+  box-shadow: 0 4px 15px rgba(255, 94, 91, 0.25);
+  text-decoration: none;
+}
+.btn-support:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 94, 91, 0.45);
+  background: #ff4743;
+  color: #fff;
+}
+.btn-support:active {
+  transform: translateY(0);
+}
+.light-mode .btn-support {
+  color: #fff;
+  background: #ff5e5b;
+}
+
 .btn-outline {
   padding: 0.7rem 1.75rem; border-radius: 100px; font-weight: 600; font-size: 0.95rem;
   color: var(--text2); background: transparent;
