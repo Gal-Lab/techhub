@@ -380,7 +380,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-26', views: 18000,
   },
   {
-    id: -43, category: 'software-dev', freeTrial: true, trialLabel: '7-Day Free Trial',
+    id: -43, category: 'devops', freeTrial: true, trialLabel: '7-Day Free Trial',
     title: 'Coursera – Popular Courses & Professional Certificates',
     description: 'Access thousands of popular courses, specialized certifications, and degrees from world-class universities and tech leaders like Google, IBM, and Stanford. Learn programming, cloud computing, and machine learning with hands-on labs.',
     url: 'https://www.coursera.org/explore/most-popular-courses',
