@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://devnest-learn.netlify.app/</loc>
+    <loc>https://devnest-learn.pages.dev/</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://devnest-learn.netlify.app/?category=software-dev</loc>
+    <loc>https://devnest-learn.pages.dev/?category=software-dev</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://devnest-learn.netlify.app/?category=networking</loc>
+    <loc>https://devnest-learn.pages.dev/?category=networking</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://devnest-learn.netlify.app/?category=security</loc>
+    <loc>https://devnest-learn.pages.dev/?category=security</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://devnest-learn.netlify.app/?category=devops</loc>
+    <loc>https://devnest-learn.pages.dev/?category=devops</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
