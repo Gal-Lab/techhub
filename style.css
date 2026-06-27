@@ -533,7 +533,19 @@ input, select, textarea { font-family: var(--font); outline: none; }
   background: color-mix(in srgb, var(--cat-color) 10%, transparent);
   box-shadow: var(--shadow);
 }
-.cat-emoji { font-size: 2rem; }
+.cat-emoji {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 0.25rem;
+  color: var(--cat-color);
+  transition: transform var(--transition);
+}
+.cat-card:hover .cat-emoji {
+  transform: scale(1.05);
+}
 .cat-name { font-size: 0.95rem; font-weight: 700; color: var(--text); }
 .cat-count { font-size: 0.78rem; color: var(--text2); font-family: var(--mono); }
 
