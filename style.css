@@ -543,11 +543,36 @@ input, select, textarea { font-family: var(--font); outline: none; }
   color: var(--cat-color);
   transition: transform var(--transition);
 }
+.cat-emoji svg {
+  width: 22px;
+  height: 22px;
+}
 .cat-card:hover .cat-emoji {
   transform: scale(1.05);
 }
 .cat-name { font-size: 0.95rem; font-weight: 700; color: var(--text); }
 .cat-count { font-size: 0.78rem; color: var(--text2); font-family: var(--mono); }
+
+/* SVG sizing helpers for cards */
+.featured-category-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.featured-category-icon svg {
+  width: 14px;
+  height: 14px;
+}
+.tut-card-cat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.35rem;
+}
+.tut-card-cat-icon svg {
+  width: 13px;
+  height: 13px;
+}
 
 /* ===== FEATURED SECTION ===== */
 .featured-section { padding: 4rem 0; background: var(--bg); }
