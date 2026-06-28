@@ -49,7 +49,7 @@ The HTML page must:
 6. Include JSON-LD `Article` structured data
 
 ### Canonical URL format
-`https://devnest-learn.netlify.app/blog/<slug>.html`
+`https://devnest-learn.pages.dev/blog/<slug>.html`
 
 ---
 
@@ -70,7 +70,7 @@ The HTML page must:
 2. Add a `<url>` entry to `sitemap.xml`:
 ```xml
 <url>
-  <loc>https://devnest-learn.netlify.app/blog/<slug>.html</loc>
+  <loc>https://devnest-learn.pages.dev/blog/<slug>.html</loc>
   <lastmod><today></lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
@@ -90,7 +90,7 @@ Tell the parent agent:
 - Post title and slug
 - Target keyword
 - Word count
-- URL: `https://devnest-learn.netlify.app/blog/<slug>.html`
+- URL: `https://devnest-learn.pages.dev/blog/<slug>.html`
 
 ---
 
