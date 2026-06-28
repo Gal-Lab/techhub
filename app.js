@@ -105,7 +105,7 @@ const TUTORIALS_DATA = [
     date: '2026-06-20', views: 12000,
   },
   {
-    id: -2, category: 'networking', badge: '🔑 FREE',
+    id: -2, category: 'networking', badge: '💳 PAID',
     title: 'NetworkLessons – Cisco & Networking Courses',
     description: "Structured networking lessons explaining complex Cisco CCNA and CCNP topics in plain English. Students will master networking concepts through clear diagrams and configuration examples.",
     url: 'https://networklessons.com/courses',
@@ -326,7 +326,7 @@ const TUTORIALS_DATA = [
     id: -42, category: 'software-dev', badge: '🎓 FREE',
     title: 'Android Basics with Compose',
     description: "Official Google course for building modern Android apps with Kotlin and Jetpack Compose. Students will learn Kotlin programming fundamentals and design declarative user interfaces.",
-    url: 'https://developer.android.com/courses/android-basics-compose/course',
+    url: 'https://developer.android.com/courses/android-basics-compose',
     source: 'Android Developers', author: 'Google Developer Team',
     level: 'Beginner', type: 'Course',
     tags: ['android', 'jetpack-compose', 'kotlin', 'mobile-dev', 'google'],
@@ -904,7 +904,7 @@ function renderTutorialCard(t) {
     <div class="tut-card-accent"></div>
     <div class="tut-card-body">
       <div class="tut-card-top">
-        <span class="tut-cat-badge chip" style="background:${cat?.color || '#7c5cff'}22;border-color:${cat?.color || '#7c5cff'}44;color:${cat?.color || '#7c5cff'}">
+        <span class="tut-cat-badge chip">
           <span class="tut-card-cat-icon" aria-hidden="true">${cat?.icon || ''}</span> ${cat?.name || t.category}
         </span>
       </div>
