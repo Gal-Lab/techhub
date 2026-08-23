@@ -402,6 +402,16 @@ const TUTORIALS_DATA = [
     tags: ['courses', 'certifications', 'google-certificates', 'degree-paths', 'data-science', 'programming'],
     date: '2026-06-27', views: 12500,
   },
+  {
+    id: -112, category: 'networking', badge: '🎥 FREE',
+    title: 'CollabCrush – Cisco Collaboration & Voice Playlists',
+    description: "Comprehensive video tutorials and lab walkthroughs covering Cisco Collaboration technologies on YouTube. Students will master CUCM, Cisco Meeting Server, Expressway, and SIP protocols through practical guides.",
+    url: 'https://www.youtube.com/@CollabCrush/playlists',
+    source: 'YouTube – CollabCrush', author: 'CollabCrush Team',
+    level: 'Intermediate', type: 'Video',
+    tags: ['cisco', 'networking', 'cucm', 'collaboration', 'sip', 'telecom', 'video-courses'],
+    date: '2026-08-23', views: 8500,
+  },
 ];
 // ── APP STATE ─────────────────────────────────────────────────────────────────
 const PAGE_SIZE = 9;
