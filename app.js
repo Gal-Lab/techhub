@@ -412,6 +412,16 @@ const TUTORIALS_DATA = [
     tags: ['cisco', 'networking', 'cucm', 'collaboration', 'sip', 'telecom', 'video-courses'],
     date: '2026-08-23', views: 8500,
   },
+  {
+    id: -113, category: 'networking', badge: '🎥 FREE',
+    title: 'Network Journey – Cisco, Firewalls & Network Automation Courses',
+    description: "Free and structured video courses on YouTube covering Cisco CCNA, CCNP, network security, and network automation. Students will learn practical routing and switching concepts, firewall configurations, and Python scripting for enterprise networks.",
+    url: 'https://www.youtube.com/@NetworkJourney/courses',
+    source: 'YouTube – Network Journey', author: 'Sagar Dhawan',
+    level: 'Beginner', type: 'Course',
+    tags: ['cisco', 'ccna', 'ccnp', 'networking', 'network-automation', 'python', 'firewalls', 'video-courses'],
+    date: '2026-09-01', views: 8200,
+  },
 ];
 // ── APP STATE ─────────────────────────────────────────────────────────────────
 const PAGE_SIZE = 9;
