@@ -422,6 +422,16 @@ const TUTORIALS_DATA = [
     tags: ['cisco', 'ccna', 'ccnp', 'networking', 'network-automation', 'python', 'firewalls', 'video-courses'],
     date: '2026-09-01', views: 8200,
   },
+  {
+    id: -114, category: 'networking', badge: '🔑 FREE',
+    title: 'UC Collabing – Cisco Unified Communications Tutorials & Guides',
+    description: "In-depth blog tutorials and troubleshooting guides for Cisco Collaboration technologies. Students will learn CUCM, Unity Connection, UCCX, voice gateways, and network automation with Python and Ansible.",
+    url: 'https://www.uccollabing.com/',
+    source: 'UC Collabing', author: 'UC Collabing Team',
+    level: 'Intermediate', type: 'Article',
+    tags: ['cisco', 'networking', 'cucm', 'collaboration', 'voip', 'automation', 'webex', 'unity-connection'],
+    date: '2026-09-08', views: 7800,
+  },
 ];
 // ── APP STATE ─────────────────────────────────────────────────────────────────
 const PAGE_SIZE = 9;
