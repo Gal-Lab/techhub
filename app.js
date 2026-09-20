@@ -432,6 +432,16 @@ const TUTORIALS_DATA = [
     tags: ['cisco', 'networking', 'cucm', 'collaboration', 'voip', 'automation', 'webex', 'unity-connection'],
     date: '2026-09-08', views: 7800,
   },
+  {
+    id: -115, category: 'networking', badge: '🎥 FREE',
+    title: 'David Bombal – Cisco CCNA & Python Network Automation',
+    description: "In-depth networking video courses, Packet Tracer lab walkthroughs, and Python network automation tutorials taught by a veteran CCIE. Students will prepare for CCNA exams and practice enterprise automation.",
+    url: 'https://www.youtube.com/@davidbombal/playlists',
+    source: 'YouTube – David Bombal', author: 'David Bombal',
+    level: 'Beginner', type: 'Video',
+    tags: ['cisco', 'ccna', 'networking', 'network-automation', 'python', 'packet-tracer', 'video-courses'],
+    date: '2026-09-20', views: 18500,
+  },
 ];
 // ── APP STATE ─────────────────────────────────────────────────────────────────
 const PAGE_SIZE = 9;
