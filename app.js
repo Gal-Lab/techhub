@@ -542,6 +542,26 @@ const TUTORIALS_DATA = [
     tags: ['ccna', 'networking', 'cisco', 'subnetting', 'tcp-ip', 'packet-tracer', 'video-courses'],
     date: '2026-09-20', views: 28000,
   },
+  {
+    id: -126, category: 'devops', badge: '🎥 FREE',
+    title: 'Go Cloud Architects – Cloud Architecture & Career Training',
+    description: "Practical cloud architecture tutorials, enterprise design principles, and career coaching by industry veteran Michael Gibbs. Students will learn how to design multi-cloud solutions, think like an architect, and prepare for high-level cloud interviews.",
+    url: 'https://www.youtube.com/@GoCloudArchitects/playlists',
+    source: 'YouTube – Go Cloud Architects', author: 'Michael Gibbs',
+    level: 'Intermediate', type: 'Video',
+    tags: ['cloud', 'aws', 'architecture', 'enterprise-cloud', 'multi-cloud', 'career', 'devops', 'video-courses'],
+    date: '2026-09-20', views: 14000,
+  },
+  {
+    id: -127, category: 'networking', badge: '🎥 FREE',
+    title: 'Chris Greer – Wireshark & Packet Analysis Tutorials',
+    description: "In-depth network analysis, packet capture, and troubleshooting masterclasses taught by Wireshark University instructor Chris Greer. Students will learn packet-level protocol analysis, TCP troubleshooting, and security incident response using Wireshark.",
+    url: 'https://www.youtube.com/@ChrisGreer/playlists',
+    source: 'YouTube – Chris Greer', author: 'Chris Greer',
+    level: 'Intermediate', type: 'Video',
+    tags: ['wireshark', 'packet-analysis', 'networking', 'tcp-ip', 'troubleshooting', 'protocols', 'cybersecurity', 'video-courses'],
+    date: '2026-09-20', views: 16500,
+  },
 ];
 // ── APP STATE ─────────────────────────────────────────────────────────────────
 const PAGE_SIZE = 9;
