@@ -562,6 +562,26 @@ const TUTORIALS_DATA = [
     tags: ['wireshark', 'packet-analysis', 'networking', 'tcp-ip', 'troubleshooting', 'protocols', 'cybersecurity', 'video-courses'],
     date: '2026-09-20', views: 16500,
   },
+  {
+    id: -128, category: 'software-dev', badge: '🎥 FREE',
+    title: 'Bogdan Stashchuk – Full Video Courses & Programming Guides',
+    description: "Comprehensive, multi-hour video courses covering Docker, Kubernetes, Git, JavaScript, Node.js, and Python. Students will build practical projects and master modern development and containerization workflows.",
+    url: 'https://www.youtube.com/@Bogdan_Stashchuk/courses',
+    source: 'YouTube – Bogdan Stashchuk', author: 'Bogdan Stashchuk',
+    level: 'Beginner', type: 'Course',
+    tags: ['docker', 'kubernetes', 'javascript', 'git', 'python', 'nodejs', 'web-dev', 'devops', 'video-courses'],
+    date: '2026-09-20', views: 15000,
+  },
+  {
+    id: -129, category: 'networking', badge: '🎥 FREE',
+    title: 'IT Tech Studies – Cisco Packet Tracer Network Labs',
+    description: "Hands-on Cisco Packet Tracer project tutorials and practical network simulation walkthroughs. Students will design, configure, and troubleshoot real-world enterprise architectures, VLANs, and routing protocols.",
+    url: 'https://www.youtube.com/@ittechstudies/playlists',
+    source: 'YouTube – IT Tech Studies', author: 'IT Tech Studies',
+    level: 'Beginner', type: 'Video',
+    tags: ['cisco', 'packet-tracer', 'networking', 'ccna', 'routing', 'switching', 'vlan', 'labs', 'video-courses'],
+    date: '2026-09-20', views: 12000,
+  },
 ];
 // ── APP STATE ─────────────────────────────────────────────────────────────────
 const PAGE_SIZE = 9;
